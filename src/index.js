@@ -1,17 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import { App } from "./app";
-import { Auth0ProviderWithHistory } from "./auth0-provider-with-history";
+import App from "./App";
+import { Auth0ProviderWithConfig } from "./auth0-provider-with-config";
 import "./styles/styles.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Auth0ProviderWithHistory>
-        <App />
-      </Auth0ProviderWithHistory>
-    </BrowserRouter>
+    <Auth0ProviderWithConfig>
+      <App />
+    </Auth0ProviderWithConfig>
   </React.StrictMode>,
   document.getElementById("root")
 );

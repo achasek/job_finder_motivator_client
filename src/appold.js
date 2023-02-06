@@ -11,7 +11,7 @@ import { ProfilePage } from "./pages/profile-page";
 import { ProtectedPage } from "./pages/protected-page";
 import { PublicPage } from "./pages/public-page";
 
-export const App = () => {
+export const Appold = () => {
   const { isLoading } = useAuth0();
 
   if (isLoading) {

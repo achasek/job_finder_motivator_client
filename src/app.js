@@ -10,6 +10,7 @@ import { NotFoundPage } from "./pages/not-found-page";
 import { ProfilePage } from "./pages/profile-page";
 import { ProtectedPage } from "./pages/protected-page";
 import { PublicPage } from "./pages/public-page";
+import { ExamplePage } from "./pages/example-page";
 
 export const App = () => {
   const { isLoading } = useAuth0();
@@ -29,6 +30,7 @@ export const App = () => {
       <Route path="/public" component={PublicPage} />
       <ProtectedRoute path="/protected" component={ProtectedPage} />
       <ProtectedRoute path="/admin" component={AdminPage} />
+      <Route path="/api/example" component={ExamplePage} />
       <Route path="/callback" component={CallbackPage} />
       <Route path="*" component={NotFoundPage} />
     </Switch>

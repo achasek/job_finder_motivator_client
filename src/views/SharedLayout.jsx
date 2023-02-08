@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-// import { Navbar } from "../components";
+import { NavBarButtons } from "../components";
 
 const SharedLayout = () => {
 
@@ -7,8 +7,10 @@ const SharedLayout = () => {
         <>
             <header>
                 <div className="nav-area">
-                    {/* <NavLink to='/' className='logo'><img className="nav-logo" src='/kayla-cares-4-kids-logo.png' alt="Kayla Cares 4 Kids Logo" /></NavLink> */}
-                    {/* <Navbar /> */}
+                    <NavLink to="/test/public" className='logo'>public_test_route</NavLink>
+                    <NavLink to="/test/protected" className='logo'>protected_test_route</NavLink>
+                    <NavLink to="/test/admin" className='logo'>admin_test_route</NavLink>
+                    <NavBarButtons />
                 </div>
             </header>
             <section>

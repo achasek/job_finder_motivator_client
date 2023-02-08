@@ -1,9 +1,9 @@
 {
-  "name": "spa_react_javascript_hello-world",
+  "name": "job-finder-motivator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@auth0/auth0-react": "^2.0.0",
+    "@auth0/auth0-react": "^1.12.0",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

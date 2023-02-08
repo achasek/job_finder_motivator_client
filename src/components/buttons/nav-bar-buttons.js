@@ -1,17 +1,17 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
-import { LoginButton } from "../../buttons_old/login-button";
-import { LogoutButton } from "../../buttons_old/logout-button";
-import { SignupButton } from "../../buttons_old/signup-button";
+import { LoginButton } from "..";
+import { LogoutButton } from "..";
+// import { SignupButton } from "..";
 
-export const MobileNavBarButtons = () => {
+const NavBarButtons = () => {
   const { isAuthenticated } = useAuth0();
 
   return (
-    <div className="mobile-nav-bar__buttons">
+    <div className="nav-bar__buttons">
       {!isAuthenticated && (
         <>
-          <SignupButton />
+          {/* <SignupButton /> */}
           <LoginButton />
         </>
       )}
@@ -23,3 +23,5 @@ export const MobileNavBarButtons = () => {
     </div>
   );
 };
+
+export default NavBarButtons;

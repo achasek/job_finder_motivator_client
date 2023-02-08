@@ -1,14 +1,16 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 
-const LoginButton = () => {
+export const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
   const handleLogin = async () => {
     await loginWithRedirect({
-      prompt: "login",
       appState: {
-        returnTo: "/callback",
+        returnTo: "/profile",
+      },
+      authorizationParams: {
+        prompt: "login",
       },
     });
   };
@@ -19,5 +21,3 @@ const LoginButton = () => {
     </button>
   );
 };
-
-export default LoginButton;

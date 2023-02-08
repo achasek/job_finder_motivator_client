@@ -4,7 +4,7 @@ export const callExternalApi = async (options) => {
   try {
     const response = await axios(options.config);
     const { data } = response;
-
+    console.log({data});
     return {
       data,
       error: null,
@@ -28,7 +28,7 @@ export const callExternalApi = async (options) => {
       if (response && response.data && response.data.message) {
         message = response.data.message;
       }
-
+      console.log({message});
       return {
         data: null,
         error: {
@@ -36,6 +36,8 @@ export const callExternalApi = async (options) => {
         },
       };
     }
+
+    console.log({error});
 
     return {
       data: null,

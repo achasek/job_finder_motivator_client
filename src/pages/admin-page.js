@@ -1,10 +1,35 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useState } from "react";
 import { CodeSnippet } from "../components/code-snippet";
 import { PageLayout } from "../components/page-layout";
-import { getAdminResource } from "../services/message.service";
+// import { getAdminResource } from "../services/message.service";
+import { callExternalApi } from "../services/external-api.service";
 
 export const AdminPage = () => {
   const [message, setMessage] = useState("");
+  const {getAccessTokenSilently} = useAuth0();
+  const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
+
+  const getAdminResource = async () => {
+    const token = await getAccessTokenSilently();
+    const config = {
+      url: `${apiServerUrl}/api/messages/admin`,
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        "Authorization": `bearer ${token}`
+      },
+    };
+  
+    const { data, error } = await callExternalApi({ config });
+    
+    console.log({response: data ? data : error});
+  
+    return {
+      data: data || null,
+      error,
+    };
+  };
 
   useEffect(() => {
     let isMounted = true;

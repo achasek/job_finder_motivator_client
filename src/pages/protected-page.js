@@ -1,20 +1,45 @@
-import React, { useEffect, useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect, useState } from "react";
 import { CodeSnippet } from "../components/code-snippet";
 import { PageLayout } from "../components/page-layout";
-import { getProtectedResource } from "../services/message.service";
+// import { getProtectedResource } from "../services/message.service";
+import { callExternalApi } from "../services/external-api.service";
 
 export const ProtectedPage = () => {
   const [message, setMessage] = useState("");
+  const {getAccessTokenSilently} = useAuth0();
+  const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
 
+  const getProtectedResource = async () => {
+    const token = await getAccessTokenSilently();
+    const config = {
+      url: `${apiServerUrl}/api/messages/protected`,
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        "Authorization": `bearer ${token}`
+      },
+    };
+  
+    const { data, error } = await callExternalApi({ config });
+    
+    console.log({response: data ? data : error});
+  
+    return {
+      data: data || null,
+      error,
+    };
+  };
+  
   useEffect(() => {
-    let isMounted = true;
+    // let isMounted = true;
 
     const getMessage = async () => {
       const { data, error } = await getProtectedResource();
 
-      if (!isMounted) {
-        return;
-      }
+      // if (!isMounted) {
+      //   return;
+      // }
 
       if (data) {
         setMessage(JSON.stringify(data, null, 2));
@@ -27,9 +52,9 @@ export const ProtectedPage = () => {
 
     getMessage();
 
-    return () => {
-      isMounted = false;
-    };
+    // return () => {
+    //   isMounted = false;
+    // };
   }, []);
 
   return (

@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin} from "./views";
 import { useAuth0 } from "@auth0/auth0-react";
-import { PageLoader } from "./components";
 import TodoList from "./views/TodoList-form";
 import { Auth0LoginRequired, PageLoader } from "./components";
 

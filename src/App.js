@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes } from "./views";
 import { useAuth0 } from "@auth0/auth0-react";
 import { PageLoader } from "./components";
+import TodoList from "./views/TodoList-form";
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
@@ -35,6 +36,7 @@ function App() {
               <Route path="users/*" element={<UserRoutes />} />
               <Route path="callback" element={<CallbackView />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/todo" element={<TodoList />} />
             </Route>
           </Routes>
         </UserContext.Provider>

@@ -7,8 +7,8 @@ const SharedLayout = () => {
         <>
             <header>
                 <div className="nav-area">
-                    {/* <NavLink to='/' className='logo'><img className="nav-logo" src='/kayla-cares-4-kids-logo.png' alt="Kayla Cares 4 Kids Logo" /></NavLink> */}
-                    {/* <Navbar /> */}
+                     {/* <NavLink to='/' className='logo'><img className="nav-logo" src='/kayla-cares-4-kids-logo.png' alt="Kayla Cares 4 Kids Logo" /></NavLink>
+                    <Navbar /> */}
                 </div>
             </header>
             <section>

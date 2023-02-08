@@ -1,154 +1,103 @@
-/* General */
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 10px;
-  text-rendering: geometricPrecision;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-html,
 body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+background-color: blue;
 }
 
-body {
-  background-color: var(--black);
-
-  color: var(--white);
-  font-family: var(--font-primary);
-
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  overflow-y: scroll;
+.homepage__title{
+  background-color: rgb(255, 255, 112);
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border: 3px solid rgb(0, 0, 0);
+  text-align: center;
+  width: fit-content;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 40px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-secondary);
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.86);
+.homepage__title:hover{
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border: 6px solid rgb(253, 0, 0);
+  text-align: center;
+  width: fit-content;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 40px;
 }
 
-h1,
-h2,
-h3 {
-  margin-top: 3.2rem;
-  margin-bottom: 1.6rem;
+.form__title{
+  background-color: white;
+  color: black;
+  text-align: center;
+  width: fit-content;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-h4,
-h5,
-h6 {
-  margin-top: 1.6rem;
-  margin-bottom: 1.6rem;
+.todo__form{
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgba(0, 128, 0, 0.653);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  border-radius: 10px;
+  border: 1px solid white;
 }
 
-h1 {
-  font-size: 3.2rem;
+.form{
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: tan;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-h2 {
-  font-size: 2.8rem;
+.todo__input{
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-h3 {
-  font-size: 2.4rem;
+.todo__select{
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-h4 {
-  font-size: 2rem;
+.todo__submit{
+  margin-left: 20px;
+  margin-right: 30px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-h5 {
-  font-size: 1.6rem;
+.todo__input-label{
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
 }
 
-h6 {
-  font-size: 1.4rem;
+.todo__select-label{
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
 }
 
-p {
-  margin: 0 0 1.6rem;
-}
 
-strong {
-  font-weight: 500;
-}
-
-small {
-  font-size: 1.2rem;
-}
-
-blockquote {
-  padding: 1.6rem 3.2rem;
-  margin: 0 0 3.2rem;
-
-  border-left: 8px solid #eee;
-
-  font-size: 1.6rem;
-  font-style: italic;
-}
-
-body,
-button,
-input,
-select,
-textarea {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-a {
-  color: var(--white);
-  text-decoration: none;
-}
-
-figure {
-  margin: 0;
-}
-img {
-  vertical-align: middle;
-}
-
-code,
-pre {
-  font-family: "Fira Code", source-code-pro, Menlo, Monaco, Consolas,
-    "Courier New", monospace;
-  width: 100%;
-}
-
-code {
-  color: var(--emerald);
-}
-
-#root {
-  height: 100%;
-  width: 100%;
-}
-
-@media only screen and (max-width: 640px) {
-  .mobile-scroll-lock {
-    overflow: hidden;
-  }
+.todo__submit:hover{
+  background-color: rgb(0, 255, 229);
+  color: rgb(105, 55, 255);
 }

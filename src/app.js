@@ -1,9 +1,10 @@
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin} from "./views";
+import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, } from "./views";
 import {Profile} from "./pages/Profile";
-
+import Test from "./pages/Test";
+import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { Auth0LoginRequired, PageLoader } from "./components";
@@ -77,6 +78,8 @@ function App() {
               <Route path="users/*" element={<UserRoutes />} />
               <Route path="callback" element={<CallbackView />} />
               <Route path='test/public' element={<TestAPIRoute />} /> 
+              <Route exact path='test' element={< Test />} /> 
+              <Route exact path='testtwo' element={< TestTwo />} /> 
               <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
               <Route path='/profile' element={<Auth0LoginRequired component={Profile} />} /> 
              <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />

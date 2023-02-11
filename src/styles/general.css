@@ -8,12 +8,15 @@ background-color: #5AE6DE;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
-  border: 3px solid rgb(0, 0, 0);
+  border: 3px solid rgb(255, 255, 255);
   text-align: center;
   width: fit-content;
   padding-left: 40px;
   padding-right: 40px;
   font-size: 40px;
+  -webkit-box-shadow: 6px -5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px -5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 6px -5px 5px 0px rgba(0,0,0,0.75);
 }
 
 .homepage__title:hover{
@@ -52,13 +55,17 @@ background-color: #5AE6DE;
   margin-top: 25px;
   border-radius: 10px;
   border: 1px solid white;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
 }
 
 .form{
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #FF7860;
+  background-color: #ffffff;
+  border: 1px solid black;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -84,15 +91,19 @@ background-color: #5AE6DE;
 }
 
 .todo__input-label{
-  background-color: white;
+  color: rgb(0, 0, 0);
   padding: 10px;
   border-radius: 12px;
+  font-weight: bolder;
+  font-size: 23px;
 }
 
 .todo__select-label{
-  background-color: white;
+  color: rgb(0, 0, 0);
   padding: 10px;
   border-radius: 12px;
+  font-weight: bolder;
+  font-size: 23px;
 }
 
 

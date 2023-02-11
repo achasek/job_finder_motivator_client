@@ -1,0 +1,53 @@
+.gridContainer{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 40% 
+}
+
+.paper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30rem;
+    height: 50rem; 
+}
+
+.title {
+    position: relative;
+    font-size: 75px;
+}
+
+.titley {
+    margin-top: -45px;
+    position: relative;
+    font-size: 75px;
+}
+
+.bt:hover {
+cursor: pointer;
+}
+
+.list{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 35%;
+    width: 100%;
+}
+
+.listItem{
+    position: relative;
+    height: 2.8rem;
+    width: 6rem;
+    border: 1px solid black;
+    border-radius: 100px
+}
+
+.listItem:hover{
+    background-color: lightgray;
+    opacity: 99%;
+    cursor: pointer
+}

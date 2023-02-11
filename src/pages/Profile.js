@@ -3,8 +3,9 @@ import React from "react";
 import { CodeSnippet } from "../components/code-snippet";
 import { PageLayout } from "../components/page-layout";
 
-export const ProfilePage = () => {
+export const Profile = () => {
   const { user } = useAuth0();
+  console.log(user)
 
   if (!user) {
     return null;

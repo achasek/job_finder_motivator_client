@@ -5,7 +5,7 @@ import { PageLayout } from "../components/page-layout";
 // import { getAdminResource } from "../services/message.service";
 import { callExternalApi } from "../services/external-api.service";
 
-export const AdminPage = () => {
+ export const AdminPage = () => {
   const [message, setMessage] = useState("");
   const {getAccessTokenSilently} = useAuth0();
   const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
@@ -83,3 +83,4 @@ export const AdminPage = () => {
     </PageLayout>
   );
 };
+

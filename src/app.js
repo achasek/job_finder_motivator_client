@@ -23,6 +23,7 @@ function App() {
   const token = getAccessTokenSilently();
 
   
+  
  const getProtectedResource = async () => { 
   const token = await getAccessTokenSilently();    
       const config = {

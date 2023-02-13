@@ -2,12 +2,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, } from "./views";
+import { Auth0LoginRequired, PageLoader, TodoList } from "./components";
 import {Profile} from "./pages/Profile";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-import { Auth0LoginRequired, PageLoader } from "./components";
+
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
@@ -22,8 +23,16 @@ function App() {
   const {getAccessTokenSilently} = useAuth0();
   const token = getAccessTokenSilently();
 
-  
-  
+//modal stuff
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
  const getProtectedResource = async () => { 
   const token = await getAccessTokenSilently();    
       const config = {
@@ -71,8 +80,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ConstContext.Provider value={{ BACK_URI, LOGOUT_URL, AUDIENCE }}>
-        <UserContext.Provider value={{ currUser, setCurrUser }}>
+    <DataContext.Provider value={{ open, handleClose, handleOpen}}>
+      <ConstContext.Provider value={{BACK_URI, LOGOUT_URL, AUDIENCE }}>
+        <UserContext.Provider value={{currUser, setCurrUser }}>
           <Routes>
             <Route path="/" element={<SharedLayout />}>
               <Route index element={<Landing />} />
@@ -81,6 +91,7 @@ function App() {
               <Route path='test/public' element={<TestAPIRoute />} /> 
               <Route exact path='test' element={< Test />} /> 
               <Route exact path='testtwo' element={< TestTwo />} /> 
+              <Route exact path='testthree' element={< TodoList />} />
               <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
               <Route path='/profile' element={<Auth0LoginRequired component={Profile} />} /> 
              <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />
@@ -89,6 +100,7 @@ function App() {
           </Routes>
         </UserContext.Provider>
       </ConstContext.Provider>
+      </DataContext.Provider>
     </BrowserRouter>
   );
 }

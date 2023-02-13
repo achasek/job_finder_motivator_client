@@ -2,7 +2,7 @@ import React from 'react'
 import { PageLayout } from '../components/page-layout';
 import { useAuth0 } from '@auth0/auth0-react';
 
-function TodoList() {
+function TodoListForm() {
 
   const { user } = useAuth0();
 
@@ -32,4 +32,4 @@ function TodoList() {
   )
 }
 
-export default TodoList;
+export default TodoListForm;

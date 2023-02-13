@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import TodoList from "./TodoListForm";
+import TodoListForm from ".";
 
 const TodoList = () => {
 

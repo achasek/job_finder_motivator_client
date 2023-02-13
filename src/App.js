@@ -1,8 +1,8 @@
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, } from "./views";
-import {Profile} from "./pages/Profile";
+import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, } from "./views";
+// import {Profile} from "./pages/Profile";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -55,10 +55,10 @@ function App() {
 };
 
 //runs the function above and logs the bearer token, token acquired using the getAccessTokenSilently() function at the top of the page
-  useEffect(() => {
-     getProtectedResource()
-    console.log(token)
- }, [])
+//   useEffect(() => {
+//      getProtectedResource()
+//     console.log(token)
+//  }, [])
 
   if (isLoading) {
     return (

@@ -11,3 +11,7 @@ export { default as Logout } from './userRoutes/Logout';
 export { default as TestAPIRoute } from './TestAPIRoute';
 export { default as TestAPIprotected } from './TestAPIProtected';
 export { default as TestAPIAdmin } from './TestAPIAdmin';
+
+export { default as TodoList } from './TodoList';
+export { default as TodoListForm } from './TodoListForm';
+export { default as Profile } from "./Profile";

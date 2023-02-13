@@ -1,8 +1,13 @@
+import { TodoListForm } from './';
+
 const Landing = () => {
     return (
-        <section>
-            <h1>Welcome to Kayla Cares 4 Kids Operations</h1>
-        </section>
+        <div>
+            <section>
+                <h1>Welcome to Thriver!!</h1>
+            </section>
+            <TodoListForm />
+        </div>
     )
 }
 

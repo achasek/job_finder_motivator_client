@@ -24,13 +24,8 @@ function App() {
   const token = getAccessTokenSilently();
 
 //modal stuff
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [open, setOpen] = useState(false);
+
 
 
  const getProtectedResource = async () => { 
@@ -80,7 +75,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <DataContext.Provider value={{ open, handleClose, handleOpen}}>
+    <DataContext.Provider value={{ open, setOpen}}>
       <ConstContext.Provider value={{BACK_URI, LOGOUT_URL, AUDIENCE }}>
         <UserContext.Provider value={{currUser, setCurrUser }}>
           <Routes>

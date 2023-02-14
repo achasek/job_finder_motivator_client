@@ -9,6 +9,7 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import '../styles/todo.css'
 import { DataContext } from '../App';
 
+
 const messages = [
   {
     id: 1,
@@ -60,10 +61,10 @@ const messages = [
 
 
 
-export default function TodoList({}) {
+export default function TodoList(){ 
+  const {open, setOpen} = useContext(DataContext)
 
   return (
-    <DataContext.Consumer>
   <div className='to-do-list-container'>
         <div className='to-do-innards'>
         <h1>Tasks</h1>
@@ -78,11 +79,12 @@ export default function TodoList({}) {
         </div>
         </div>
         <div className='app-bar'>
-          <div onClick={handleOpenBurger}><GiHamburgerMenu /></div>
-        <div onClick={handleOpen} className='add-btn'>+</div>
-        <div onClick={handleOpenDots}><BsThreeDotsVertical /></div>
+          <div onClick={(e) => setOpen(true)}><GiHamburgerMenu /></div>
+          <div onClick={(e) => setOpen(true)} className='add-btn'>+</div>
+          <div onClick={(e) => setOpen(true)} ><BsThreeDotsVertical /></div>
         </div>
+        <MaterialModal />
     </div>
-    </DataContext.Consumer>
+    
   );
 }

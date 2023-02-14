@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { DataContext } from '../App';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import { SettingsInputComponent } from '@mui/icons-material';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 const style = {
   position: 'absolute',
@@ -19,23 +19,20 @@ const style = {
   pb: 3,
 };
 
-export default function MaterialModal() {
-    const {open} = useContext(DataContext)
-
+export default function MaterialModal(props) {
+    const {open, setOpen} = useContext(DataContext)
+    const component = props.component
   return (
     <div>
 
       <Modal
         open={open}
-        onClose={(e) => SetOpen(false)}
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
         <Box sx={{ ...style, width: 400 }}>
-          <h2 id="parent-modal-title">Text in a modal</h2>
-          <p id="parent-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
+            <button type="button" style={{backgroundColor:"transparent", border:"none", cursor:"pointer"}} onClick={(e) => setOpen(false)}><AiFillCloseCircle/></button>
+         {component}
         </Box>
       </Modal>
     </div>

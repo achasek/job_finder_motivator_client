@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import MaterialModal from './MaterialModal';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BsThreeDotsVertical } from 'react-icons/bs';
-
+import TodoListForm from './TodoListForm';
 import '../styles/todo.css'
 import { DataContext } from '../App';
 
@@ -83,7 +83,7 @@ export default function TodoList(){
           <div onClick={(e) => setOpen(true)} className='add-btn'>+</div>
           <div onClick={(e) => setOpen(true)} ><BsThreeDotsVertical /></div>
         </div>
-        <MaterialModal />
+        <MaterialModal component={<TodoListForm/>} />
     </div>
     
   );

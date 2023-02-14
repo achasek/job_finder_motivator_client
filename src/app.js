@@ -1,21 +1,19 @@
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, } from "./views";
-import { Auth0LoginRequired, PageLoader, TodoList } from "./components";
-import {Profile} from "./pages/Profile";
+import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, } from "./views";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-
+import { Auth0LoginRequired, PageLoader, TodoList } from "./components";
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
 export const DataContext = React.createContext();
 
 function App() {
-    const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
+  const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
   const LOGOUT_URL = process.env.REACT_APP_AUTH0_LOGOUT_URL;
   const AUDIENCE = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [currUser, setCurrUser] = useState({});
@@ -23,11 +21,10 @@ function App() {
   const {getAccessTokenSilently} = useAuth0();
   const token = getAccessTokenSilently();
 
-//modal stuff
+  //modal stuff
   const [open, setOpen] = useState(false);
 
-
-
+  
  const getProtectedResource = async () => { 
   const token = await getAccessTokenSilently();    
       const config = {
@@ -76,8 +73,8 @@ function App() {
   return (
     <BrowserRouter>
     <DataContext.Provider value={{ open, setOpen}}>
-      <ConstContext.Provider value={{BACK_URI, LOGOUT_URL, AUDIENCE }}>
-        <UserContext.Provider value={{currUser, setCurrUser }}>
+      <ConstContext.Provider value={{ BACK_URI, LOGOUT_URL, AUDIENCE }}>
+        <UserContext.Provider value={{ currUser, setCurrUser }}>
           <Routes>
             <Route path="/" element={<SharedLayout />}>
               <Route index element={<Landing />} />
@@ -86,11 +83,13 @@ function App() {
               <Route path='test/public' element={<TestAPIRoute />} /> 
               <Route exact path='test' element={< Test />} /> 
               <Route exact path='testtwo' element={< TestTwo />} /> 
-              <Route exact path='testthree' element={< TodoList />} />
+              <Route exact path='testthree' element={< TodoList />} /> 
               <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
               <Route path='/profile' element={<Auth0LoginRequired component={Profile} />} /> 
-             <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />
+              <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />
+              <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/todo" element={<TodoList />} />
             </Route>
           </Routes>
         </UserContext.Provider>
@@ -99,7 +98,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
-
 
 export default App;

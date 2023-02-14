@@ -15,6 +15,7 @@ const SharedLayout = () => {
                     <NavLink to="/test/public" className='nav__link'>public-test</NavLink>
                     <NavLink to="/test/protected" className='nav__link'>protected-test</NavLink>
                     <NavLink to="/test/admin" className='nav__link'>admin-test</NavLink>
+                    &nbsp; | &nbsp;
                     <NavBarButtons />
                 </div>
             </header>

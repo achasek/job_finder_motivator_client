@@ -155,7 +155,8 @@ body {
     margin-right: auto;
     padding: 30px;
     background-color: #FFC618;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
   }
 
   .about__text{
@@ -176,4 +177,56 @@ body {
     text-align: center;
     margin-bottom: 50px;
     font-size: 40px;
+  }
+
+  .profile-page__container{
+    margin-top: 75px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFC618;
+    height: fit-content;
+    /* padding-bottom: 1px; */
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+
+  .profile__title{
+    text-align: center;
+    font-size: 40px;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .profile__avatar{
+    display: block;
+    border-radius: 100%;
+    border: 2px solid white;
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+    margin: auto;
+  }
+
+  .profile__avatarContainer{
+    /* background-color: var(--blue); */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile__details{
+    width: fit-content;
+    overflow: scroll;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
   }

@@ -58,7 +58,6 @@ import { callExternalApi } from "../services/external-api.service";
   }, []);
 
   return (
-    <PageLayout>
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
           Admin Page
@@ -80,7 +79,6 @@ import { callExternalApi } from "../services/external-api.service";
           <CodeSnippet title="Admin Message" code={message} />
         </div>
       </div>
-    </PageLayout>
   );
 };
 

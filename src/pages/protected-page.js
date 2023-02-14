@@ -58,7 +58,6 @@ export const ProtectedPage = () => {
   }, []);
 
   return (
-    <PageLayout>
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
           Protected Page
@@ -76,6 +75,5 @@ export const ProtectedPage = () => {
           <CodeSnippet title="Protected Message" code={message} />
         </div>
       </div>
-    </PageLayout>
   );
 };

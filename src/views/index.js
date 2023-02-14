@@ -12,3 +12,4 @@ export { default as TestAPIAdmin } from './TestAPIAdmin';
 export { default as TodoList } from './TodoList';
 export { default as TodoListForm } from './TodoListForm';
 export { default as Profile } from "./Profile";
+export { default as About } from './About';

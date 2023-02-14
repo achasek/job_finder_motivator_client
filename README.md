@@ -1,17 +1,21 @@
-# React/JavaScript: Basic User Authentication Code Sample
-
-This JavaScript code sample demonstrates **how to implement user authentication** in React applications using Auth0. This React code sample builds the Single-Page Application (SPA) using the React Router 5 library.
-
-This code sample is part of the ["Auth0 Developer Resources"](https://developer.auth0.com/resources), a place where you can explore the authentication and authorization features of the Auth0 Identity Platform.
-
-Visit the ["React/JavaScript Code Sample: User Authentication For Basic Apps"](https://developer.auth0.com/resources/code-samples/spa/react/basic-authentication/v17-javascript-react-router-5) page for instructions on how to configure and run this code sample and how to integrate it with an API server of your choice to [create a full-stack code sample](https://developer.auth0.com/resources/code-samples/full-stack/hello-world/basic-access-control/spa).
-
-[![React/JavaScript Code Sample: User Authentication For Basic Apps](https://cdn.auth0.com/blog/hub/code-samples/spa/react-javascript/basic-authentication.png)](https://developer.auth0.com/resources/code-samples/spa/react/basic-authentication/v17-javascript-react-router-5)
-
-## Why Use Auth0?
-
-Auth0 is a flexible drop-in solution to add authentication and authorization services to your applications. Your team and organization can avoid the cost, time, and risk that come with building your own solution to authenticate and authorize users. We offer tons of guidance and SDKs for you to get started and [integrate Auth0 into your stack easily](https://developer.auth0.com/resources/code-samples/full-stack).
-
-# APD3 Client
-
-abcasdf
+# Thriver
+Thriver is a web application that helps users find employment, stay motivated to reach their goals, track job applications, store resources, and connect with others on similar missions through a built-in messenger. This app was developed using the MERN stack and Agile methodology by a team of UX designers and software engineers.
+# Features
+Job Search: Users can search for job listings based on their skills, interests, and location.
+Motivation Tracker: Users can set and track their goals, receive motivational quotes, and mark their progress.
+Job Application Tracker: Users can keep track of their job applications, including the company name, position applied for, and application status.
+Resource Library: Users can store helpful resources, such as resume templates and interview tips.
+Built-in Messenger: Users can connect with other users on similar missions and discuss their progress and struggles.
+# Technologies Used
+MERN Stack: MongoDB, Express, React, and Node.js were used to build this app.
+Agile Methodology: The development process followed the Agile methodology to ensure a flexible and collaborative approach.
+UX Design: The app was designed with a user-centered approach, considering user needs and preferences.
+# Installation
+Clone the repository to your local machine.
+Run npm install in the root directory to install the necessary dependencies.
+Create a .env file in the root directory and add the necessary environment variables.
+Run npm start to start the app.
+#Contribution
+We welcome contributions from anyone interested in improving Thriver. To contribute, please fork the repository, make your changes, and submit a pull request. We will review your changes and merge them into the main branch if they meet our criteria.
+# License
+Thriver is licensed under .....

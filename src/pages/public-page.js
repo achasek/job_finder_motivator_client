@@ -33,7 +33,6 @@ export const PublicPage = () => {
   }, []);
 
   return (
-    <PageLayout>
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
           Public Page
@@ -51,6 +50,5 @@ export const PublicPage = () => {
           <CodeSnippet title="Public Message" code={message} />
         </div>
       </div>
-    </PageLayout>
   );
 };

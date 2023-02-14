@@ -15,7 +15,7 @@ const LoginButton = () => {
   };
 
   return (
-    <button className="button__login" onClick={handleLogin}>
+    <button className="nav__link" onClick={handleLogin}>
       Log In
     </button>
   );

@@ -1,12 +1,12 @@
-import { TodoListForm } from './';
+import TodoListForm from "./TodoListForm";
 
 const Landing = () => {
     return (
         <div>
-            <section>
-                <h1>Welcome to Thriver!!</h1>
-            </section>
-            <TodoListForm />
+        <section className="homepage__title">
+            <h1>Welcome to Thriver!!</h1>
+        </section>
+        <TodoListForm />
         </div>
     )
 }

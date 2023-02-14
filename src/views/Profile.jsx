@@ -16,11 +16,13 @@ const Profile = () => {
         <h2 className="profile__title">Logged into {user.name}'s Profile </h2>
         </div>
             <div className="profile__avatarContainer">
+                <a href="/about">
               <img
                 src={user.picture}
                 alt="Profile"
                 className="profile__avatar"
               />
+                </a>
             </div>
             <div className="profile__details">
               <CodeSnippet

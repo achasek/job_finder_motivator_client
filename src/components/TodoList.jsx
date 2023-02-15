@@ -8,14 +8,14 @@ import { BsKanban } from 'react-icons/bs';
 import TodoListForm from './TodoListForm';
 import TaskContent from './TaskContent';
 import '../styles/todo.css'
+import { Kanban } from '../views';
 import { DataContext } from '../App';
 import { UserContext } from '../App';
 
 
 
 export default function TodoList(){ 
-  const {open, setOpen} = useContext(DataContext)
-  const [modalType, setModalType] = useState()
+  const {open, setOpen, modalType, setModalType} = useContext(DataContext)
   const { currUser } = useContext(UserContext)
   const [userTasks, setUserTasks] = useState()
   const email = currUser.email
@@ -38,6 +38,11 @@ export default function TodoList(){
     setOpen(true)
     setModalType(<TaskContent taskName={taskName} added={added} task={task} id={id}/>)
   }
+
+  const kanbanModal = () => {
+    setOpen(true)
+    setModalType(<Kanban />)
+  }
   
 
   return (
@@ -46,7 +51,7 @@ export default function TodoList(){
           <div className='top-bar'>
         <h1>Tasks</h1>
         <div className='task-btns'>
-        <div onClick={postModal} className='kanban'><BsKanban/></div>
+        <div onClick={kanbanModal} className='kanban'><BsKanban/></div>
         <div onClick={postModal} className='add-btn'>+</div>
         </div>
         </div>

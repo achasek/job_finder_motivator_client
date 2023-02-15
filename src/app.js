@@ -1,12 +1,14 @@
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, Kanban } from "./views";
+import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About } from "./views";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
+import DashboardApps from "./components/DashboardApps";
 import axios from "axios";
 import { Auth0LoginRequired, PageLoader, TodoList } from "./components";
+import { Calendar } from "./components";
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
@@ -22,6 +24,7 @@ function App() {
 
   //modal stuff
   const [open, setOpen] = useState(false);
+  const [modalType, setModalType] = useState()
 
   
  const getProtectedResource = async () => { 
@@ -78,7 +81,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <DataContext.Provider value={{ open, setOpen}}>
+    <DataContext.Provider value={{ open, setOpen, modalType, setModalType}}>
       <ConstContext.Provider value={{ BACK_URI, LOGOUT_URL, AUDIENCE }}>
         <UserContext.Provider value={{ currUser }}>
           <Routes>
@@ -89,7 +92,7 @@ function App() {
               <Route path='test/public' element={<TestAPIRoute />} /> 
               <Route exact path='test' element={< Test />} /> 
               <Route exact path='testtwo' element={< TestTwo />} /> 
-              <Route exact path='testthree' element={< TodoList />} /> 
+              <Route exact path='testthree' element={< DashboardApps />} /> 
               <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
               <Route path='/profile' element={ <Profile />} /> 
               <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />

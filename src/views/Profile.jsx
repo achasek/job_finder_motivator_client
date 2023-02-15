@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/profile.css"
 import Kanban from "./Kanban";
-import { TodoList, ProfileSideBar } from "../components";
+import { TodoList, ProfileSideBar, Calendar } from "../components";
 
 const Profile = () => {
 
@@ -14,6 +14,7 @@ const Profile = () => {
        <Kanban />
        <TodoList/>
       </div>
+      <Calendar />
       </div>
   );
 };

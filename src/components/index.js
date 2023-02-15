@@ -6,4 +6,5 @@ export { default as ProfileSideBar } from './ProfileSideBar';
 export { default as NavBarButtons } from './buttons/nav-bar-buttons';
 export { default as LoginButton } from './buttons/login-button';
 export { default as LogoutButton } from './buttons/logout-button';
+export { default as Calendar } from './Calendar';
 

@@ -7,6 +7,7 @@ import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { Auth0LoginRequired, PageLoader, TodoList } from "./components";
+import { Calendar } from "./components";
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
@@ -89,7 +90,7 @@ function App() {
               <Route path='test/public' element={<TestAPIRoute />} /> 
               <Route exact path='test' element={< Test />} /> 
               <Route exact path='testtwo' element={< TestTwo />} /> 
-              <Route exact path='testthree' element={< Kanban />} /> 
+              <Route exact path='testthree' element={< Calendar />} /> 
               <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
               <Route path='/profile' element={ <Profile />} /> 
               <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />

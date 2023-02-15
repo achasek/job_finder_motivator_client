@@ -118,6 +118,7 @@ body {
   
   .nav__area {
     display: flex;
+    height: 2rem;
     align-items: center;
     background-color: #F2F2F2;
     border: 1px solid black;

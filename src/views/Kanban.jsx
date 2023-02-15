@@ -2,7 +2,6 @@ import React from 'react'
 import "../styles/kanban.css"
 import { useEffect } from 'react';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
 import { BsTrash } from 'react-icons/bs';
 
 const Kanban = () => {
@@ -61,33 +60,27 @@ const Kanban = () => {
       <div className='kanban-wrapper'>
         <div className='kanban-inside-containers'>
             <h1>Todo</h1>
-            <Divider />
          <div className='kanban-todo-list'>
               <div className='kanban-listitem-draggable'>
-                <ListItemText draggable="true" primary="taskname" secondary="actual task"  /> 
-              <Divider />
+                <ListItemText className='kanban-listitem-text' draggable="true" primary="taskname" secondary="actual task"  /> 
               </div>
          </div>
         </div>
 
         <div className='kanban-inside-containers'>
         <h1>In prog</h1>
-        <Divider />
         <div className='kanban-progress-list'>
           <div className='kanban-listitem-draggable'>
-            <ListItemText  draggable="true" primary="inpro" secondary="actual task"  /> 
-            <Divider />
+            <ListItemText className='kanban-listitem-text' draggable="true" primary="inpro" secondary="actual task"  /> 
             </div>
         </div>
         </div>
 
         <div className='kanban-inside-containers'>
         <h1>finished</h1>
-        <Divider />
         <div className='kanban-finished-list'>
           <div className='kanban-listitem-draggable'>
-            <ListItemText  draggable="true" primary="fini" secondary="actual task"  /> 
-            <Divider />
+            <ListItemText className='kanban-listitem-text' draggable="true" primary="fini" secondary="actual task"  /> 
             </div>
         </div>
         </div>

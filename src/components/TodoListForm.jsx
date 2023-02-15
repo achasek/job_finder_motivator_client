@@ -46,9 +46,11 @@ function TodoListForm(props) {
         <h1>Add an item to your todo list!</h1>
       </div>
       <div className='form'>
+      <h4>task name</h4>
          <input className='todo__input' onChange={(e) => handleTaskName(e)} type='text' id='todo-input' placeholder='New item'></input>
+         <h4>task</h4>
           <input className='todo__input' onChange={(e) => handleTask(e)} type='text' id='todo-input' placeholder='New item'></input>
-          <label className='todo__select-label'>Level Of Importance</label>
+          <h4>urgency</h4>
             <select className='todo__select'  onChange={(e) => handleImportance(e)} type='text' id='todo-select' placeholder='Level of importance'>
               <option value='Low' selected>Low</option>
               <option value='Medium' >Medium</option>

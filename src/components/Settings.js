@@ -51,10 +51,10 @@ function TabPanel(props) {
     };
   
     return (
-    <div style={{ width: "100%"}}>
-      <Box sx={{ width: "100%", backgroundColor:"white" }}>
-        <Box sx={{borderColor: 'divider', width: "100%", backgroundColor:"white" }}>
-          <Tabs sx={{ backgroundColor:"white" }} value={value} onChange={handleChange} aria-label="basic tabs example">
+    <div style={{ width: "100%", backgroundColor:"#F2F2F2"}}>
+      <Box sx={{ width: "100%", backgroundColor:"#F2F2F2", boxShadow:"0 0 8px" }}>
+        <Box sx={{borderColor: 'divider', width: "100%", backgroundColor:"#F2F2F2" }}>
+          <Tabs sx={{ backgroundColor:"#F2F2F2" }} value={value} onChange={handleChange} aria-label="basic tabs example">
             <Tab label="Account" {...a11yProps(0)} />
             <Tab label="Safety" {...a11yProps(1)} />
             <Tab label="Notifications" {...a11yProps(2)} />

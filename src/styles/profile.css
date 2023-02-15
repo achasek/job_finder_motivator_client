@@ -1,0 +1,109 @@
+.profile-page__container {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    margin-top: 2%;
+
+    justify-content: center;
+  }
+
+  .sidebar-container {
+    position: absolute;
+    top: 17%;
+    bottom: 0%;
+    left: 0.48%;
+    height: 100vh;
+    width: 14vw;
+    border: 1px solid black;
+    border-top: none;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+  }
+
+  .nav-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .titles {
+    margin-right: auto;
+    margin-left: 10%;
+    margin-top: 3rem;
+    font-size: larger;
+  }
+
+
+
+  .basic-wrapper{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
+  .tools-wrapper{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .other-wrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-list-container> * {
+    list-style-type: none;
+  }
+
+
+  
+  /* .profile__titleContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .profile__title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .profile__avatarContainer {
+    margin-bottom: -70px;
+    z-index: 1;
+  }
+  .profile__avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid white;
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+  }
+  .profile__details {
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .profile__details h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .profile__details pre {
+    font-size: 16px;
+    font-style: italic;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  } */

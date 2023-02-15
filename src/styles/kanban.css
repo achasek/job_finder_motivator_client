@@ -1,0 +1,58 @@
+.kanban-container {
+    position: relative;
+    background-color: #F2F2F2;
+    width: 70%;
+    height: 60vh;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 25px;
+}
+
+.kanban-wrapper {
+    display: flex;
+    height: 75%;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.kanban-title {
+    position: relative;
+    margin-left: 35%;
+}
+
+.kanban-wrapper h1 {
+   margin-left: 38%;
+}
+
+.kanban-todo-list {
+    padding: 1rem;
+}
+
+.kanban-finished-list {
+    padding: 1rem;
+}
+
+.kanban-progress-list {
+    padding: 1rem;
+}
+
+.kanban-inside-containers {
+    height: 100%;
+    width: 25%;
+    margin-top: 5%;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0px 0px 25px;
+}
+
+.kanban-listitem-draggable.dragging {
+    opacity: 0.5;
+}
+
+.kanban-listitem-draggable{
+    cursor: pointer;
+}
+
+.kanban-listitem-draggable:hover {
+    background-color: lightgray;
+}

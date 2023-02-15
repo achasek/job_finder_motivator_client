@@ -89,7 +89,7 @@ function App() {
               <Route path='test/public' element={<TestAPIRoute />} /> 
               <Route exact path='test' element={< Test />} /> 
               <Route exact path='testtwo' element={< TestTwo />} /> 
-              <Route exact path='testthree' element={< TodoList />} /> 
+              <Route exact path='testthree' element={< Kanban />} /> 
               <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
               <Route path='/profile' element={ <Profile />} /> 
               <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />

@@ -1,5 +1,7 @@
 .to-do-list-container {
     border-radius: 100%;
+    margin-left: auto;
+    margin-right: 2%;
 }
 
 .to-do-innards{

@@ -1,12 +1,19 @@
 import React from "react";
-import { TodoList } from "../components";
+import "../styles/profile.css"
+import Kanban from "./Kanban";
+import { TodoList, ProfileSideBar } from "../components";
 
 const Profile = () => {
 
 
   return (
-      <div className="profile-page__container">
+    <div>
+  <ProfileSideBar />
+
+    <div className="profile-page__container">
+       <Kanban />
        <TodoList/>
+      </div>
       </div>
   );
 };

@@ -15,8 +15,7 @@ import { UserContext } from '../App';
 
 
 export default function TodoList(){ 
-  const {open, setOpen} = useContext(DataContext)
-  const [modalType, setModalType] = useState()
+  const {open, setOpen, modalType, setModalType} = useContext(DataContext)
   const { currUser } = useContext(UserContext)
   const [userTasks, setUserTasks] = useState()
   const email = currUser.email

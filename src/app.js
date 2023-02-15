@@ -23,6 +23,7 @@ function App() {
 
   //modal stuff
   const [open, setOpen] = useState(false);
+  const [modalType, setModalType] = useState()
 
   
  const getProtectedResource = async () => { 
@@ -79,7 +80,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <DataContext.Provider value={{ open, setOpen}}>
+    <DataContext.Provider value={{ open, setOpen, modalType, setModalType}}>
       <ConstContext.Provider value={{ BACK_URI, LOGOUT_URL, AUDIENCE }}>
         <UserContext.Provider value={{ currUser }}>
           <Routes>

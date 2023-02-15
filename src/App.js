@@ -1,7 +1,7 @@
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, } from "./views";
+import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, Dash, } from "./views";
 // import {Profile} from "./pages/Profile";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
@@ -87,6 +87,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/todo" element={<TodoList />} />
+              <Route path="/dash" element={<Dash />} />
             </Route>
           </Routes>
         </UserContext.Provider>

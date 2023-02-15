@@ -39,11 +39,12 @@ cursor: pointer;
 }
 
 .listItem{
+    background-color: antiquewhite;
     position: relative;
     height: 2.8rem;
     width: 6rem;
     border: 1px solid black;
-    border-radius: 100px
+    border-radius: 100px;
 }
 
 .listItem:hover{
@@ -51,3 +52,9 @@ cursor: pointer;
     opacity: 99%;
     cursor: pointer
 }
+
+
+.listItem.active {
+    background-color: yellow;
+    color: black;
+  }

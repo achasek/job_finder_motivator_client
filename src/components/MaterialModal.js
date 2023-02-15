@@ -22,7 +22,10 @@ const style = {
 export default function MaterialModal(props) {
     const {open, setOpen} = useContext(DataContext)
     const component = props.component
+
+
   return (
+
     <div>
 
       <Modal

@@ -1,64 +1,84 @@
+.to-do-list-container {
+    border-radius: 100%;
+}
+
 .to-do-innards{
     display: flex;
     flex-direction: column;
+    border-radius: 10%;
     align-items: center;
     background-color: white;
     width: 20vw;
-    height: 50vh;
+    height: 35vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    box-shadow: 0 0 10px;
 }
 
-.app-bar {
-    background-color: rgb(92, 92, 212);
-    width: 20vw;
-    height: 4rem;
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.top-bar {
     display: flex;
-    justify-content: space-between;
-    color: white;
-    font-size: 2rem;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid black;
 }
 
-.app-bar>:nth-child(1) {
-    cursor: pointer;
-    margin-top: 5%;
-    margin-left: 5px;
+.top-bar>:nth-child(1) {
+    margin-left: 1rem;
 }
 
-.app-bar>:nth-child(3) {
-    cursor: pointer;
-    margin-top: 5%;
-    margin-right: 5px;
+.task-btns {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    margin-top: 0.5rem;
+    margin-right: 2rem;
 }
 
 .add-btn {
     cursor: pointer;
-    box-shadow: 0px 0px 100px 100px 100px;
-    width: 4rem;
-    height: 4rem;
-    background-color: darkmagenta;
+    font-weight: bold;
     border: none;
-    border-radius: 100%;
-    color: white;
-    display: flex;
-    font-size: 25px;
-    align-items: center;
-    justify-content: center;
+    color: black;
+    font-size: 40px;
 }
 
-
+.kanban {
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    color: black;
+    margin-top: 0.7rem;
+    font-size: 20px;
+}
 
 .unordered-list {
-    align-items: flex-start;
+    width: 100%;
 }
 
 .list-items {
-    position: relative;
+    gap: 0.2rem;
     width: fit-content;
     list-style: none;
     width: 100%;
     cursor: pointer;
     transition: ease-in-out 250ms;
+}
+.list-items>:nth-child(1) {
+    width: 50%;
+   }
+
+.list-items>:nth-child(2) {
+ margin-left: 90%;
+ position: relative;
+}
+
+.list-item {
+    margin-left: 1rem;
 }
 
 .list-items:hover {

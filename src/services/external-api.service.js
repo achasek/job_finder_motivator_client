@@ -3,10 +3,10 @@ import axios from "axios";
 export const callExternalApi = async (options) => {
   try {
     const response = await axios(options.config);
-    const { data } = response;
-    console.log({data});
+    const { data, status } = response.data;
     return {
       data,
+      status,
       error: null,
     };
   } catch (error) {
@@ -31,6 +31,7 @@ export const callExternalApi = async (options) => {
       console.log({message});
       return {
         data: null,
+        status: null,
         error: {
           message,
         },
@@ -41,6 +42,7 @@ export const callExternalApi = async (options) => {
 
     return {
       data: null,
+      status: null,
       error: {
         message: error.message,
       },

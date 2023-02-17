@@ -3,6 +3,7 @@ import { ConstContext, UserContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import { useAuth0} from '@auth0/auth0-react'
 import { callExternalApi } from "../../services/external-api.service";
+import SignUpForm from "../../components/SignUpForm";
 
 const Login = () => {
     const { BACK_URI } = useContext(ConstContext);
@@ -41,6 +42,7 @@ const Login = () => {
     return (
         <section>
             <h1>logging in</h1>
+            <SignUpForm />
         </section>    )
 };
 

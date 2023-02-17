@@ -1,6 +1,6 @@
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, 
          TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, 
          UserProtectedRoute } from "./views";
@@ -8,6 +8,7 @@ import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Auth0LoginRequired, PageLoader, TodoList, Calendar, DashboardApps } from "./components";
+
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
@@ -31,6 +32,10 @@ function App() {
       </div>
     );
   }
+  console.log(currUser, 'THIS IS CURR USER')
+  // useEffect(() => {
+  //   console.log(currUser, 'USE-EFFECT CURR USER:')
+  // }, [currUser])
 
   return (
     <BrowserRouter>

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../App';
 
-export default function SignUpFormP2({ formData, setFormData }) {
+export default function SignUpFormP2({ formData, setFormData, handleSubmit, handleChange }) {
     const { currUser } = useContext(UserContext)
     console.log(currUser)
     return (
@@ -27,7 +27,7 @@ export default function SignUpFormP2({ formData, setFormData }) {
     </div>
     <div>
     </div>
-    <button onClick={handleNext} disabled={disable}>Next</button>
+    <button onClick={handleSubmit}>Create</button>
   </div>
   </form>
     )

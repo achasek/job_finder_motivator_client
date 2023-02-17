@@ -1,13 +1,18 @@
+import axios from 'axios';
 import { useState } from 'react';
 import SignUpFormP2 from './SignUpFormP2';
+import { useContext } from 'react';
+import { UserContext } from '../App';
+import { callExternalApi } from '../services/external-api.service';
 
 export default function SignUpForm(){
     const [showSignUpFormP2, setShowSignUpFormP2] = useState(false)
     const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      password: '',
-      confirm: '',
+      display_name: '',
+    //   links: '',
+        //  what are your goals: '',
+        //  how rigourous of job search do desire: '',
+    //   etc.
     //   userType: UserTypes.Hero,
       photoUrl: '',
       businessName: '',
@@ -19,6 +24,8 @@ export default function SignUpForm(){
       phoneNumber: '',
       error: ''
     });
+    const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
+    const { currUser, setCurrUser } = useContext(UserContext)
   
     const handleChange = (evt) => {
       setFormData({
@@ -33,19 +40,36 @@ export default function SignUpForm(){
       setShowSignUpFormP2(true)
     }
   
-    const handleSubmit = async (evt) => {
-        console.log('handlesubmit')
-    //   console.log(formData, "THIS IS THE STATE")
-    //   evt.preventDefault();
-    //   try {
-    //     const {name, email, password, userType, photoUrl, address, state, zipCode, city, phoneNumber, businessName, businessType} = formData;
-    //     const data = {name, email, password, userType, photoUrl, address, state, zipCode, city, phoneNumber, businessName, businessType} ;
-    //     const user = await signUp(data);
-    //     setUser(user)
-    //   } catch {
-    //     setFormData({ ...formData, error: 'Sign Up Failed - Try Again' });
-    //   }
-    };
+    const handleSubmit = async () => {
+        const token = await getAccessTokenSilently();
+        const config = {
+            // change
+            url: `${BACK_URI}/api/user/${currUser._id}/update`,
+            // change to update method
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+                "Authorization": `bearer ${token}`
+            }
+        }
+        const { data, status, error } = await callExternalApi({config});
+        console.log(data)
+        if (data) {
+            // point to dashboard
+            if (status.code === 200) { // returning user loging in
+                setCurrUser(data.user);
+                navigate(`/`);
+            // sign up route
+            } else if (status.code === 201) { // new user loging in
+                setCurrUser(data.user);
+                navigate(`/`);  // TODO: do new user profile setup path here 
+            } else { // should never hit
+                console.error('ERROR: invalid login response')
+            }  
+        } else {
+            console.error(`ERROR: problem with login: ${error.message}`)
+        }
+    }
   
     const disable = formData.password !== formData.confirm;
 
@@ -58,8 +82,8 @@ export default function SignUpForm(){
                   <div>
                     <div>
                       <div>
-                        <label>Q 1</label>
-                        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+                        <label>User Name</label>
+                        <input type="text" name="display_name" value={formData.display_name} onChange={handleChange} required />
                       </div>
                       <div>
                         <label>Q 2</label>
@@ -88,7 +112,7 @@ export default function SignUpForm(){
                     <button onClick={handleNext} disabled={disable}>Next</button>
                   </div>
                   :
-                  <SignUpFormP2 formData={formData} setFormData={setFormData}/>
+                  <SignUpFormP2 formData={formData} setFormData={setFormData} handleSubmit={handleSubmit} handleChange={handleChange}/>
                 // <SignUpFormP2 setUser={setUser} handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} setFormData={setFormData}/>
                 }
                   </form>

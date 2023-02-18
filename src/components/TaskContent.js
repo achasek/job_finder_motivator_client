@@ -18,7 +18,7 @@ const TaskContent = (props) => {
 
   return (
     <div>          
-          <li onClick={(e) => setOpen(true)} className='list-items'>
+          <li onClick={(e) => setOpen(true)} className='list__items'>
                 
                 <ListItemText primary={taskName} secondary={task} /> 
                 <Divider />

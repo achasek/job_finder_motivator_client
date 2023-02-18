@@ -24,17 +24,17 @@ const ProfileSideBar = () => {
     }
 
   return (
-    <div className='sidebar-container'>
-        <div className="nav-list-container">
+    <div className='sidebar__container'>
+        <div className="nav-list__container">
 
             <h4 className='titles'>basic</h4>
-            <div className='basic-wrapper'>
+            <div className='basic__wrapper'>
            
             <div><MdOutlineDashboardCustomize/> Dashboard</div>
             </div>
             
             <h4 className='titles'>tools</h4>
-            <div className='tools-wrapper'>
+            <div className='tools__wrapper'>
             <div><BsKanban/> Kanban</div>
             <div><AiOutlineCalendar /> Calendar</div>
             <div><BiNotepad /> Applications</div>
@@ -43,7 +43,7 @@ const ProfileSideBar = () => {
             </div>
 
             <h4 className='titles'>other</h4>
-            <div className='other-wrapper'>
+            <div className='other__wrapper'>
             <div><AiFillFileExcel /> Report an issue</div>
             <div style={{cursor:"pointer"}} onClick={settingsModal}><VscSettingsGear onClick={settingsModal}/> Settings</div>
             <div><BiLogOut /> Sign out</div>

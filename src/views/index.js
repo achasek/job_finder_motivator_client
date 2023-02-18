@@ -12,4 +12,4 @@ export { default as TestAPIAdmin } from './TestAPIAdmin';
 export { default as Profile } from "./Profile";
 export { default as Kanban } from "./Kanban";
 export { default as About } from './About';
-export { default as Dash } from './Dash';
+export { default as SignUp } from './userRoutes/SignUp';

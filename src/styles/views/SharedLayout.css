@@ -1,0 +1,16 @@
+.loginCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    min-height: 100vh;
+}
+
+.loginDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    min-height: 300px;
+}

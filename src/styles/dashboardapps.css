@@ -1,11 +1,11 @@
-.applications-container{
+.applications__container{
     position: absolute;
     margin-left: 15%;
-height: 50vh;
-width: 50vw;
+    height: 50vh;
+    width: 50vw;
 }
 
-.applications-wrapper {
+.applications__wrapper {
     display: flex;
     width: 100%;
     height: 100%;
@@ -13,16 +13,16 @@ width: 50vw;
     flex-direction: row;
 }
 
-.app-title {
+.app__title {
     border-bottom: 1px solid black;
 }
 
-.app-number {
+.app__number {
     position: absolute;
     font-size: 50px;
 }
 
-.applications-amount {
+.applications__amount {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +33,7 @@ width: 50vw;
     background-color: #F2F2F2;
 }
 
-.applications-responses{
+.applications__responses{
     display: flex;
     flex-direction: column;
     align-items: center;

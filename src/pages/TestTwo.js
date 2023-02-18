@@ -8,8 +8,25 @@ import { BsArrowLeftShort } from 'react-icons/bs';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 export default function TestTwo() {
-const [messages, setMessages] = useState()
-const [question, setQuestion] = useState()
+  const [messages, setMessages] = useState()
+  const [question, setQuestion] = useState()
+
+  function handleButtonClick(event) {
+    // Get the ID of the clicked button
+    const buttonId = event.target.id;
+    // Get the clicked button and add the "active" class to it
+    const clickedButton = document.getElementById(buttonId);
+    if (clickedButton) {
+      clickedButton.classList.add('active');
+    } else {
+      console.error('Button not found');
+    }
+    // Get all other buttons and remove the "active" class from them
+    const otherButtons = document.querySelectorAll('.listItem:not(#' + buttonId + ')');
+    otherButtons.forEach((button) => {
+      button.classList.remove('active');
+    });
+  }
 
 const messagesX = [
     {
@@ -53,11 +70,11 @@ const messagesX = [
   const messagesY = [
     {
       id: 1,
-      primary: 'cow',
+      primary: 'Gecko',
     },
     {
       id: 2,
-      primary: 'capybara',
+      primary: 'Capybara',
     },
     {
       id: 3,
@@ -65,19 +82,19 @@ const messagesX = [
     },
     {
       id: 4,
-      primary: 'dog',
+      primary: 'BBQ Chicken',
     },
     {
       id: 5,
-      primary: "cat",
+      primary: "CatDog",
     },
     {
       id: 6,
-      primary: 'mammoth',
+      primary: 'Tony Hawk',
     },
     {
       id: 7,
-      primary: 'cow',
+      primary: 'cow aka (ur sister)',
     },
     {
       id: 8,
@@ -115,7 +132,7 @@ setQuestion('Whats your goal?')
         <List className="list">
           {messages?.map(({ id, primary}) => (
             <div key={id}>
-              <ListItem className="listItem">
+              <ListItem onClick={handleButtonClick} className="listItem" id={id}>
                 <ListItemText primary={primary}/>
               </ListItem>
             </div>

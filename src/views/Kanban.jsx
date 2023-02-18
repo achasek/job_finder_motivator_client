@@ -9,8 +9,8 @@ const Kanban = () => {
   useEffect(() => {
 
  
-    const draggables = document.querySelectorAll('.kanban-listitem-draggable')
-    const containers = document.querySelectorAll('.kanban-inside-containers')
+    const draggables = document.querySelectorAll('.kanban-listitem__draggable')
+    const containers = document.querySelectorAll('.kanban-inside__containers')
     console.log("containers", containers)
 
     draggables.forEach(draggable => {
@@ -52,35 +52,35 @@ const Kanban = () => {
   }, [])
 
   return (
-    <div className='kanban-container'>
-      <h1 className='kanban-title'>Welcome To your Kanban</h1>
+    <div className='kanban__container'>
+      <h1 className='kanban__title'>Welcome To your Kanban</h1>
       <div style={{position:"absolute", fontSize:"1.5rem", fontWeight:"bold", marginLeft:"85%", top:"7%"}}> <BsTrash /> </div>
       <div style={{position:"absolute", fontSize:"3rem", fontWeight:"bold", marginLeft:"90%", top:"4%"}}> + </div>
 
-      <div className='kanban-wrapper'>
-        <div className='kanban-inside-containers'>
+      <div className='kanban__wrapper'>
+        <div className='kanban-inside__containers'>
             <h1>Todo</h1>
-         <div className='kanban-todo-list'>
-              <div className='kanban-listitem-draggable'>
-                <ListItemText className='kanban-listitem-text' draggable="true" primary="taskname" secondary="actual task"  /> 
+         <div className='kanban-todo__list'>
+              <div className='kanban-listitem__draggable'>
+                <ListItemText className='kanban-listitem__text' draggable="true" primary="taskname" secondary="actual task"  /> 
               </div>
          </div>
         </div>
 
-        <div className='kanban-inside-containers'>
+        <div className='kanban-inside__containers'>
         <h1>In prog</h1>
         <div className='kanban-progress-list'>
           <div className='kanban-listitem-draggable'>
-            <ListItemText className='kanban-listitem-text' draggable="true" primary="inpro" secondary="actual task"  /> 
+            <ListItemText className='kanban-listitem__text' draggable="true" primary="inpro" secondary="actual task"  /> 
             </div>
         </div>
         </div>
 
-        <div className='kanban-inside-containers'>
+        <div className='kanban-inside__containers'>
         <h1>finished</h1>
-        <div className='kanban-finished-list'>
-          <div className='kanban-listitem-draggable'>
-            <ListItemText className='kanban-listitem-text' draggable="true" primary="fini" secondary="actual task"  /> 
+        <div className='kanban-finished__list'>
+          <div className='kanban-listitem__draggable'>
+            <ListItemText className='kanban-listitem__text' draggable="true" primary="fini" secondary="actual task"  /> 
             </div>
         </div>
         </div>

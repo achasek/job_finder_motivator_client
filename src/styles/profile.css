@@ -1,8 +1,17 @@
+.profile__layout{
+  display: grid;
+  grid-template-columns: repeat();
+  background-color: rgb(255, 255, 255);
+  min-width: fit-content;
+  margin-left: 160px;
+  margin-top: 5px;
+  height: 1000px;
+  overflow: scroll;
+}
+
 .profile-page__container {
-    display: flex;
+    display: grid;
     align-items: center;
-    margin-left: 15%;
-    margin-top: 2%;
     z-index: 99;
     justify-content: center;
   }
@@ -10,14 +19,13 @@
   .sidebar__container {
     position: absolute;
     z-index: 99;
-    top: 5%;
-    left: 0.48%;
+    top: 82px;
+    left: 8px;
     min-height: fit-content;
     padding-bottom: 300px;
     min-width: fit-content;
     border: 1px solid black;
     border-top: none;
-    margin-top: 2.1%;
     background-color: #F2F2F2;
     padding-right: 20px;
   }
@@ -64,18 +72,16 @@
   }
 
 .KB{
-  margin-top: 100px;
   min-height: fit-content;
   min-width: fit-content;
   padding: 40px;
-  margin-left: 100px;
 }
 
 .TD{
   min-width: fit-content;
   min-height: fit-content;
   padding: 40px;
-  margin-top: 50px;
+  z-index: 99;
 }
 
 .CLN{
@@ -85,7 +91,9 @@
 }
 
 .dash__apps{
-
+  min-width: fit-content;
+  min-height: fit-content;
+  padding: 40px;
 }
 
 .sidebar{

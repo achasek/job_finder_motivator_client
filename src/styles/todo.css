@@ -1,18 +1,23 @@
-.to-do-list-container {
-    border-radius: 100%;
-    margin-left: auto;
-    margin-right: 2%;
-    transform: translateY(-65%);
+.todo-list__container {
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    padding: 20px;
+    border-radius: 30px;
+    /* margin-left: auto;
+    margin-right: 2%; */
+    /* transform: translateY(-65%); */
 }
 
-.to-do-innards{
+.todo__innards{
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     border-radius: 10%;
     align-items: center;
     background-color: white;
-    width: 20vw;
-    height: 35vh;
+    min-height: 300px;
+    min-width: 300px;
     overflow-y: scroll;
     overflow-x: hidden;
     box-shadow: 0 0 10px;
@@ -23,18 +28,18 @@
     background: transparent; /* make scrollbar transparent */
 }
 
-.top-bar {
+.top__bar {
     display: flex;
     width: 100%;
     background-color: white;
     border-bottom: 1px solid black;
 }
 
-.top-bar>:nth-child(1) {
-    margin-left: 1rem;
+.top__bar>:nth-child(1) {
+    /* margin-left: 1rem; */
 }
 
-.task-btns {
+.task__btns {
     display: flex;
     gap: 1rem;
     margin-left: auto;
@@ -42,7 +47,7 @@
     margin-right: 2rem;
 }
 
-.add-btn {
+.add__btn {
     cursor: pointer;
     font-weight: bold;
     border: none;
@@ -59,11 +64,11 @@
     font-size: 20px;
 }
 
-.unordered-list {
+.unordered__list {
     width: 100%;
 }
 
-.list-items {
+.list__items {
     gap: 0.2rem;
     width: fit-content;
     list-style: none;
@@ -71,20 +76,20 @@
     cursor: pointer;
     transition: ease-in-out 250ms;
 }
-.list-items>:nth-child(1) {
+.list__items>:nth-child(1) {
     width: 50%;
    }
 
-.list-items>:nth-child(2) {
+.list__items>:nth-child(2) {
  margin-left: 90%;
  position: relative;
 }
 
-.list-item {
+.list__item {
     margin-left: 1rem;
 }
 
-.list-items:hover {
+.list__items:hover {
 
     background-color: rgb(170, 205, 234);
 }

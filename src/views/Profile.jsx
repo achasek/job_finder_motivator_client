@@ -8,22 +8,22 @@ const Profile = () => {
 
 
   return (
-    <div>
+    <div className="profile__layout">
         <div className="sidebar">
   <ProfileSideBar />
         </div>
+    <div className="profile-page__container">
         <div className="dash__apps">
     <DashboardApps />
         </div>
-    <div className="profile-page__container">
-        <div className="KB">
-       <Kanban />
+        <div className="CLN">
+      <Calendar />
         </div>
         <div className="TD">
        <TodoList/>
         </div>
-        <div className="CLN">
-      <Calendar />
+        <div className="KB">
+       <Kanban />
         </div>
       </div>
       </div>

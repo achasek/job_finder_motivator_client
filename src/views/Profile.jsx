@@ -9,13 +9,23 @@ const Profile = () => {
 
   return (
     <div>
+        <div className="sidebar">
   <ProfileSideBar />
+        </div>
+        <div className="dash__apps">
     <DashboardApps />
+        </div>
     <div className="profile-page__container">
+        <div className="KB">
        <Kanban />
+        </div>
+        <div className="TD">
        <TodoList/>
-      </div>
+        </div>
+        <div className="CLN">
       <Calendar />
+        </div>
+      </div>
       </div>
   );
 };

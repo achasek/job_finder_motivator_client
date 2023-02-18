@@ -70,7 +70,7 @@ const Kanban = () => {
         <div className='kanban-inside__containers'>
         <h1>In prog</h1>
         <div className='kanban-progress-list'>
-          <div className='kanban-listitem-draggable'>
+          <div className='kanban-listitem__draggable'>
             <ListItemText className='kanban-listitem__text' draggable="true" primary="inpro" secondary="actual task"  /> 
             </div>
         </div>

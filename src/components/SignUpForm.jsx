@@ -83,7 +83,7 @@ export default function SignUpForm(){
                     <div>
                       <div>
                         <label>User Name</label>
-                        <input type="text" name="display_name" value={formData.display_name} onChange={handleChange} required />
+                        <input type="text" name="display__name" value={formData.display_name} onChange={handleChange} required />
                       </div>
                       <div>
                         <label>Q 2</label>

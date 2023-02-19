@@ -1,7 +1,7 @@
 .applications__container{
     height: fit-content;
     width: fit-content;
-    padding: 40px;
+    /* padding: 40px; */
     background-color: rgb(255, 255, 255);
     border-radius: 60px;
 }

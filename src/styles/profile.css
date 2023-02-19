@@ -1,19 +1,24 @@
 .profile__layout{
-  display: grid;
-  grid-template-columns: repeat();
   background-color: rgb(255, 255, 255);
   min-width: fit-content;
-  margin-left: 160px;
-  margin-top: 5px;
-  height: 1000px;
+  margin-left: 120px;
+  height: fit-content;
   overflow: scroll;
 }
 
+.KB { grid-area: kaban; }
+.CLN { grid-area: calendar; }
+.TD { grid-area: todo; }
+.dash__apps { grid-area: apps; }
 .profile-page__container {
     display: grid;
+    grid-template-areas: 
+    'apps todo todo'
+    'kaban kaban calendar';
     align-items: center;
     z-index: 99;
     justify-content: center;
+    margin-bottom: 200px;
   }
 
   .sidebar__container {
@@ -74,14 +79,13 @@
 .KB{
   min-height: fit-content;
   min-width: fit-content;
-  padding: 40px;
+  padding-top: 20px;
 }
 
 .TD{
   min-width: fit-content;
   min-height: fit-content;
-  padding: 40px;
-  z-index: 99;
+  padding-top: 30px;
 }
 
 .CLN{

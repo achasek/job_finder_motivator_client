@@ -1,10 +1,9 @@
 .applications__container{
-    position: absolute;
-    margin-left: 15%;
-    margin-top: 20px;
     height: fit-content;
     width: fit-content;
-    padding: 20px;
+    /* padding: 40px; */
+    background-color: rgb(255, 255, 255);
+    border-radius: 60px;
 }
 
 .applications__wrapper {
@@ -22,7 +21,6 @@
 
 .app__number {
     padding-top: 20px;
-    position: absolute;
     font-size: 30px;
 }
 
@@ -51,8 +49,6 @@
 }
 
 .tamagatchi {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     height: fit-content;
     width: fit-content;

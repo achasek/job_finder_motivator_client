@@ -59,7 +59,7 @@ const Kanban = () => {
 
       <div className='kanban__wrapper'>
         <div className='kanban-inside__containers'>
-            <h1>Todo</h1>
+            <h1 className='task__status'>Todo</h1>
          <div className='kanban-todo__list'>
               <div className='kanban-listitem__draggable'>
                 <ListItemText className='kanban-listitem__text' draggable="true" primary="taskname" secondary="actual task"  /> 
@@ -68,7 +68,7 @@ const Kanban = () => {
         </div>
 
         <div className='kanban-inside__containers'>
-        <h1>In prog</h1>
+        <h1 className='task__status'>In prog</h1>
         <div className='kanban-progress-list'>
           <div className='kanban-listitem__draggable'>
             <ListItemText className='kanban-listitem__text' draggable="true" primary="inpro" secondary="actual task"  /> 
@@ -77,7 +77,7 @@ const Kanban = () => {
         </div>
 
         <div className='kanban-inside__containers'>
-        <h1>finished</h1>
+        <h1 className='task__status'>finished</h1>
         <div className='kanban-finished__list'>
           <div className='kanban-listitem__draggable'>
             <ListItemText className='kanban-listitem__text' draggable="true" primary="fini" secondary="actual task"  /> 

@@ -13,15 +13,14 @@
 
 .kanban__wrapper {
     display: flex;
-    height: 75%;
+    height: 350px;
     gap: 5rem;
     align-items: center;
     justify-content: center;
 }
 
 .kanban__title {
-    position: relative;
-    margin-left: 35%;
+    text-align: center;
 }
 
 .kanban__wrapper h1 {
@@ -81,3 +80,17 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+  /* ========================================= Media Query MEDIUM ========================================== */
+
+  @media screen and (max-width: 1024px) {
+
+    .kanban__wrapper {
+        gap: 1rem;
+    }
+    .kanban__container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+  }

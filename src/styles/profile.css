@@ -2,8 +2,10 @@
   background-color: var(--TealBlue);
   min-width: fit-content;
   margin-left: 165px;
-  height: fit-content;
-  overflow: scroll;
+  max-height: 800px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  padding-bottom: 100px;
 }
 
 .KB { grid-area: kaban; }
@@ -18,7 +20,8 @@
     align-items: center;
     z-index: 99;
     justify-content: center;
-    margin-bottom: 200px;
+    overflow-y: scroll;
+    margin-bottom: 100px;
   }
 
   .sidebar__container {
@@ -77,9 +80,9 @@
   }
 
 .KB{
-  min-height: fit-content;
+  max-height: fit-content;
   min-width: fit-content;
-  padding-top: 20px;
+  margin-left: 20px;
 }
 
 .TD{

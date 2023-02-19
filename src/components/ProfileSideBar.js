@@ -27,26 +27,26 @@ const ProfileSideBar = () => {
     <div className='sidebar__container'>
         <div className="nav-list__container">
 
-            <h4 className='titles'>basic</h4>
+            <h4 className='titles'>Basic</h4>
             <div className='basic__wrapper'>
            
-            <div><MdOutlineDashboardCustomize/> Dashboard</div>
+            <div><a href='http://www.google.com' ><MdOutlineDashboardCustomize/> Dashboard </a></div>
             </div>
             
-            <h4 className='titles'>tools</h4>
+            <h4 className='titles'>Tools</h4>
             <div className='tools__wrapper'>
-            <div><BsKanban/> Kanban</div>
-            <div><AiOutlineCalendar /> Calendar</div>
-            <div><BiNotepad /> Applications</div>
-            <div><BsPen /> Materials</div>
-            <div><GrResources /> Resources</div>
+            <div><a href='http://www.google.com' ><BsKanban/> Kanban </a></div>
+            <div><a href='http://www.google.com' ><AiOutlineCalendar /> Calendar </a></div>
+            <div><a href='http://www.google.com' ><BiNotepad /> Applications </a></div>
+            <div><a href='http://www.google.com' ><BsPen /> Materials </a></div>
+            <div><a href='http://www.google.com' ><GrResources /> Resources </a></div>
             </div>
 
-            <h4 className='titles'>other</h4>
+            <h4 className='titles'>Other</h4>
             <div className='other__wrapper'>
-            <div><AiFillFileExcel /> Report an issue</div>
-            <div style={{cursor:"pointer"}} onClick={settingsModal}><VscSettingsGear onClick={settingsModal}/> Settings</div>
-            <div><BiLogOut /> Sign out</div>
+            <div><a href='http://www.google.com' ><AiFillFileExcel /> Report an issue </a></div>
+            <div style={{cursor:"pointer"}} onClick={settingsModal}><a href='http://www.google.com' ><VscSettingsGear onClick={settingsModal}/> Settings </a></div>
+            <div><a href='http://www.google.com' ><BiLogOut /> Sign out </a></div>
             </div>
         </div>
     </div>

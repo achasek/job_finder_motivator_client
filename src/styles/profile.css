@@ -2,7 +2,7 @@
   background-color: var(--TealBlue);
   min-width: fit-content;
   margin-left: 165px;
-  max-height: 800px;
+  max-height: 1000px;
   overflow-y: scroll;
   border-radius: 5px;
   padding-bottom: 100px;
@@ -198,5 +198,44 @@
   /* =========================================== Media Query SMALL ============================================ */
   
   @media screen and (max-width: 600px) {
+    .profile-page__container {
+      display: grid;
+      grid-template-areas: 
+      'todo'
+      'apps'
+      'kanban'
+      'calendar';
+    }
+
+    .profile__layout{
+      background-color: var(--TealBlue);
+      max-width: fit-content;
+      margin-left: 165px;
+      max-height: 800px;
+      overflow-y: scroll;
+      border-radius: 5px;
+      padding-bottom: 100px;
+      padding-right: 50px;
+    }
+
+    .TD{
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .CLN{
+      padding: 0;
+    }
+
+    .KB{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      
+    }
+
+    .dash__apps{
+      padding: 10px;
+      margin-left: 40px;
+    }
   
   }

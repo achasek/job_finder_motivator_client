@@ -1,5 +1,5 @@
 .profile__layout{
-  background-color: rgb(255, 255, 255);
+  background-color: var(--TealBlue);
   min-width: fit-content;
   margin-left: 165px;
   height: fit-content;

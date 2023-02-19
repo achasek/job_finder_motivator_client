@@ -1,7 +1,6 @@
 .applications__container{
     height: fit-content;
     width: fit-content;
-    /* padding: 40px; */
     background-color: rgb(255, 255, 255);
     border-radius: 60px;
 }
@@ -25,25 +24,21 @@
 }
 
 .applications__amount {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     height: fit-content;
     width: fit-content;
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 50px;
     box-shadow: 0 0 15px;
     background-color: #f2f2f2;
 }
 
 .applications__responses{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     height: fit-content;
     width: fit-content;
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 50px;
     box-shadow: 0 0 15px;
     background-color: #F2F2F2;
 }
@@ -52,7 +47,8 @@
     align-items: center;
     height: fit-content;
     width: fit-content;
-    padding: 30px;
+    margin-top: 20px;
+    padding: 20px;
     transform: translateY(-10%);
     border-radius: 50px;
     box-shadow: 0 0 15px;

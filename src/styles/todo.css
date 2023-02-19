@@ -8,6 +8,8 @@
 }
 
 .todo__innards{
+    padding: 20px;
+    overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -15,7 +17,7 @@
     border-radius: 10%;
     align-items: center;
     background-color: white;
-    min-height: 300px;
+    max-height: 300px;
     min-width: 300px;
     overflow-y: scroll;
     overflow-x: hidden;

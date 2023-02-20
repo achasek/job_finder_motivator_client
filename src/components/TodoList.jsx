@@ -11,7 +11,8 @@ import '../styles/todo.css'
 import { Kanban } from '../views';
 import { DataContext } from '../App';
 import { UserContext } from '../App';
-
+import { useAuth0 } from '@auth0/auth0-react';
+import { callExternalApi } from '../services/external-api.service';
 
 
 export default function TodoList(){ 
@@ -20,13 +21,33 @@ export default function TodoList(){
   const [userTasks, setUserTasks] = useState()
   const email = currUser.email
   const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
+  const { getAccessTokenSilently } = useAuth0();
 
   useEffect(() => {
-    axios.get(`${BACK_URI}/api/user/tasks/${email}`)
-    .then(response => {
-      console.log(response.data.userTasks)
-      setUserTasks(response.data.userTasks)
-    })
+    const handleGetTasks = async () => {
+      const token = await getAccessTokenSilently();
+      const config = {
+          // change
+          url: `${BACK_URI}/api/task/`,
+          // change to update method
+          method: "GET",
+          headers: {
+              "content-type": "application/json",
+              "Authorization": `bearer ${token}`
+          }
+      }
+      const { data, status, error } = await callExternalApi({config});
+      if (status.code === 200){
+        // axios.get(`${BACK_URI}/api/user/tasks/${email}`)
+        // .then(response => {
+        //   console.log(response.data.userTasks)
+        //   setUserTasks(response.data.userTasks)
+        // })
+        console.log({data: data.tasks});
+        setUserTasks(data.tasks);
+      }
+    }
+    handleGetTasks();
   }, [])
 
   const postModal = () => {

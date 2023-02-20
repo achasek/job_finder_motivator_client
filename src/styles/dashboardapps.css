@@ -1,6 +1,7 @@
 .applications__container{
     height: fit-content;
     width: fit-content;
+    padding: 10px;
     border-radius: 60px;
 }
 
@@ -53,3 +54,29 @@
     box-shadow: 0 0 15px;
     background-color: #F2F2F2;
 }
+
+  /* ========================================= Media Query MEDIUM ========================================== */
+
+  @media screen and (max-width: 1024px) {
+    .applications__container{
+        
+
+    }
+
+    .applications__amount { grid-area: amnt; }
+    .applications__responses { grid-area: res; }
+    .tamagatchi { grid-area: toma; }
+
+    .applications__wrapper{
+        display: grid;
+        grid-template-areas: 
+        'toma toma toma'
+        'amnt res res';
+    }
+
+    .tamagatchi{
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+  

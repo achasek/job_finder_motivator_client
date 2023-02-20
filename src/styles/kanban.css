@@ -14,7 +14,7 @@
 .kanban__wrapper {
     display: flex;
     height: 350px;
-    gap: 5rem;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
 }
@@ -25,24 +25,8 @@
 
 .kanban__wrapper h1 {
    /* margin-left: 38%; */
-   border-bottom: 1px solid black;
+   border-bottom: 3px solid black;
    width: fit-content;
-}
-
-.kanban-todo__list {
-    width: 100%;
-}
-
-.kanban-finished__list {
-    width: 100%;
-}
-
-.kanban-progress__list {
-    width: 100%;
-}
-
-.kanban-listitem__text {
-    margin-left: 5%;
 }
 
 .kanban-inside__containers {
@@ -86,11 +70,14 @@
   @media screen and (max-width: 1024px) {
 
     .kanban__wrapper {
-        gap: 1rem;
+        display: block;
     }
-    .kanban__container {
-        padding-left: 10px;
-        padding-right: 10px;
+
+    .kanban-inside__containers {
+        max-width: 100px;
+        margin-left: auto;
+        margin-right: auto;
     }
+    
     
   }

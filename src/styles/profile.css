@@ -30,7 +30,8 @@
     z-index: 99;
     top: 82px;
     left: 8px;
-    min-height: fit-content;
+    max-height: fit-content;
+    padding-top: 20px;
     padding-bottom: 300px;
     min-width: fit-content;
     border: 1px solid black;
@@ -107,70 +108,26 @@
 }
 
 
-/* .profile__titleContainer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-.profile__title {
-  font-size: 28px;
-  font-weight: bold;
-}
-.profile__avatarContainer {
-  margin-bottom: -70px;
-  z-index: 1;
-}
-.profile__avatar {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 2px solid white;
-  -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
-  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
-}
-.profile__details {
-  background-color: hsl(0, 0%, 95%);
-  border-radius: 10px;
-  border: 2px solid black;
-  padding: 20px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-.profile__details h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.profile__details pre {
-  font-size: 16px;
-  font-style: italic;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-} */
-
-
-
   /* ========================================= Media Query MEDIUM ========================================== */
 
   @media screen and (max-width: 1024px) {
     .profile-page__container {
       display: grid;
       grid-template-areas: 
-      'apps apps apps'
-      'kanban kanban kanban'
-      'todo calendar calendar';
+      'apps'
+      'kanban'
+      'todo'
+      'calendar';
+      margin-left: 50px;
     }
 
     .profile__layout{
-      background-color: var(--TealBlue);
-      max-width: fit-content;
-      margin-left: 165px;
-      max-height: 800px;
-      overflow-y: scroll;
-      border-radius: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 800px;
+      background-color: transparent;
+      max-height:1000px;
       padding-bottom: 100px;
-      padding-right: 50px;
     }
 
     .TD{
@@ -190,7 +147,11 @@
 
     .dash__apps{
       padding: 10px;
-      margin-left: 40px;
+      margin-left: 0px;
+    }
+
+    .sidebar__container {
+      border-radius: 20px;
     }
   
   }

@@ -8,7 +8,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import DashboardApps from "./components/DashboardApps";
 import axios from "axios";
 import { Auth0LoginRequired, PageLoader, TodoList } from "./components";
-import { Calendar } from "./components";
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();

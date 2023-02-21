@@ -8,14 +8,24 @@ const Profile = () => {
 
 
   return (
-    <div>
+    <div className="profile__layout">
+        <div className="sidebar">
   <ProfileSideBar />
-    <DashboardApps />
+        </div>
     <div className="profile-page__container">
-       <Kanban />
-       <TodoList/>
-      </div>
+        <div className="dash__apps">
+    <DashboardApps />
+        </div>
+        <div className="CLN">
       <Calendar />
+        </div>
+        <div className="TD">
+       <TodoList/>
+        </div>
+        <div className="KB">
+       <Kanban />
+        </div>
+      </div>
       </div>
   );
 };

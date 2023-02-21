@@ -1,68 +1,96 @@
-.kanban-container {
+.kanban__container {
     position: relative;
-    background-color: #F2F2F2;
-    width: 70%;
-    height: 60vh;
-    margin-top: 15%;
+    background-color: #ffffff;
+    max-width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-height: 450px;
     border-radius: 1rem;
-    box-shadow: 0px 0px 25px;
-    margin-left: -4%;
+    box-shadow: 0px 0px 15px;
+    overflow: scroll;
+    z-index: 99;
 }
 
-.kanban-wrapper {
+.kanban__wrapper {
     display: flex;
-    height: 75%;
+    height: 350px;
     gap: 5rem;
     align-items: center;
     justify-content: center;
 }
 
-.kanban-title {
-    position: relative;
-    margin-left: 35%;
+.kanban__title {
+    text-align: center;
 }
 
-.kanban-wrapper h1 {
-   margin-left: 38%;
+.kanban__wrapper h1 {
+   /* margin-left: 38%; */
    border-bottom: 1px solid black;
    width: fit-content;
 }
 
-.kanban-todo-list {
+.kanban-todo__list {
     width: 100%;
 }
 
-.kanban-finished-list {
+.kanban-finished__list {
     width: 100%;
 }
 
-.kanban-progress-list {
+.kanban-progress__list {
     width: 100%;
 }
 
-.kanban-listitem-text {
+.kanban-listitem__text {
     margin-left: 5%;
 }
 
-.kanban-inside-containers {
-    height: 100%;
-    width: 25%;
-    margin-top: 6%;
-    border-radius: 1rem;
+.kanban-inside__containers {
+    text-align: center;
+    height: fit-content;
+    padding-bottom: 100px;
+    border-radius: 20px;
     background-color: white;
     box-shadow: 0px 0px 25px;
+    margin: 10px;
+    min-width: 200px;
 }
 
-.kanban-listitem-draggable.dragging {
+.kanban-listitem__draggable.dragging {
     opacity: 0.5;
 }
 
-.kanban-listitem-draggable{
+.kanban-listitem__draggable{
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 40px;
     border: 1px solid gray;
+    width: fit-content;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.kanban-listitem-draggable:hover {
+.kanban-listitem__draggable:hover {
     background-color: lightgray;
 }
+
+.task__status{
+    text-align: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  /* ========================================= Media Query MEDIUM ========================================== */
+
+  @media screen and (max-width: 1024px) {
+
+    .kanban__wrapper {
+        gap: 1rem;
+    }
+    .kanban__container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+  }

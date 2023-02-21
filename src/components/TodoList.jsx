@@ -11,7 +11,8 @@ import '../styles/todo.css'
 import { Kanban } from '../views';
 import { DataContext } from '../App';
 import { UserContext } from '../App';
-
+import { useAuth0 } from '@auth0/auth0-react';
+import { callExternalApi } from '../services/external-api.service';
 
 
 export default function TodoList(){ 
@@ -20,13 +21,33 @@ export default function TodoList(){
   const [userTasks, setUserTasks] = useState()
   const email = currUser.email
   const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
+  const { getAccessTokenSilently } = useAuth0();
 
   useEffect(() => {
-    axios.get(`${BACK_URI}/api/user/tasks/${email}`)
-    .then(response => {
-      console.log(response.data.userTasks)
-      setUserTasks(response.data.userTasks)
-    })
+    const handleGetTasks = async () => {
+      const token = await getAccessTokenSilently();
+      const config = {
+          // change
+          url: `${BACK_URI}/api/task/`,
+          // change to update method
+          method: "GET",
+          headers: {
+              "content-type": "application/json",
+              "Authorization": `bearer ${token}`
+          }
+      }
+      const { data, status, error } = await callExternalApi({config});
+      if (status.code === 200){
+        // axios.get(`${BACK_URI}/api/user/tasks/${email}`)
+        // .then(response => {
+        //   console.log(response.data.userTasks)
+        //   setUserTasks(response.data.userTasks)
+        // })
+        console.log({data: data.tasks});
+        setUserTasks(data.tasks);
+      }
+    }
+    handleGetTasks();
   }, [])
 
   const postModal = () => {
@@ -46,19 +67,19 @@ export default function TodoList(){
   
 
   return (
-  <div className='to-do-list-container'>
-        <div className='to-do-innards'>
-          <div className='top-bar'>
+  <div className='todo-list__container'>
+        <div className='todo__innards'>
+          <div className='top__bar'>
         <h1>Tasks</h1>
-        <div className='task-btns'>
+        <div className='task__btns'>
         <div onClick={kanbanModal} className='kanban'><BsKanban/></div>
-        <div onClick={postModal} className='add-btn'>+</div>
+        <div onClick={postModal} className='add__btn'>+</div>
         </div>
         </div>
-        <div className='unordered-list'>
+        <div className='unordered__list'>
           {userTasks?.map(({ taskName, comments, importance, isComplete, task, added, _id }) => (
-              <li onClick={(e) => taskModal(added,  task, _id, taskName)} className='list-items'>
-                <ListItemText  className='list-item' primary={taskName} secondary={task}  /> <input type="checkbox" />
+              <li onClick={(e) => taskModal(added,  task, _id, taskName)} className='list__items'>
+                <ListItemText  className='list__item' primary={taskName} secondary={task}  /> <input type="checkbox" />
                 
                 <Divider />
               </li>

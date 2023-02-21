@@ -1,26 +1,45 @@
-.profile-page__container {
-    display: flex;
-    align-items: center;
-    margin-left: 15%;
-    margin-top: 2%;
+.profile__layout{
+  background-color: var(--TealBlue);
+  min-width: fit-content;
+  margin-left: 165px;
+  max-height: 1000px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  padding-bottom: 100px;
+  padding: 20px;
+}
 
+.KB { grid-area: kanban; }
+.CLN { grid-area: calendar; }
+.TD { grid-area: todo; }
+.dash__apps { grid-area: apps; }
+.profile-page__container {
+    display: grid;
+    grid-template-areas: 
+    'apps todo todo'
+    'kanban kanban calendar';
+    align-items: center;
+    z-index: 99;
     justify-content: center;
+    overflow-y: scroll;
+    margin-bottom: 100px;
   }
 
-  .sidebar-container {
+  .sidebar__container {
     position: absolute;
-    z-index: 0;
-    top: 5%;
-    left: 0.48%;
-    height: 100vh;
-    width: 10vw;
+    z-index: 99;
+    top: 82px;
+    left: 8px;
+    min-height: fit-content;
+    padding-bottom: 300px;
+    min-width: fit-content;
     border: 1px solid black;
     border-top: none;
-    margin-top: 2.1%;
     background-color: #F2F2F2;
+    padding-right: 20px;
   }
 
-  .nav-list-container {
+  .nav-list__container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -33,9 +52,7 @@
     font-size: larger;
   }
 
-
-
-  .basic-wrapper{
+  .basic__wrapper{
     display: flex;
     width: 100%;
     align-items: center;
@@ -43,8 +60,7 @@
     gap: 1rem;
   }
 
-
-  .tools-wrapper{
+  .tools__wrapper{
     display: flex;
     width: 100%;
     align-items: center;
@@ -52,7 +68,7 @@
     gap: 1rem;
   }
 
-  .other-wrapper{
+  .other__wrapper{
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -60,50 +76,166 @@
     gap: 1rem;
   }
 
-  .nav-list-container> * {
+  .nav-list__container> * {
     list-style-type: none;
   }
 
+.KB{
+  max-height: fit-content;
+  min-width: fit-content;
+  margin-left: 20px;
+}
 
+.TD{
+  min-width: fit-content;
+  min-height: fit-content;
+  padding-top: 30px;
+  padding-left: 150px;
+}
+
+.CLN{
+  min-width: fit-content;
+  min-height: fit-content;
+  padding: 40px;
+}
+
+.dash__apps{
+  min-width: fit-content;
+  min-height: fit-content;
+  padding: 40px;
+  padding-left: 140px;
+}
+
+
+/* .profile__titleContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.profile__title {
+  font-size: 28px;
+  font-weight: bold;
+}
+.profile__avatarContainer {
+  margin-bottom: -70px;
+  z-index: 1;
+}
+.profile__avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid white;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+}
+.profile__details {
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.profile__details h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.profile__details pre {
+  font-size: 16px;
+  font-style: italic;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+} */
+
+
+
+  /* ========================================= Media Query MEDIUM ========================================== */
+
+  @media screen and (max-width: 1024px) {
+    .profile-page__container {
+      display: grid;
+      grid-template-areas: 
+      'apps apps apps'
+      'kanban kanban kanban'
+      'todo calendar calendar';
+    }
+
+    .profile__layout{
+      background-color: var(--TealBlue);
+      max-width: fit-content;
+      margin-left: 165px;
+      max-height: 800px;
+      overflow-y: scroll;
+      border-radius: 5px;
+      padding-bottom: 100px;
+      padding-right: 50px;
+    }
+
+    .TD{
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .CLN{
+      padding: 0;
+    }
+
+    .KB{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      
+    }
+
+    .dash__apps{
+      padding: 10px;
+      margin-left: 40px;
+    }
   
-  /* .profile__titleContainer {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
   }
-  .profile__title {
-    font-size: 28px;
-    font-weight: bold;
+  
+  /* =========================================== Media Query SMALL ============================================ */
+  
+  @media screen and (max-width: 600px) {
+    .profile-page__container {
+      display: grid;
+      grid-template-areas: 
+      'todo'
+      'apps'
+      'kanban'
+      'calendar';
+    }
+
+    .profile__layout{
+      background-color: var(--TealBlue);
+      max-width: fit-content;
+      margin-left: 165px;
+      max-height: 800px;
+      overflow-y: scroll;
+      border-radius: 5px;
+      padding-bottom: 100px;
+      padding-right: 50px;
+    }
+
+    .TD{
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .CLN{
+      padding: 0;
+    }
+
+    .KB{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      
+    }
+
+    .dash__apps{
+      padding: 10px;
+      margin-left: 40px;
+    }
+  
   }
-  .profile__avatarContainer {
-    margin-bottom: -70px;
-    z-index: 1;
-  }
-  .profile__avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 2px solid white;
-    -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
-    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
-  }
-  .profile__details {
-    background-color: hsl(0, 0%, 95%);
-    border-radius: 10px;
-    border: 2px solid black;
-    padding: 20px;
-    margin-bottom: 50px;
-    text-align: center;
-  }
-  .profile__details h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  .profile__details pre {
-    font-size: 16px;
-    font-style: italic;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  } */

@@ -1,35 +1,30 @@
 import { useContext, useEffect } from "react";
 import { UserContext, ConstContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import { callExternalApi } from "../../services/external-api.service";
 
 const Logout = () => {
     
     const { BACK_URI } = useContext(ConstContext);
     const { setCurrUser } = useContext(UserContext);
     const navigate = useNavigate();
-    // console.log('in logout')
 
     const handleLogout = async () => {
-        try {
-            // console.log(BACK_URI +'/api/v1/users/logout')
-            const response = await fetch(BACK_URI + '/api/v1/users/logout', {
-                method: 'GET',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json',
-                }});
-            if(response.ok){
-                const jsonResp = await response.json();
-                setCurrUser({});
-                navigate(`/`);
+        const config = {
+            url: `${BACK_URI}/api/user/logout`,
+            method: "GET",
+            headers: {
+                "content-type": "application/json",
             }
-        } catch (error) {
-            console.error(error);
+        }
+        const { status } = await callExternalApi({config});
+        if(status.code === 200){
+            setCurrUser({});
+            navigate(`/`);
         }
     }
 
-    //TODO: Build API Logout route then re-enable the next line
-    // useEffect(()=>{ handleLogout() },[])
+    useEffect(()=>{ handleLogout() },[])
 
     return (
         <h1>Logout</h1>

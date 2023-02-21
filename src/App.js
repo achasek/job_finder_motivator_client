@@ -1,14 +1,14 @@
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, } from "./views";
-// import {Profile} from "./pages/Profile";
+import React, { useState, useEffect } from "react";
+import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, 
+         TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, 
+         UserProtectedRoute } from "./views";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
-import TodoList from "./views/TodoList-form";
-import axios from "axios";
-import { Auth0LoginRequired, PageLoader } from "./components";
+import { Auth0LoginRequired, PageLoader, TodoList, Calendar, DashboardApps } from "./components";
+
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
@@ -20,46 +20,10 @@ function App() {
   const AUDIENCE = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [currUser, setCurrUser] = useState({});
   const { isLoading } = useAuth0();
-  const {getAccessTokenSilently} = useAuth0();
-  const token = getAccessTokenSilently();
-
-  
- const getProtectedResource = async () => { 
-  const token = await getAccessTokenSilently();    
-      const config = {
-        url: `${BACK_URI}/api/user/seed`,
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          "Authorization": `bearer ${token}`
-        }
-  }
-  axios(config)
-  .then(response => {
-    const name = response.data.payload.name
-    const email = response.data.payload.email
-    axios({
-      method: 'POST',
-      url: `${BACK_URI}/api/user/create/${name}/${email}`,
-      headers: {
-        "content-type": "application/json",
-        "Authorization": `bearer ${token}`
-      }
-    }).then(response => {
-      console.log(response)
-    }).catch(err =>{
-      console.log("error", err)
-    })   
-  }).catch(err =>{
-    console.log("error", err)
-  })
-};
-
-//runs the function above and logs the bearer token, token acquired using the getAccessTokenSilently() function at the top of the page
-//   useEffect(() => {
-//      getProtectedResource()
-//     console.log(token)
-//  }, [])
+ 
+  //modal stuff
+  const [open, setOpen] = useState(false);
+  const [modalType, setModalType] = useState();
 
   if (isLoading) {
     return (
@@ -68,27 +32,34 @@ function App() {
       </div>
     );
   }
+  console.log(currUser, 'THIS IS CURR USER')
+  // useEffect(() => {
+  //   console.log(currUser, 'USE-EFFECT CURR USER:')
+  // }, [currUser])
 
   return (
     <BrowserRouter>
       <ConstContext.Provider value={{ BACK_URI, LOGOUT_URL, AUDIENCE }}>
         <UserContext.Provider value={{ currUser, setCurrUser }}>
-          <Routes>
-            <Route path="/" element={<SharedLayout />}>
-              <Route index element={<Landing />} />
-              <Route path="users/*" element={<UserRoutes />} />
-              <Route path="callback" element={<CallbackView />} />
-              <Route path='test/public' element={<TestAPIRoute />} /> 
-              <Route exact path='test' element={< Test />} /> 
-              <Route exact path='testtwo' element={< TestTwo />} /> 
-              <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
-              <Route path='/profile' element={<Auth0LoginRequired component={Profile} />} /> 
-              <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />
-              <Route path="/about" element={<About />} />
-              <Route path="*" element={<NotFound />} />
-              <Route path="/todo" element={<TodoList />} />
-            </Route>
-          </Routes>
+          <DataContext.Provider value={{ open, setOpen, modalType, setModalType}}>
+            <Routes>
+              <Route path="/" element={<SharedLayout />}>
+                <Route index element={<Landing />} />
+                <Route path="users/*" element={<UserRoutes />} />
+                <Route path="callback" element={<CallbackView />} />
+                <Route path='test/public' element={<TestAPIRoute />} /> 
+                <Route exact path='test' element={< Test />} /> 
+                <Route exact path='testtwo' element={< TestTwo />} /> 
+                <Route exact path='testthree' element={<UserProtectedRoute user={currUser}>< DashboardApps /></UserProtectedRoute>} /> 
+                <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
+                <Route path='/profile' element={<Auth0LoginRequired component={Profile} />} /> 
+                <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/todo" element={<TodoList />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
+            </Routes>
+          </DataContext.Provider>
         </UserContext.Provider>
       </ConstContext.Provider>
     </BrowserRouter>

@@ -39,7 +39,7 @@ const ProfileSideBar = () => {
             <div><a href='http://www.google.com' ><AiOutlineCalendar /> Calendar </a></div>
             <div><a href='http://www.google.com' ><BiNotepad /> Applications </a></div>
             <div><a href='http://www.google.com' ><BsPen /> Materials </a></div>
-            <div><a href='http://www.google.com' ><GrResources /> Resources </a></div>
+            <div><a href='/resources' ><GrResources /> Resources </a></div>
             </div>
 
             <h4 className='titles'>Other</h4>

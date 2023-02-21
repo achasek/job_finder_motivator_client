@@ -21,6 +21,7 @@
 .app__number {
     padding-top: 20px;
     font-size: 30px;
+    text-align: center;
 }
 
 .applications__amount {

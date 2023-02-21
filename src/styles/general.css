@@ -3,7 +3,6 @@
 body {
   background-color: #E6E2DD;
   font-family: 'Poppins', sans-serif;
-  overflow-y: hidden;
   }
   
   .homepage__title{
@@ -117,14 +116,17 @@ body {
   }
   
   .nav__area {
+    position: fixed;
     display: flex;
-    height: 2rem;
+    height: 30px;
+    width: 96%;
     align-items: center;
     background-color: #F2F2F2;
     border: 1px solid black;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     padding: 20px;
+    z-index: 99;
 
   }
   .nav__title {

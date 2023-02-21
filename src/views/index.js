@@ -13,3 +13,4 @@ export { default as Profile } from "./Profile";
 export { default as Kanban } from "./Kanban";
 export { default as About } from './About';
 export { default as SignUp } from './userRoutes/SignUp';
+export { default as Resources } from './Resources';

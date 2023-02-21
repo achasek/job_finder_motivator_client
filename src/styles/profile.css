@@ -1,12 +1,13 @@
 .profile__layout{
-  background-color: var(--TealBlue);
-  min-width: fit-content;
-  margin-left: 165px;
+  max-width: fit-content;
+  margin-left: 140px;
+  margin-top: 5px;
   max-height: 1000px;
   overflow-y: scroll;
-  border-radius: 5px;
-  padding-bottom: 100px;
-  padding: 20px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  
 }
 
 .KB { grid-area: kanban; }
@@ -14,26 +15,33 @@
 .TD { grid-area: todo; }
 .dash__apps { grid-area: apps; }
 .profile-page__container {
-    display: grid;
-    grid-template-areas: 
-    'apps todo todo'
-    'kanban kanban calendar';
-    align-items: center;
-    z-index: 99;
-    justify-content: center;
-    overflow-y: scroll;
-    margin-bottom: 100px;
+  background-color: var(--TealBlue);
+  border: 1px solid black;
+  border-radius: 100px;
+  display: grid;
+  grid-template-areas: 
+  'apps todo todo'
+  'kanban kanban calendar';
+  align-items: center;
+  z-index: 99;
+  justify-content: center;
+  overflow-y: scroll;
+  margin-bottom: 50px;
+  margin-top: 90px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  min-width: fit-content;
   }
 
   .sidebar__container {
-    position: absolute;
+    position: fixed;
     z-index: 99;
-    top: 82px;
+    top: 79px;
     left: 8px;
-    max-height: fit-content;
+    height: 95%;
     padding-top: 20px;
     padding-bottom: 300px;
-    min-width: fit-content;
     border: 1px solid black;
     border-top: none;
     background-color: #F2F2F2;
@@ -141,8 +149,7 @@
 
     .KB{
       margin-top: 20px;
-      margin-bottom: 20px;
-      
+      margin-bottom: 20px; 
     }
 
     .dash__apps{

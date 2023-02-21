@@ -35,12 +35,14 @@ const TaskContent = (props) => {
 
   return (
     <div>          
-          <li onClick={(e) => setOpen(true)} className='list__items'>
-                
-                <ListItemText primary={taskName} secondary={task} /> 
-                <Divider />
-              <button onClick={handleDelete}>delete</button>
-          </li>
+          <div onClick={(e) => setOpen(true)} className='task-modal-content'>
+              <ListItemText primary={taskName} secondary={task} />  
+          </div>
+          <div className="task-modal-btn-wrapper">
+          <div className="edit-task-btn" >edit</div>
+          <div className="archive-task-btn" >archive</div>
+          <div className="delete-task-btn" onClick={handleDelete}>delete</div>
+          </div>
   </div>
   )
 }

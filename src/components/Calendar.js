@@ -11,6 +11,7 @@ export default function CalendarGfg() {
     <div className='calendar__container'>
         <h3>Calendar</h3>
       <Calendar
+      
         onChange={onChange}
         value={value}
       />

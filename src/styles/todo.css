@@ -36,10 +36,6 @@
     border-bottom: 1px solid black;
 }
 
-.top__bar>:nth-child(1) {
-    /* margin-left: 1rem; */
-}
-
 .task__btns {
     display: flex;
     gap: 1rem;
@@ -67,6 +63,7 @@
 
 .unordered__list {
     width: 100%;
+    margin-top: 20%;
 }
 
 .list__items {

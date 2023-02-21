@@ -27,6 +27,7 @@ const TaskContent = (props) => {
           }
       }
       const { data, status, error } = await callExternalApi({config});
+      // console.log({status});
       if (status.code === 200){
         // if status.code === 200 task was deleted
         // axios.delete(`${BACK_URI}/api/task/${id}`)
@@ -35,8 +36,8 @@ const TaskContent = (props) => {
 
   return (
     <div>          
-          <li onClick={(e) => setOpen(true)} className='list__items'>
-                
+          {/* <li onClick={(e) => setOpen(true)} className='list__items'> */}
+          <li className='list__items'>      
                 <ListItemText primary={taskName} secondary={task} /> 
                 <Divider />
               <button onClick={handleDelete}>delete</button>

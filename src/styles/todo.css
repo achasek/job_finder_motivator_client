@@ -36,10 +36,6 @@
     border-bottom: 1px solid black;
 }
 
-.top__bar>:nth-child(1) {
-    /* margin-left: 1rem; */
-}
-
 .task__btns {
     display: flex;
     gap: 1rem;
@@ -78,12 +74,7 @@
     cursor: pointer;
     transition: ease-in-out 250ms;
 }
-<<<<<<< HEAD
-
-.list-items>:nth-child(1) {
-=======
 .list__items>:nth-child(1) {
->>>>>>> 88f8996d18f6332ff6542316ba17d7aebc7a9931
     width: 50%;
    }
 
@@ -92,13 +83,7 @@
  position: relative;
 }
 
-<<<<<<< HEAD
-.list-item {
-    overflow: hidden;
-    height: 3rem;
-=======
 .list__item {
->>>>>>> 88f8996d18f6332ff6542316ba17d7aebc7a9931
     margin-left: 1rem;
 }
 

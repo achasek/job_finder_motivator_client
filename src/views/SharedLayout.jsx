@@ -8,7 +8,7 @@ const SharedLayout = () => {
         <>
             <header>
                 <div className="nav__area">
-                    <h1 className="nav__title">Thriver!</h1>
+                    <div className="nav__logo"></div>
                     <NavLink to="/" className='nav__link'>Home</NavLink>
                     <NavLink to="/about" className='nav__link'>About</NavLink>
                     <NavLink to="/profile" className='nav__link'>Profile</NavLink>

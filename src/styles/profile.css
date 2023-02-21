@@ -1,10 +1,10 @@
 .profile__layout{
   max-width: fit-content;
-  margin-left: 140px;
+  margin-left: 180px;
   margin-top: 5px;
   max-height: 1000px;
   overflow-y: scroll;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   padding-left: 50px;
   padding-right: 50px;
   
@@ -39,13 +39,20 @@
     z-index: 99;
     top: 79px;
     left: 8px;
-    height: 95%;
+    width: fit-content;
+    height: fit-content;
     padding-top: 20px;
-    padding-bottom: 300px;
     border: 1px solid black;
     border-top: none;
     background-color: #F2F2F2;
     padding-right: 20px;
+  }
+
+  .logo__sidebar{
+    background-image: url('../Img/ThriverSidebarArt.jpg');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
   }
 
   .nav-list__container {

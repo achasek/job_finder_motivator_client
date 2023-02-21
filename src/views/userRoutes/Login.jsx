@@ -28,7 +28,7 @@ const Login = () => {
             // point to dashboard
             if (status.code === 200) { // returning user loging in
                 setCurrUser(data.user);
-                navigate(`/`);
+                navigate(`/`);  // TODO: redirect to dashboard here
             // sign up route
             } else if (status.code === 201) { // new user loging in
                 setCurrUser(data.user);

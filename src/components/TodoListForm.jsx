@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
-
+import { useAuth0 } from '@auth0/auth0-react';
+import { callExternalApi } from '../services/external-api.service';
 
 function TodoListForm(props) {
   const [task, setTask] = useState({})
@@ -9,7 +10,7 @@ function TodoListForm(props) {
   const [taskName, setTaskName] = useState({})
   const email = props.email
   const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
-
+  const { getAccessTokenSilently } = useAuth0();
   const handleTaskName = (e) => {
     const tn = e.target.value
     setTaskName(tn)
@@ -28,15 +29,35 @@ function TodoListForm(props) {
     console.log(importance)
   }
 
-  function postUserTasks() {
-    const data = {taskName, task, importance}
-    console.log(data)
-    axios.put(`${BACK_URI}/api/user/${email}/createtask`, data)
-    .then(response => {
-      console.log(response)
-    }).catch(err => {
-      console.log(err)
-    })
+  const postUserTasks = async () => {
+    const body = {task: taskName, description: task, importance}
+    console.log(body)
+
+    const token = await getAccessTokenSilently();
+    const config = {
+        // change
+        url: `${BACK_URI}/api/task/`,
+        // change to update method
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+            "Authorization": `bearer ${token}`
+        },
+        data: body
+    }
+    const { data, status, error } = await callExternalApi({config});
+    console.log({status});
+    if (data){
+      console.log({task: data.task});
+    // axios.put(`${BACK_URI}/api/user/${email}/createtask`, data)
+    // .then(response => {
+    //   console.log(response)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
+    } else {
+      console.error(error);
+    }
   }
   
   

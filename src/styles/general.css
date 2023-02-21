@@ -3,7 +3,10 @@
 body {
   background-color: #E6E2DD;
   font-family: 'Poppins', sans-serif;
-  overflow-y: hidden;
+  }
+
+  .homepage{
+    padding-top: 100px;
   }
   
   .homepage__title{
@@ -117,22 +120,32 @@ body {
   }
   
   .nav__area {
+    position: fixed;
     display: flex;
-    height: 2rem;
+    height: 30px;
+    width: 96%;
     align-items: center;
     background-color: #F2F2F2;
     border: 1px solid black;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     padding: 20px;
+    z-index: 99;
 
   }
-  .nav__title {
-    font-size: 38px;
-    z-index: 1;
-    font-weight: bold;
-    margin-right: auto;
+
+  .nav__logo{
+    background-image: url('../Img/image.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
+    height: 30px;
+    width: 150px;
+    padding: 10px;
+    padding-right: 400px;
   }
+
+
   .nav__link {
     color: #333;
     border: 1px solid black;
@@ -140,7 +153,8 @@ body {
     padding: 10px;
     border-radius: 20px;
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: auto;
+    margin-left: auto;
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s;
@@ -182,11 +196,11 @@ body {
   }
   
   .about__page{
-    margin-top: 50px;
     width: fit-content;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 100px;
   }
   
   .about__title{
@@ -199,9 +213,44 @@ body {
 
 @media screen and (max-width: 1024px) {
   .nav__link{
-    padding: 10px;
+    padding: 0px;
     font-size: 14px;
   }
+
+  .nav__area {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    /* height: fit-content; */
+    align-items: center;
+    background-color: #F2F2F2;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    padding: 10px;
+    width: 800px;
+
+  }
+  .nav__title {
+    font-size: 38px;
+    z-index: 1;
+    font-weight: bold;
+    margin-right: auto;
+  }
+  .nav__link {
+    color: #333;
+    border: 1px solid black;
+    background-color: #FFC618;
+    padding: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+
 }
 
 /* =========================================== Media Query SMALL ============================================ */

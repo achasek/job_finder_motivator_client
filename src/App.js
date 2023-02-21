@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, 
          TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, 
-         UserProtectedRoute } from "./views";
+         UserProtectedRoute, Resources, } from "./views";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -57,6 +57,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/todo" element={<TodoList />} />
                 <Route path="*" element={<NotFound />} />
+                <Route path="/resources" element={<Resources />} />
               </Route>
             </Routes>
           </DataContext.Provider>

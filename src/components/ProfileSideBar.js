@@ -39,7 +39,7 @@ const ProfileSideBar = () => {
             <div><a href='http://www.google.com' ><AiOutlineCalendar /> Calendar </a></div>
             <div><a href='http://www.google.com' ><BiNotepad /> Applications </a></div>
             <div><a href='http://www.google.com' ><BsPen /> Materials </a></div>
-            <div><a href='http://www.google.com' ><GrResources /> Resources </a></div>
+            <div><a href='/resources' ><GrResources /> Resources </a></div>
             </div>
 
             <h4 className='titles'>Other</h4>
@@ -47,6 +47,7 @@ const ProfileSideBar = () => {
             <div><a href='http://www.google.com' ><AiFillFileExcel /> Report an issue </a></div>
             <div style={{cursor:"pointer"}} onClick={settingsModal}><a href='http://www.google.com' ><VscSettingsGear onClick={settingsModal}/> Settings </a></div>
             <div><a href='http://www.google.com' ><BiLogOut /> Sign out </a></div>
+            <div className='logo__sidebar'> </div>
             </div>
         </div>
     </div>

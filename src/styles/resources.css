@@ -1,5 +1,4 @@
 .resources__page{
-    background-color: var(--TealBlue);
     width: 100%;
     height: 3000px;
     margin-left: auto;
@@ -11,8 +10,12 @@
 .resources__container{
     background-color: white;
     width: fit-content;
-    height: fit-content;
-    padding: 100px;
+    height: 800px;
+    overflow-y: scroll;
+    padding-right: 200px;
+    padding-left: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black;
@@ -24,11 +27,33 @@
     height: 300px;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--TealBlue);
-    border: 1px solid black;
+    padding-top: 250px;
 }
 
 .material__form{
+    background-color: var(--TealBlue);
+    padding: 30px;
     margin: auto;
     border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.Mlabel{
+    text-align: center;
+}
+
+.Minput{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.each__resource{
+    background-color: beige;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 }

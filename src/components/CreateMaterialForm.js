@@ -28,9 +28,10 @@ const CreateMaterialForm = ({ accessToken }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="create__material" onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
       <input
+        className="input1"
         type="text"
         id="name"
         value={name}
@@ -39,6 +40,7 @@ const CreateMaterialForm = ({ accessToken }) => {
 
       <label htmlFor="content">Content:</label>
       <textarea
+        className="input2"
         id="content"
         value={content}
         onChange={(e) => setContent(e.target.value)}

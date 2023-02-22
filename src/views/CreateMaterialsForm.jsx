@@ -4,12 +4,15 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { ConstContext } from '../App';
 import { callExternalApi } from '../services/external-api.service';
 import "../styles/resources.css";
+import { useNavigate } from "react-router-dom";
 
 const CreateMaterialForm = () => {
   const { getAccessTokenSilently } = useAuth0();
-  const [name, setName] = useState('name');
-  const [content, setContent] = useState('content');
+  const [name, setName] = useState('');
+  const [content, setContent] = useState('');
   const { BACK_URI } = useContext(ConstContext);
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,6 +34,7 @@ const CreateMaterialForm = () => {
       console.log({data});
       console.log({status});
       console.log({error});
+      navigate('/resources');
     } catch (error) {
       console.error(error);
     }
@@ -40,8 +44,11 @@ const CreateMaterialForm = () => {
     <div className='create__material'>
     <form className='material__form' onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Name:</label>
+        <h1> Add Resource here</h1>
+        <label className='Mlabel' htmlFor="name">Name:</label>
+        <br/>
         <input
+          className='Minput'
           type="text"
           id="name"
           value={name}
@@ -49,8 +56,10 @@ const CreateMaterialForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="content">Content:</label>
+        <label className='Mlabel' htmlFor="content">Content:</label>
+        <br/>
         <textarea
+          className='Minput'
           id="content"
           value={content}
           onChange={(event) => setContent(event.target.value)}

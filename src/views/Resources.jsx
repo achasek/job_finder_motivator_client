@@ -9,10 +9,11 @@ import { ConstContext } from '../App';
 
 const Resources = () => {
   const [materials, setMaterials] = useState([]);
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently, user } = useAuth0();
   const { BACK_URI } = useContext(ConstContext);
 
   useEffect(() => {
+    console.log({user});
     const getMaterials = async () => {
       const token = await getAccessTokenSilently();
       const config = {
@@ -41,7 +42,7 @@ const Resources = () => {
         <div className='resources__container'>
             <h1>Your Resources</h1>
       {materials?.map((material) => (
-        <div key={material._id}>
+        <div className='each__resource' key={material._id}>
           <h2>{material.name}</h2>
           <p>{material.content}</p>
           <p>

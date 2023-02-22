@@ -12,11 +12,11 @@ import { AiFillFileExcel } from 'react-icons/ai';
 import { VscSettingsGear } from 'react-icons/vsc';
 import { BiLogOut } from 'react-icons/bi';
 import Settings from './Settings';
-
+import { Link } from 'react-router-dom';
 
 const ProfileSideBar = () => {
     const {open, setOpen, setModalType} = useContext(DataContext)
-    
+
     function settingsModal() {
         setOpen(true)
         setModalType(<Settings />)
@@ -24,6 +24,7 @@ const ProfileSideBar = () => {
     }
 
   return (
+    <div className='sidebar__block'>
     <div className='sidebar__container'>
         <div className="nav-list__container">
 
@@ -38,8 +39,8 @@ const ProfileSideBar = () => {
             <div><a href='http://www.google.com' ><BsKanban/> Kanban </a></div>
             <div><a href='http://www.google.com' ><AiOutlineCalendar /> Calendar </a></div>
             <div><a href='http://www.google.com' ><BiNotepad /> Applications </a></div>
-            <div><a href='/add/resources' ><BsPen /> Materials </a></div>
-            <div><a href='/resources' ><GrResources /> Resources </a></div>
+            <div><Link to='/add/resources' ><BsPen /> Materials </Link></div>
+            <div><Link to='/resources' ><GrResources /> Resources </Link></div>
             </div>
 
             <h4 className='titles'>Other</h4>
@@ -50,6 +51,7 @@ const ProfileSideBar = () => {
             <div className='logo__sidebar'> </div>
             </div>
         </div>
+    </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@
   max-height: 1000px;
   overflow-y: scroll;
   padding-bottom: 20px;
-  padding-left: 50px;
+  padding-left: 60px;
   padding-right: 50px;
   
 }
@@ -15,7 +15,7 @@
 .TD { grid-area: todo; }
 .dash__apps { grid-area: apps; }
 .profile-page__container {
-  background-color: var(--TealBlue);
+  background-color: white;
   border: 1px solid black;
   border-radius: 100px;
   display: grid;
@@ -27,12 +27,20 @@
   justify-content: center;
   overflow-y: scroll;
   margin-bottom: 50px;
-  margin-top: 90px;
+  /* margin-top: 90px; */
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
   min-width: fit-content;
   }
+
+  /* .sidebar__block{
+    height: 100px;
+    width: 100px;
+    margin-right: auto;
+    background-color: black;
+    border: 2px solid red;
+  } */
 
   .sidebar__container {
     position: fixed;

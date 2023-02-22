@@ -9,8 +9,7 @@
 }
 
 .resources__container{
-    background-image: url('../Img/ThriverSidebarArt.jpg');
-    background-size: cover;
+    background-color: white;
     width: fit-content;
     height: fit-content;
     padding: 100px;
@@ -18,4 +17,18 @@
     margin-right: auto;
     border: 1px solid black;
     border-radius: 20%;
+}
+
+.create__material{
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--TealBlue);
+    border: 1px solid black;
+}
+
+.material__form{
+    margin: auto;
+    border: 1px solid black;
 }

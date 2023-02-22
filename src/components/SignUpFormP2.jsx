@@ -10,19 +10,19 @@ export default function SignUpFormP2({ formData, setFormData, handleSubmit, hand
     <div>
       <div>
         <label>Q 1</label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+        <input type="text" name="name" value={formData.name} onChange={handleChange} />
       </div>
       <div>
         <label>Q 2</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+        <input type="email" name="email" value={formData.email} onChange={handleChange} />
       </div>
       <div>
         <label>Q 3</label>
-        <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+        <input type="password" name="password" value={formData.password} onChange={handleChange} />
       </div>
       <div>
         <label>Q 4</label>
-        <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+        <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} />
       </div>
     </div>
     <div>

@@ -92,14 +92,8 @@ export default function SignUp() {
     return (
         <>
             <form autoComplete="off" onSubmit={handleSubmit}>
-                { pageData?.map((page, idx)=>{
-                    return (
-                        <div key={idx}>
-                            <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} />
-                        </div>
-                    )
-                })
-                }
+                { formData && pageData ? <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} /> : null }
+                
                 <button type="button" onClick={(e)=>{handleNext(e)}} disabled={(currPage+1 < pageData.length)?false:true}>Next</button>           
                 <button type="submit" onClick={(e)=>{handleSubmit(e)}} disabled={(currPage+1 < pageData.length)?true:false}>Create</button>
             </form>

@@ -28,7 +28,7 @@ const { BACK_URI } = useContext(ConstContext);
   };
 
   return (
-    <button onClick={handleDelete}>Delete</button>
+    <button className='btn__delete' onClick={handleDelete}>Delete</button>
   );
 };
 

@@ -19,6 +19,8 @@
   border: 1px solid black;
   border-radius: 100px;
   display: grid;
+  row-gap: 30px;
+  column-gap: 30px;
   grid-template-areas: 
   'apps todo todo'
   'kanban kanban calendar';

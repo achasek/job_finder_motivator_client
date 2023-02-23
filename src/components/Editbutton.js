@@ -40,15 +40,15 @@ const EditButton = ({ material }) => {
   };
 
   if (!editing) {
-    return <button className='btn1' onClick={() => setEditing(true)}>Edit</button>;
+    return <button className='btn__edit' onClick={() => setEditing(true)}>Edit</button>;
   }
 
   return (
     <>
-      <input value={name} onChange={(e) => setName(e.target.value)} />
-      <input value={content} onChange={(e) => setContent(e.target.value)} />
+      <input placeholder='New Title' onChange={(e) => setName(e.target.value)} />
+      <input placeholder='New Description' onChange={(e) => setContent(e.target.value)} />
       <br />
-      <button onClick={handleEdit}>Save</button>
+      <button className='btn__save' onClick={handleEdit}>Save</button>
     </>
   );
 };

@@ -46,14 +46,14 @@ const Resources = () => {
       <div className="resources__container">
         {materials?.map((material) => (
           <div className="each__resource" key={material._id}>
-            <EditButton material={material} />
-            <DeleteButton material={material} onDelete={handleDelete} />
             <h2>{material.name}</h2>
             <p>{material.content}</p>
             <p>
               Likes: {material.likes} | Dislikes: {material.dislikes} | Comments: {material.comments.length}
             </p>
             <hr />
+            <EditButton material={material} />
+            <DeleteButton material={material} onDelete={handleDelete} />
           </div>
         ))}
       </div>

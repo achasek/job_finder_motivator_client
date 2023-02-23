@@ -21,6 +21,15 @@ const pageData = [
             type: "checkbox",
         }
     ], 
+    [   //page 2 data
+        {
+            question: "Do you want the social dashboard?",
+            id: "isSocialDash",
+            label: "Social Dashboard",
+            type: "checkbox",
+            options: [],
+        }
+    ], 
     // [   //page 2 data
     //     {
     //         question: "Do you want the social dashboard?",
@@ -59,7 +68,12 @@ export default function SignUp() {
         console.log("this is the form data: ", formData)
     };
 
-    const handleSubmit = async () => {
+    const handleClick = (e) => {
+        // setFormData([e.target.name]: )
+    };
+
+    const handleSubmit = async (evt) => {
+        evt.preventDefault();
         const token = await getAccessTokenSilently();
         const config = {
             url: `${BACK_URI}/api/user/update`,

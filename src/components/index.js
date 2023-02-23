@@ -8,3 +8,4 @@ export { default as LoginButton } from './buttons/login-button';
 export { default as LogoutButton } from './buttons/logout-button';
 export { default as Calendar } from './Calendar';
 export { default as DashboardApps } from './DashboardApps';
+export { default as SignUpForm } from './SignUpForm'

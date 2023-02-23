@@ -19,6 +19,8 @@
   border: 1px solid black;
   border-radius: 100px;
   display: grid;
+  row-gap: 30px;
+  column-gap: 30px;
   grid-template-areas: 
   'apps todo todo'
   'kanban kanban calendar';
@@ -27,11 +29,10 @@
   justify-content: center;
   overflow-y: scroll;
   margin-bottom: 50px;
-  /* margin-top: 90px; */
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
-  min-width: fit-content;
+  width: fit-content;
   }
 
   /* .sidebar__block{
@@ -201,13 +202,13 @@
       padding-right: 50px;
     }
 
-    .TD{
+    /* .TD{
       padding-left: 0;
       margin-bottom: 10px;
     }
 
     .CLN{
-      padding: 0;
+      padding;
     }
 
     .KB{
@@ -220,5 +221,5 @@
       padding: 10px;
       margin-left: 40px;
     }
-  
+   */
   }

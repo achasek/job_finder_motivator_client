@@ -99,9 +99,9 @@ export default function SignUp() {
     return (
         <>
             <form autoComplete="off" onSubmit={handleSubmit}>
+                { formData && pageData ? <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} /> : null 
                 { pageData &&
                     <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} />
-                }
                 
                 <button type="button" onClick={(e)=>{handleNext(e)}} disabled={(currPage+1 < pageData.length)?false:true}>Next</button>           
                 <button type="submit" disabled={(currPage+1 < pageData.length)?true:false}>Create</button>

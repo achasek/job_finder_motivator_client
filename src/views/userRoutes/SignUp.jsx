@@ -1,4 +1,4 @@
-import SignUpForm from "../../components/SignUpForm";
+import { SignUpForm } from "../../components";
 import { useState, useContext, useEffect } from "react";
 import { ConstContext, UserContext } from "../../App";
 import { useAuth0 } from "@auth0/auth0-react";

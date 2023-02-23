@@ -1,4 +1,4 @@
-import { SignUpForm } from "../../components";
+import SignUpForm from "../../components/SignUpForm";
 import { useState, useContext, useEffect } from "react";
 import { ConstContext, UserContext } from "../../App";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -14,58 +14,52 @@ const pageData = [
             label: "Display Name",
             type: "text",
         },
-        // {
-        //     question: "Do you want the social dashboard?",
-        //     id: "isSocialDash",
-        //     label: "Social Dashboard",
-        //     type: "checkbox",
-        // }
-    ], 
-    [   //page 2 data
         {
             question: "Do you want the social dashboard?",
             id: "isSocialDash",
             label: "Social Dashboard",
             type: "checkbox",
         }
-    ],
+    ], 
+    // [   //page 2 data
+    //     {
+    //         question: "Do you want the social dashboard?",
+    //         id: "isSocialDash",
+    //         label: "Social Dashboard",
+    //         type: "checkbox",
+    //     }
+    // ],
 ]
 
 export default function SignUp() {
+    const [showSignUpFormP2, setShowSignUpFormP2] = useState(false);
     const [currPage, setCurrPage] = useState(0);
     const [formData, setFormData] = useState({
       display_name: '',
-      isSocialDash: false,
     });
     const { BACK_URI } = useContext(ConstContext);
     const { currUser, setCurrUser } = useContext(UserContext);
     const { getAccessTokenSilently } = useAuth0();
     const navigate = useNavigate();
 
-    const handleNext = (evt) => {
+    const handleNext = () => {
         if(currPage + 1 < pageData.length)
             setCurrPage(currPage+1);
     };
 
-    const handleChange = (evt, type) => {
+    const handleChange = (evt) => {
         // debugger;
         const tmpData = {...formData};
-        switch (type) {
-            case "checkbox": 
-                tmpData[evt.target.name] = evt.target.checked;
-                break;
-            case "text":
-                tmpData[evt.target.name] = evt.target.value;
-                break;
-            default:
-                console.info('INFO: onChange type not handled. SignUp.jsx');
+        if ("value" != '') {
+            tmpData[evt.target.name] = evt.target.value;
+        } else {
+            tmpData[evt.target.name] = evt.target.checked;
         }
         setFormData(tmpData);
         console.log("this is the form data: ", formData)
     };
 
-    const handleSubmit = async (evt) => {
-        evt.preventDefault();
+    const handleSubmit = async () => {
         const token = await getAccessTokenSilently();
         const config = {
             url: `${BACK_URI}/api/user/update`,
@@ -76,13 +70,13 @@ export default function SignUp() {
             },
             data: formData
         }
+        debugger;
         console.log({config});
         const { data, status, error } = await callExternalApi({config});
         console.log({data}, {status}, {error});
-        // debugger;
         if (data) {
             setCurrUser(data.user);
-            navigate('/profile');
+            navigate('/');
         }
         if (error) {
             console.error(error);
@@ -92,19 +86,16 @@ export default function SignUp() {
     useEffect(()=>{
         setFormData({
             display_name: currUser.display_name,
-            isSocialDash: currUser.isSocialDash,
         });
     },[]);
 
     return (
         <>
             <form autoComplete="off" onSubmit={handleSubmit}>
-                { formData && pageData ? <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} /> : null 
-                { pageData &&
-                    <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} />
+                { formData && pageData ? <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} /> : null }
                 
                 <button type="button" onClick={(e)=>{handleNext(e)}} disabled={(currPage+1 < pageData.length)?false:true}>Next</button>           
-                <button type="submit" disabled={(currPage+1 < pageData.length)?true:false}>Create</button>
+                <button type="submit" onClick={(e)=>{handleSubmit(e)}} disabled={(currPage+1 < pageData.length)?true:false}>Create</button>
             </form>
         </>
     )

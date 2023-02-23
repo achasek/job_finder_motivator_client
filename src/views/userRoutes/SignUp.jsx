@@ -14,12 +14,12 @@ const pageData = [
             label: "Display Name",
             type: "text",
         },
-        // {
-        //     question: "Do you want the social dashboard?",
-        //     id: "isSocialDash",
-        //     label: "Social Dashboard",
-        //     type: "checkbox",
-        // }
+        {
+            question: "Do you want the social dashboard?",
+            id: "isSocialDash",
+            label: "Social Dashboard",
+            type: "checkbox",
+        }
     ], 
     [   //page 2 data
         {
@@ -27,6 +27,7 @@ const pageData = [
             id: "isSocialDash",
             label: "Social Dashboard",
             type: "checkbox",
+            options: [],
         }
     ],
 ]
@@ -62,6 +63,10 @@ export default function SignUp() {
         }
         setFormData(tmpData);
         console.log("this is the form data: ", formData)
+    };
+
+    const handleClick = (e) => {
+        // setFormData([e.target.name]: )
     };
 
     const handleSubmit = async (evt) => {

@@ -8,11 +8,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //comment both lines to switch from StrictMode to allow new user path. 
   //strict mode double mounts components.
-  // <React.StrictMode> 
+  <React.StrictMode> 
     <Auth0ProviderWithConfig>
       <App />
     </Auth0ProviderWithConfig>
-  // </React.StrictMode> 
+  </React.StrictMode> 
   //comment both lines to switch from StrictMode to allow new user path. 
   //strict mode double mounts components.
 );

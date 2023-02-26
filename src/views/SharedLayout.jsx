@@ -9,6 +9,7 @@ const SharedLayout = () => {
             <header className="nav__header">
                 <div className="nav__area">
                     <div className="nav__logo"></div>
+                    <div className="nav__block"></div>
                     <NavLink to="/" className='nav__link'>Home</NavLink>
                     <NavLink to="/about" className='nav__link'>About</NavLink>
                     <NavLink to="/profile" className='nav__link'>Profile</NavLink>

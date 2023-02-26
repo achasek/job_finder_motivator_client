@@ -1,6 +1,6 @@
 .calendarWrapper{
     display: flex;
-    background-Color: rgb(254, 250, 250);
+    background-color: rgb(240, 239, 199);
     border-Radius: 50px;
     box-Shadow: 0 0 15px;
     padding: 20px;
@@ -8,7 +8,7 @@
 }
 
 .calendar__container{
-    background-Color: white;
+    background-color: rgb(240, 239, 199);
     height: fit-content;
     width: 350px;
 }

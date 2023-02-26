@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 import { ConstContext } from '../App';
 import { callExternalApi } from '../services/external-api.service';
-import "../styles/resources.css";
+import "../styles/material.css";
 import { useNavigate } from "react-router-dom";
 
 const CreateMaterialForm = () => {
@@ -18,7 +18,7 @@ const CreateMaterialForm = () => {
     event.preventDefault();
     const token = await getAccessTokenSilently();
     const config = {
-      url: `${BACK_URI}/api/material`,
+      url: `${BACK_URI}/api/material/`,
       method: 'POST',
       headers: {
         'content-type': 'application/json',

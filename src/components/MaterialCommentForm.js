@@ -32,15 +32,6 @@ const MaterialCommentForm = ({ material }) => {
     if (status.code === 201) {
       console.log('Comment created', {data}, '------', {status});
       navigate('/resources');
-    //   setComment('');
-      
-    //   const newComment = new MaterialComment({
-    //     owner: user._id,
-    //     title: material.title,
-    //     content: comment,
-    //     materialId: material._id,
-    //   });
-    //   await newComment.save();
     } else {
       console.error("This is your error:", {data}, {status}, {material});
     }

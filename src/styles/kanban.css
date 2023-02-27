@@ -1,6 +1,5 @@
 .kanban__container {
     position: relative;
-    background-color: #ffffff;
     max-width: fit-content;
     padding-left: 30px;
     padding-right: 30px;
@@ -34,7 +33,7 @@
     height: fit-content;
     padding-bottom: 100px;
     border-radius: 20px;
-    background-color: white;
+    background-color: rgb(240, 239, 199);
     box-shadow: 0px 0px 25px;
     margin: 10px;
     min-width: 200px;
@@ -52,6 +51,7 @@
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgb(255, 255, 255);
 }
 
 .kanban-listitem__draggable:hover {

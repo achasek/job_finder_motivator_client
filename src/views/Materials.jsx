@@ -4,7 +4,8 @@ import { callExternalApi } from '../services/external-api.service';
 import { ProfileSideBar } from '../components';
 import EditButton from '../components/Editbutton';
 import DeleteButton from '../components/Deletebutton';
-import '../styles/resources.css';
+import MaterialCommentForm from '../components/MaterialCommentForm';
+import '../styles/material.css';
 import { ConstContext } from '../App';
 
 const Resources = () => {
@@ -42,20 +43,22 @@ const Resources = () => {
   return (
     <div className="resources__page">
       <ProfileSideBar />
-        <h1 className='resource__title'>Your Resources</h1>
+        <h1 className='resource__title'> Materials</h1>
       <div className="resources__container">
-        {materials?.map((material) => (
-          <div className="each__resource" key={material._id}>
-            <h2>{material.name}</h2>
-            <p>{material.content}</p>
-            <p>
-              Likes: {material.likes} | Dislikes: {material.dislikes} | Comments: {material.comments.length}
-            </p>
-            <hr />
-            <EditButton material={material} />
-            <DeleteButton material={material} onDelete={handleDelete} />
-          </div>
-        ))}
+      {materials?.map((material) => (
+      <div className="each__resource" key={material._id}>
+        <h2>{material.name}</h2>
+        <p>{material.content}</p>
+        <p>
+          Likes: {material.likes} | Dislikes: {material.dislikes} | Comments: {material.comments.length}
+        </p>
+        <hr />
+        <MaterialCommentForm material={material} />
+        <hr />
+        <EditButton material={material} />
+        <DeleteButton material={material} onDelete={handleDelete} />
+      </div>
+      ))}
       </div>
     </div>
   );

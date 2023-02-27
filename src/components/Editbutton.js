@@ -29,12 +29,10 @@ const EditButton = ({ material }) => {
     if (status.code === 200) {
       console.log('Material updated:', data.post);
       navigate('/resources');
-      // Optional: Add a success message or trigger a rerender
     } else {
       console.error('Failed to update material:', status);
       navigate('/resources');
       setEditing(false);
-      // Optional: Add an error message
     }
     setEditing(false);
   };

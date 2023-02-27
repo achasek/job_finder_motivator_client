@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 30px;
-    row-gap: 30px;
+    row-gap: 10px;
 }
 
 .create__material{
@@ -61,7 +61,8 @@
     margin-left: 10px;
     margin-right: 10px;
     width: 250px;
-    height: fit-content;
+    height: 420px;
+    overflow-y: scroll;
 }
 
 .resource__title{
@@ -95,7 +96,7 @@
 }
 
 .btn__delete{
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
@@ -125,4 +126,32 @@
     border-radius: 10px;
     text-align: center;
     margin-top: 20px;
+}
+
+.comments__box{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.materials__Pcontainer{
+    background-color: rgb(6, 3, 3);
+    max-width: fit-content;
+    height: fit-content;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+.comment__author{
+    background-color: rgb(115, 157, 248);
+    width: fit-content;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

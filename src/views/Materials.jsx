@@ -46,15 +46,34 @@ const Resources = () => {
         <h1 className='resource__title'> Materials</h1>
       <div className="resources__container">
       {materials?.map((material) => (
+      <div className='materials__Pcontainer'>
       <div className="each__resource" key={material._id}>
         <h2>{material.name}</h2>
         <p>{material.content}</p>
+        {console.log("RIGHT HERE !!!!!",{material})}
         <p>
           Likes: {material.likes} | Dislikes: {material.dislikes} | Comments: {material.comments.length}
         </p>
-        <hr />
+        <hr /> 
         <MaterialCommentForm material={material} />
         <hr />
+          {material.comments.length > 0 && (
+            <div>
+            <h3>Scoll Comments Below:</h3>
+          <div className="comments__box">
+            {material.comments.map((comment) => (
+            <div key={comment._id}>
+              <div className='comment__author'>
+            <p>User: {comment.owner_name}</p>
+                </div>
+            <p>~ {comment.content}</p>
+            <hr />
+          </div>
+          ))}
+          </div>
+              </div>
+          )}
+      </div>
         <EditButton material={material} />
         <DeleteButton material={material} onDelete={handleDelete} />
       </div>

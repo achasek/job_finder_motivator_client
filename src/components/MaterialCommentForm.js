@@ -27,7 +27,7 @@ const MaterialCommentForm = ({ material }) => {
     };
     console.log(config)
     const { data, status } = await callExternalApi({ config });
-    if (status.code === 200) {
+    if (status.code === 201) {
       console.log('Comment created', {data}, '------', {status});
     //   setComment('');
       

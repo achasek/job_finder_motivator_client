@@ -137,11 +137,10 @@
 }
 
 .materials__Pcontainer{
-    background-color: rgb(6, 3, 3);
+    background-color: rgba(6, 3, 3, 0.728);
     max-width: fit-content;
     height: fit-content;
     padding-bottom: 10px;
-    padding-top: 5px;
     border-radius: 20px;
     border: 1px solid white;
 }
@@ -154,4 +153,8 @@
     padding-right: 10px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.material__title{
+    color: white;
 }

@@ -13,25 +13,26 @@ const Resources = () => {
   const { getAccessTokenSilently, user } = useAuth0();
   const { BACK_URI } = useContext(ConstContext);
 
+  const getMaterials = async () => {
+    const token = await getAccessTokenSilently();
+    const config = {
+      url: `${BACK_URI}/api/material/`,
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `bearer ${token}`,
+      },
+    };
+    const { data, status, error } = await callExternalApi({ config });
+    console.log({ status }, { data });
+    if (status.code === 200) {
+      console.log({ data: data.posts });
+      setMaterials(data.posts);
+    }
+  };
+
   useEffect(() => {
     console.log({ user });
-    const getMaterials = async () => {
-      const token = await getAccessTokenSilently();
-      const config = {
-        url: `${BACK_URI}/api/material/`,
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          'Authorization': `bearer ${token}`,
-        },
-      };
-      const { data, status, error } = await callExternalApi({ config });
-      console.log({ status }, { data });
-      if (status.code === 200) {
-        console.log({ data: data.posts });
-        setMaterials(data.posts);
-      }
-    };
     getMaterials();
   }, []);
   
@@ -47,15 +48,17 @@ const Resources = () => {
       <div className="resources__container">
       {materials?.map((material) => (
       <div className='materials__Pcontainer'>
+        <h2 className='material__title'>{material.name}</h2>
       <div className="each__resource" key={material._id}>
-        <h2>{material.name}</h2>
+        <h3>Content :</h3>
         <p>{material.content}</p>
+        <hr />
         {console.log("RIGHT HERE !!!!!",{material})}
         <p>
-          Likes: {material.likes} | Dislikes: {material.dislikes} | Comments: {material.comments.length}
+          Likes: {material.likes}| Comments: {material.comments.length}
         </p>
         <hr /> 
-        <MaterialCommentForm material={material} />
+        <MaterialCommentForm material={material} getMaterials={getMaterials} />
         <hr />
           {material.comments.length > 0 && (
             <div>
@@ -74,8 +77,8 @@ const Resources = () => {
               </div>
           )}
       </div>
-        <EditButton material={material} />
-        <DeleteButton material={material} onDelete={handleDelete} />
+        <EditButton material={material} getMaterials={getMaterials} />
+        <DeleteButton material={material} onDelete={handleDelete} getMaterials={getMaterials} />
       </div>
       ))}
       </div>

@@ -27,7 +27,7 @@ const Resources = () => {
       };
       const { data, status, error } = await callExternalApi({ config });
       console.log({ status }, { data });
-      if (status.code === 200) {
+      if (status?.code === 200) {
         console.log({ data: data.posts });
         setMaterials(data.posts);
       }

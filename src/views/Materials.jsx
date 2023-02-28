@@ -7,10 +7,11 @@ import DeleteButton from '../components/Deletebutton';
 import MaterialCommentForm from '../components/MaterialCommentForm';
 import '../styles/material.css';
 import { ConstContext } from '../App';
+import MaterialLikeButton from '../components/LikeMaterialButton';
 
 const Resources = () => {
-  const [materials, setMaterials] = useState([]);
   const { getAccessTokenSilently, user } = useAuth0();
+  const [materials, setMaterials] = useState([]);
   const { BACK_URI } = useContext(ConstContext);
 
   const getMaterials = async () => {
@@ -32,13 +33,31 @@ const Resources = () => {
   };
 
   useEffect(() => {
-    console.log({ user });
+    console.log('Hello');
     getMaterials();
   }, []);
   
   const handleDelete = (materialId) => {
     const updatedMaterials = materials.filter((material) => material._id !== materialId);
     setMaterials(updatedMaterials);
+  };
+  
+  const handleLike = async (materialId) => {
+    const token = await getAccessTokenSilently();
+    const config = {
+      url: `${BACK_URI}/api/material/${materialId}/like`,
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `bearer ${token}`,
+      },
+    };
+    const { data, status, error } = await callExternalApi({ config });
+    console.log({ status }, { data });
+    if (status.code === 200) {
+      console.log({ data });
+      getMaterials();
+    }
   };
 
   return (
@@ -49,20 +68,22 @@ const Resources = () => {
       {materials?.map((material) => (
       <div className='materials__Pcontainer'>
         <h2 className='material__title'>{material.name}</h2>
+        <MaterialLikeButton material={material} getMaterials={getMaterials} />
+        <br/>
       <div className="each__resource" key={material._id}>
         <h3>Content :</h3>
         <p>{material.content}</p>
         <hr />
         {console.log("RIGHT HERE !!!!!",{material})}
         <p>
-          Likes: {material.likes}| Comments: {material.comments.length}
+          Likes: {material.likes.length} <br/> Comments: {material.comments.length}
         </p>
         <hr /> 
         <MaterialCommentForm material={material} getMaterials={getMaterials} />
         <hr />
           {material.comments.length > 0 && (
             <div>
-            <h3>Scoll Comments Below:</h3>
+            <h3>Scroll Comments Below:</h3>
           <div className="comments__box">
             {material.comments.map((comment) => (
             <div key={comment._id}>

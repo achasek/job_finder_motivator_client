@@ -13,6 +13,8 @@ const EditButton = ({ material, getMaterials }) => {
   const [editing, setEditing] = useState(false);
   const navigate = useNavigate();
 
+  console.log('User:   ',user)
+  console.log('Material: ', material)
 
   const handleEdit = async () => {
     const token = await getAccessTokenSilently();
@@ -38,8 +40,12 @@ const EditButton = ({ material, getMaterials }) => {
     setEditing(false);
   };
 
+//   if (material._id !== user)
+
   if (!editing) {
-    return <button className='btn__edit' onClick={() => setEditing(true)}>Edit</button>;
+    return(
+    <button className='btn__edit' onClick={() => setEditing(true)}>Edit</button>
+    )
   }
 
   return (

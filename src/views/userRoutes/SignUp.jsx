@@ -5,15 +5,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { callExternalApi } from "../../services/external-api.service";
 import { useNavigate } from "react-router-dom";
 import { GrTestDesktop } from "react-icons/gr";
-// import "../styles/components/SignUpForm.css"
+import '../../styles/views/SignUp.css';
 
 const pageData = [
     [   //page 1 data
         {
             className: 'placeHolder',
-            question: "What would you like to be called?",
+            question: "What would you like your display name to be?",
             id: "display_name",
-            label: "Display Name",
+            label: "",
             type: "text",
         },
     ], 
@@ -21,7 +21,7 @@ const pageData = [
         {
             question: "Do you want the social dashboard?",
             id: "isSocialDash",
-            label: "Social Dashboard",
+            label: "",
             type: "checkbox",
         }
     ], 
@@ -51,12 +51,14 @@ export default function SignUp() {
       display_name: '',
       interests: '',
     });
+    const [isActive, setIsActive] = useState(false);
     const { BACK_URI } = useContext(ConstContext);
     const { currUser, setCurrUser } = useContext(UserContext);
     const { getAccessTokenSilently } = useAuth0();
     const navigate = useNavigate();
 
     const handleClick = (e) => {
+        setIsActive(!isActive);
         e.preventDefault();
         const tmpData = {...formData};
         console.log({tmpData},e, e.target.name, e.target.innerText)
@@ -129,10 +131,12 @@ export default function SignUp() {
     return (
         <>
             <form autoComplete="off" onSubmit={handleSubmit}>
-                { formData && pageData ? <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} handleClick={handleClick}/> : null }
+                { formData && pageData ? <SignUpForm pageData={pageData[currPage]} formData={formData} onChange={handleChange} handleClick={handleClick} isActive={isActive} /> : null }
                 
-                <button type="button" onClick={(e)=>{handleNext(e)}} disabled={(currPage+1 < pageData.length)?false:true}>Next</button>           
-                <button type="submit" onClick={(e)=>{handleSubmit(e)}} disabled={(currPage+1 < pageData.length)?true:false}>Create</button>
+                <div className="formBtns">
+                    <button className="nextBtn" type="button" onClick={(e)=>{handleNext(e)}} disabled={(currPage+1 < pageData.length)?false:true}>Next</button>
+                    <button className="createBtn" type="submit" onClick={(e)=>{handleSubmit(e)}} disabled={(currPage+1 < pageData.length)?true:false}>Create</button>
+                </div>
             </form>
         </>
     )

@@ -99,6 +99,7 @@
     background-color: grey;
     color: rgb(220, 220, 220);
     cursor: pointer;
+    border: none;
 }
 
 .activeBtns {
@@ -108,4 +109,5 @@
 
 .activeBtns:hover {
     cursor: pointer;
+    border: none;
 }

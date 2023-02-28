@@ -14,6 +14,7 @@ const Resources = () => {
   const [materials, setMaterials] = useState([]);
   const { BACK_URI } = useContext(ConstContext);
 
+<<<<<<< HEAD
   const getMaterials = async () => {
     const token = await getAccessTokenSilently();
     const config = {
@@ -23,6 +24,26 @@ const Resources = () => {
         'content-type': 'application/json',
         'Authorization': `bearer ${token}`,
       },
+=======
+  useEffect(() => {
+    console.log({ user });
+    const getMaterials = async () => {
+      const token = await getAccessTokenSilently();
+      const config = {
+        url: `${BACK_URI}/api/material/`,
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          'Authorization': `bearer ${token}`,
+        },
+      };
+      const { data, status, error } = await callExternalApi({ config });
+      console.log({ status }, { data });
+      if (status?.code === 200) {
+        console.log({ data: data.posts });
+        setMaterials(data.posts);
+      }
+>>>>>>> 350f8b02120cf8950a71b4f5e0139808bfbd0dbe
     };
     const { data, status, error } = await callExternalApi({ config });
     console.log({ status }, { data });

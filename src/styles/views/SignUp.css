@@ -1,0 +1,16 @@
+.formBtns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid red;
+}
+
+.nextBtn {
+    min-width: 10%;
+    min-height: 60px;
+}
+
+.createBtn {
+    min-width: 10%;
+    min-height: 60px;
+}

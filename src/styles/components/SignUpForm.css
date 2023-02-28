@@ -1,8 +1,113 @@
-.biggestDiv {
-    border: 5px solid red;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg,
+            rgba(217, 237, 146, 1) 0%,
+            rgba(153, 217, 140, 1) 25%,
+            rgba(82, 182, 154, 1) 50%,
+            rgba(22, 138, 173, 1) 75%,
+            rgba(30, 96, 145, 1) 100%);
+    animation: AnimateBG 20s ease infinite;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 10px;
 }
 
-.secondDiv {
-    margin: 200px;
-    padding-top: 500px;
+@keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: rgb(250, 250, 250, 0.3);
+    padding: 3em;
+    height: 320px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.form>p {
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)
+}
+
+.form>input[type=text] {
+    background: transparent;
+    width: 300px;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: none;
+    border-left: 1px solid rgb(250, 250, 250, 0.3);
+    border-top: 1px solid rgb(250, 250, 250, 0.3);
+    border-radius: 5000px;
+    backdrop-filter: blur(5px);
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+    
+.form>input[type=text]:hover {
+    box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.07);
+}
+
+.form>input[type=text]:focus {
+    border: 1px solid black;
+}
+
+
+::placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.form>input[type=checkbox] {
+    transform: scale(3);
+    margin: 40px 15px 0 0;
+}
+
+.toggleBtns, .activeBtns {
+    font-size: xx-large;
+    border-radius: 50px;
+    border: none;
+    padding: 8%;
+}
+
+.toggleBtns:hover {
+    background-color: grey;
+    color: rgb(220, 220, 220);
+    cursor: pointer;
+    border: none;
+}
+
+.activeBtns {
+    background-color: grey;
+    color: rgb(220, 220, 220);
+}
+
+.activeBtns:hover {
+    cursor: pointer;
+    border: none;
 }

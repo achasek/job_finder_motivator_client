@@ -5,7 +5,7 @@ import { ConstContext } from '../App';
 import { useNavigate } from "react-router-dom";
 
 
-const EditButton = ({ material }) => {
+const EditButton = ({ material, getMaterials }) => {
   const { getAccessTokenSilently, user } = useAuth0();
   const { BACK_URI } = useContext(ConstContext);
   const [name, setName] = useState(material.name);
@@ -13,6 +13,8 @@ const EditButton = ({ material }) => {
   const [editing, setEditing] = useState(false);
   const navigate = useNavigate();
 
+  console.log('User:   ',user)
+  console.log('Material: ', material)
 
   const handleEdit = async () => {
     const token = await getAccessTokenSilently();
@@ -28,6 +30,7 @@ const EditButton = ({ material }) => {
     const { data, status } = await callExternalApi({ config });
     if (status.code === 200) {
       console.log('Material updated:', data.post);
+      getMaterials();
       navigate('/resources');
     } else {
       console.error('Failed to update material:', status);
@@ -37,8 +40,12 @@ const EditButton = ({ material }) => {
     setEditing(false);
   };
 
+//   if (material._id !== user)
+
   if (!editing) {
-    return <button className='btn__edit' onClick={() => setEditing(true)}>Edit</button>;
+    return(
+    <button className='btn__edit' onClick={() => setEditing(true)}>Edit</button>
+    )
   }
 
   return (

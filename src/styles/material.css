@@ -109,6 +109,18 @@
     font-weight: bold;
 }
 
+.like__button{
+    width: fit-content;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: greenyellow;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
 .post__comment{
     border-radius: 20px;
     padding: 10px;
@@ -132,26 +144,32 @@
     background-color: white;
     border: 1px solid black;
     border-radius: 20px;
-    height: 300px;
+    height: fit-content;
+    max-height: 300px;
     overflow-y: scroll;
 }
 
 .materials__Pcontainer{
-    background-color: rgb(6, 3, 3);
+    background-color: rgba(6, 3, 3, 0.728);
     max-width: fit-content;
     height: fit-content;
     padding-bottom: 10px;
-    padding-top: 5px;
     border-radius: 20px;
     border: 1px solid white;
 }
 
 .comment__author{
     background-color: rgb(115, 157, 248);
+    color: rgb(0, 0, 0);
+    font-style: italic;
     width: fit-content;
     border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.material__title{
+    color: white;
 }

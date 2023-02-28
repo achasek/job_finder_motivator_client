@@ -21,7 +21,7 @@ export default function DashboardApps(){
 
   <div className='tamagatchi'>
   <h3 className='app__title'>tamagatchi</h3>
-  <p>dinosaur</p>
+  <div className='dino__img'></div>
   </div>
 
  </div>

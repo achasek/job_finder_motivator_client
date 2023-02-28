@@ -124,13 +124,19 @@
 .like__button{
     width: fit-content;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: greenyellow;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+    /* padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 10px; */
+}
+
+.like__box{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .post__comment{
@@ -143,6 +149,7 @@
     margin-left: 30px;
     margin-bottom: 10px;
 }
+
 
 .comment__box{
     width: 150px;
@@ -197,4 +204,12 @@
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
+}
+
+button:hover{
+    border: 2px solid rgb(68, 102, 255);
+}
+
+.labels{
+    color: white;
 }

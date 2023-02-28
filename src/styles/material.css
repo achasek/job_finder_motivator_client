@@ -82,10 +82,22 @@
     background-color: yellow;
 }
 
+.btn__cancel{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .btn__save{
     margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
@@ -161,6 +173,7 @@
 .comment__author{
     background-color: rgb(115, 157, 248);
     color: rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
     font-style: italic;
     width: fit-content;
     border-radius: 20px;
@@ -172,4 +185,16 @@
 
 .material__title{
     color: white;
+    font-weight: bold;
+}
+
+.content__container{
+    background-color: white;
+    border: 1px solid black;
+    width: 200px;
+    height: fit-content;
+    overflow: scroll;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -94,3 +94,12 @@
     }
   }
   
+  .app__buttonP{
+    background-color: white;
+    border-radius: 20px;
+  }
+  .app__buttonM{
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 10px;
+  }

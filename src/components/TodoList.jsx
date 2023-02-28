@@ -27,9 +27,7 @@ export default function TodoList(){
     const handleGetTasks = async () => {
       const token = await getAccessTokenSilently();
       const config = {
-          // change
           url: `${BACK_URI}/api/task/`,
-          // change to update method
           method: "GET",
           headers: {
               "content-type": "application/json",
@@ -38,11 +36,6 @@ export default function TodoList(){
       }
       const { data, status, error } = await callExternalApi({config});
       if (status.code === 200){
-        // axios.get(`${BACK_URI}/api/user/tasks/${email}`)
-        // .then(response => {
-        //   console.log(response.data.userTasks)
-        //   setUserTasks(response.data.userTasks)
-        // })
         console.log({data: data.tasks});
         setUserTasks(data.tasks);
       }
@@ -72,7 +65,6 @@ export default function TodoList(){
           <div className='top__bar'>
         <h1>Tasks</h1>
         <div className='task__btns'>
-        <div onClick={kanbanModal} className='kanban'><BsKanban/></div>
         <div onClick={postModal} className='add__btn'>+</div>
         </div>
         </div>

@@ -48,7 +48,6 @@ const ProfileSideBar = () => {
             <div><a className='sidebar__text' href='http://www.google.com' ><AiFillFileExcel /> Report an issue </a></div>
             <div style={{cursor:"pointer"}} onClick={settingsModal}><a className='sidebar__text' href='http://www.google.com' ><VscSettingsGear onClick={settingsModal}/> Settings </a></div>
             <div><a className='sidebar__text' href='http://www.google.com' ><BiLogOut /> Sign out </a></div>
-            <div className='logo__sidebar'> </div>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@
 
 .kanban__wrapper {
     display: flex;
-    height: 350px;
+    height: 250px;
     gap: 2rem;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,6 @@
 }
 
 .kanban__wrapper h1 {
-   /* margin-left: 38%; */
    border-bottom: 3px solid black;
    width: fit-content;
 }
@@ -31,11 +30,10 @@
 .kanban-inside__containers {
     text-align: center;
     height: fit-content;
-    padding-bottom: 100px;
+    padding-bottom: 25px;
     border-radius: 20px;
     background-color: rgb(240, 239, 199);
     box-shadow: 0px 0px 25px;
-    margin: 10px;
     min-width: 200px;
 }
 

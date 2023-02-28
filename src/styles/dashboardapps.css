@@ -76,10 +76,6 @@
   /* ========================================= Media Query MEDIUM ========================================== */
 
   @media screen and (max-width: 1024px) {
-    .applications__container{
-        
-
-    }
 
     .applications__amount { grid-area: amnt; }
     .applications__responses { grid-area: res; }

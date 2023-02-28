@@ -49,12 +49,6 @@ function TodoListForm(props) {
     console.log({status});
     if (data){
       console.log({task: data.task});
-    // axios.put(`${BACK_URI}/api/user/${email}/createtask`, data)
-    // .then(response => {
-    //   console.log(response)
-    // }).catch(err => {
-    //   console.log(err)
-    // })
     } else {
       console.error(error);
     }
@@ -69,6 +63,7 @@ function TodoListForm(props) {
       <div className='form'>
          <input className='todo__input' onChange={(e) => handleTaskName(e)} type='text' id='todo-input' placeholder='New task'></input>
           <input className='todo__input' onChange={(e) => handleTask(e)} type='text' id='todo-input' placeholder='New task desciption'></input>
+          <br/>
           <label className='todo__select-label'>Level Of Importance</label>
             <select className='todo__select'  onChange={(e) => handleImportance(e)} type='text' id='todo-select' placeholder='Level of importance'>
               <option value='Low' selected>Low</option>

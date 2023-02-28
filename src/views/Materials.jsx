@@ -14,7 +14,6 @@ const Resources = () => {
   const [materials, setMaterials] = useState([]);
   const { BACK_URI } = useContext(ConstContext);
 
-<<<<<<< HEAD
   const getMaterials = async () => {
     const token = await getAccessTokenSilently();
     const config = {
@@ -24,26 +23,6 @@ const Resources = () => {
         'content-type': 'application/json',
         'Authorization': `bearer ${token}`,
       },
-=======
-  useEffect(() => {
-    console.log({ user });
-    const getMaterials = async () => {
-      const token = await getAccessTokenSilently();
-      const config = {
-        url: `${BACK_URI}/api/material/`,
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          'Authorization': `bearer ${token}`,
-        },
-      };
-      const { data, status, error } = await callExternalApi({ config });
-      console.log({ status }, { data });
-      if (status?.code === 200) {
-        console.log({ data: data.posts });
-        setMaterials(data.posts);
-      }
->>>>>>> 350f8b02120cf8950a71b4f5e0139808bfbd0dbe
     };
     const { data, status, error } = await callExternalApi({ config });
     console.log({ status }, { data });
@@ -84,44 +63,48 @@ const Resources = () => {
   return (
     <div className="resources__page">
       <ProfileSideBar />
-        <h1 className='resource__title'> Materials</h1>
+      <h1 className='resource__title'> Materials</h1>
+        {/* -------------------------- Material title and Content section below ------------------------- */}
       <div className="resources__container">
-      {materials?.map((material) => (
-      <div className='materials__Pcontainer'>
-        <h2 className='material__title'>{material.name}</h2>
-        <MaterialLikeButton material={material} getMaterials={getMaterials} />
-        <br/>
-      <div className="each__resource" key={material._id}>
-        <h3>Content :</h3>
-        <p>{material.content}</p>
-        <hr />
-        {console.log("RIGHT HERE !!!!!",{material})}
-        <p>
-          Likes: {material.likes.length} <br/> Comments: {material.comments.length}
-        </p>
-        <hr /> 
-        <MaterialCommentForm material={material} getMaterials={getMaterials} />
-        <hr />
-          {material.comments.length > 0 && (
-            <div>
-            <h3>Scroll Comments Below:</h3>
-          <div className="comments__box">
-            {material.comments.map((comment) => (
-            <div key={comment._id}>
-              <div className='comment__author'>
-            <p>User: {comment.owner_name}</p>
+        {materials?.map((material) => (
+          <div className='materials__Pcontainer'>
+            <h2 className='material__title'>{material.name}</h2>
+            <MaterialLikeButton material={material} getMaterials={getMaterials} />
+            <br/>
+            <div className="each__resource" key={material._id}>
+              <h3>Content :</h3>
+              <p className='content__container'>{material.content}</p>
+              <hr />
+                {/* -------------------------- like and comment total section below ------------------------- */}
+              <p>
+                Likes: {material.likes.length} <br/> Comments: {material.comments.length}
+              </p>
+              <hr /> 
+              <MaterialCommentForm material={material} getMaterials={getMaterials} />
+              <hr />
+              {material.comments.length > 0 && (
+              <div>
+                {/* -------------------------- comments section below ------------------------- */}
+                <h3>Scroll Comments Below:</h3>
+                <div className="comments__box">
+                  {material.comments.map((comment) => (
+                  <div key={comment._id}>
+                    <div className='comment__author'>
+                      <p>User: {comment.owner_name}</p>
+                  </div>
+                <p>~ {comment.content}</p>
+                <hr />
+                <hr />
                 </div>
-            <p>~ {comment.content}</p>
-            <hr />
-          </div>
-          ))}
-          </div>
+              ))}
               </div>
+            </div>
           )}
-      </div>
+          </div>
+            {/* -------------------------- edit/delete section below ------------------------- */}
         <EditButton material={material} getMaterials={getMaterials} />
         <DeleteButton material={material} onDelete={handleDelete} getMaterials={getMaterials} />
-      </div>
+        </div>
       ))}
       </div>
     </div>

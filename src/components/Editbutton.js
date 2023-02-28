@@ -40,7 +40,11 @@ const EditButton = ({ material, getMaterials }) => {
     setEditing(false);
   };
 
-//   if (material._id !== user)
+  const handleCancel = () => {
+    setName(material.name);
+    setContent(material.content);
+    setEditing(false);
+  };
 
   if (!editing) {
     return(
@@ -50,10 +54,11 @@ const EditButton = ({ material, getMaterials }) => {
 
   return (
     <>
-      <input placeholder='New Title' onChange={(e) => setName(e.target.value)} />
-      <input placeholder='New Description' onChange={(e) => setContent(e.target.value)} />
+      <input placeholder='New Title' value={name} onChange={(e) => setName(e.target.value)} />
+      <input placeholder='New Description' value={content} onChange={(e) => setContent(e.target.value)} />
       <br />
       <button className='btn__save' onClick={handleEdit}>Save</button>
+      <button className='btn__cancel' onClick={handleCancel}>Cancel</button>
     </>
   );
 };

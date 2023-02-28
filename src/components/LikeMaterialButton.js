@@ -35,9 +35,12 @@ const handleLike = async () => {
   }, [material.likes, user.sub]);
 
   return (
-    <button className="like__button" onClick={handleLike}>
-      {isLiked ? `Liked` : `Like`}
-    </button>
+    <div className='like__box'>
+        <p>Click to Like this Post</p>
+        <button className="like__button" onClick={handleLike}>
+            <ion-icon size="large" name="happy-outline"></ion-icon>
+        </button>
+    </div>
   );
 };
 

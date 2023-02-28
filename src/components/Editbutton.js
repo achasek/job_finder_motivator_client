@@ -54,7 +54,12 @@ const EditButton = ({ material, getMaterials }) => {
 
   return (
     <>
+      <label className='labels'>New Title</label>
+      <br/>
       <input placeholder='New Title' value={name} onChange={(e) => setName(e.target.value)} />
+      <br/>
+      <label className='labels'>New Description</label>
+      <br/>
       <input placeholder='New Description' value={content} onChange={(e) => setContent(e.target.value)} />
       <br />
       <button className='btn__save' onClick={handleEdit}>Save</button>

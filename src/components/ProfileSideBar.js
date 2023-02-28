@@ -38,9 +38,9 @@ const ProfileSideBar = () => {
             <div className='tools__wrapper'>
             <div><a className='sidebar__text' href='http://www.google.com' ><BsKanban/> Kanban </a></div>
             <div><a className='sidebar__text' href='http://www.google.com' ><AiOutlineCalendar /> Calendar </a></div>
-            <div><Link className='sidebar__text' to='/add/resources' ><BiNotepad /> Add a Material </Link></div>
-            <div><Link className='sidebar__text' to='/resources' ><BsPen /> Materials </Link></div>
-            <div><Link className='sidebar__text' to='/' ><GrResources /> Resources </Link></div>
+            <div><Link className='sidebar__text' to='/add/resources' ><BsPen /> Add a Material </Link></div>
+            <div><Link className='sidebar__text' to='/resources' ><BiNotepad /> Materials </Link></div>
+            <div><Link className='sidebar__text' to='/' ><ion-icon name="document-attach-outline"></ion-icon> Resources </Link></div>
             </div>
 
             <h4 className='titles'>Other</h4>

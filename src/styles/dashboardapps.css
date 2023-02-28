@@ -63,6 +63,16 @@
     background-color: rgb(240, 239, 199);
 }
 
+.dino__img{
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../Img/Dino.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+}
+
   /* ========================================= Media Query MEDIUM ========================================== */
 
   @media screen and (max-width: 1024px) {

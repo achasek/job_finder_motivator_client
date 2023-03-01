@@ -85,7 +85,7 @@ const Resources = () => {
               {material.comments.length > 0 && (
               <div>
                 {/* -------------------------- comments section below ------------------------- */}
-                <h3>Scroll Comments Below:</h3>
+                <h3>Scroll Comments Below: <ion-icon name="caret-down-outline"></ion-icon></h3>
                 <div className="comments__box">
                   {material.comments.map((comment) => (
                   <div key={comment._id}>

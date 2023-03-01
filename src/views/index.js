@@ -16,3 +16,4 @@ export { default as SignUp } from './userRoutes/SignUp';
 export { default as Materials } from './Materials';
 export { default as CreateMaterialsForm } from './CreateMaterialsForm';
 export { default as SocialDash } from './SocialDash';
+export { default as CalendarP } from './CalendarP';

@@ -13,7 +13,7 @@
     display: grid;
     grid-template-areas:
     'res res apps apps'
-    '. tama tama .' ;
+    '. . tama .' ;
     width: 100%;
     height: 100%;
     gap: 2rem;

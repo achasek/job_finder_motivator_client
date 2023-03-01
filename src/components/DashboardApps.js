@@ -48,7 +48,6 @@ export default function DashboardApps() {
         </div>
 
         <div className='tamagatchi'>
-          <h3 className='app__title'>tamagatchi</h3>
           <div className='dino__img'></div>
         </div>
       </div>

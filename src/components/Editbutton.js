@@ -8,10 +8,10 @@ import { useNavigate } from "react-router-dom";
 const EditButton = ({ material, getMaterials }) => {
   const { getAccessTokenSilently, user } = useAuth0();
   const { BACK_URI } = useContext(ConstContext);
+  const navigate = useNavigate();
   const [name, setName] = useState(material.name);
   const [content, setContent] = useState(material.content);
   const [editing, setEditing] = useState(false);
-  const navigate = useNavigate();
 
   console.log('User:   ',user)
   console.log('Material: ', material)

@@ -57,15 +57,15 @@ function App() {
                   <Route exact path='testtwo' element={< TestTwo />} /> 
                   <Route exact path='testthree' element={<UserProtectedRoute user={currUser}>< DashboardApps /></UserProtectedRoute>} /> 
                   <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
-                  <Route path='/profile' element={<Auth0LoginRequired component={Profile} />} /> 
+                  <Route path='/profile' element={<UserProtectedRoute user={currUser}><Profile/></UserProtectedRoute>} /> 
                   <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/todo" element={<TodoList />} />
+                  <Route path="/todo" element={<UserProtectedRoute user={currUser}><TodoList /></UserProtectedRoute>} />
                   <Route path="*" element={<NotFound />} />
-                  <Route path="/resources" element={<Materials />} />
-                  <Route path="/add/resources" element={<CreateMaterialsForm />} />
-                  <Route path="/Social" element={<SocialDash />} />
-                  <Route path="/Calendar" element={<CalendarP />} />
+                  <Route path="/resources" element={<UserProtectedRoute user={currUser}><Materials /></UserProtectedRoute>} />
+                  <Route path="/add/resources" element={<UserProtectedRoute user={currUser}><CreateMaterialsForm /></UserProtectedRoute>} />
+                  <Route path="/Social" element={<UserProtectedRoute user={currUser}><SocialDash /></UserProtectedRoute>} />
+                  <Route path="/Calendar" element={<UserProtectedRoute user={currUser}><CalendarP /></UserProtectedRoute>} />
                 </Route>
               </Routes>
           </DataContext.Provider>

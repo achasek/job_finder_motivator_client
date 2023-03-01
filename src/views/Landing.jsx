@@ -1,3 +1,4 @@
+import { ProfileSideBar } from "../components";
 
 const Landing = () => {
     return (
@@ -5,6 +6,9 @@ const Landing = () => {
         <section className="homepage__title">
             <h1>Welcome to Thriver!!</h1>
         </section>
+            <div className="Dino__back">
+            </div>
+            <ProfileSideBar />
         </div>
     )
 }

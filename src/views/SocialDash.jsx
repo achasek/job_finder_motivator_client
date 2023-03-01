@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { ProfileSideBar } from "../components";
 
 const SocialDash = () => {
   return (
-    <div>SocialDash</div>
+    <div>
+        <ProfileSideBar />
+    </div>
   )
 }
 

@@ -91,10 +91,10 @@ const Materials = () => {
                   {material.comments.map((comment) => (
                   <div key={comment._id}>
                     <div className='comment__author'>
-                      <img className='comment__pic' src={comment.owner_picture} alt="" />
-                      <p>User: {comment.owner_name}</p>
+                      <img className='comment__pic' src={comment.owner_picture} />
+                      <p>User: <h4>{comment.owner_name}</h4></p>
+                <p className='comment'>Comment: <h4>{comment.content}</h4></p>
                   </div>
-                <p>~ {comment.content}</p>
                 <hr />
                 <hr />
                 </div>

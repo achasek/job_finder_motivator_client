@@ -19,7 +19,7 @@ const Logout = () => {
         }
         const { status } = await callExternalApi({config});
         if(status.code === 200){
-            setCurrUser({});
+            setCurrUser(null);
             navigate(`/`);
         }
     }

@@ -31,10 +31,10 @@ const EditButton = ({ material, getMaterials }) => {
     if (status.code === 200) {
       console.log('Material updated:', data.post);
       getMaterials();
-      navigate('/resources');
+      navigate('/materials');
     } else {
       console.error('Failed to update material:', status);
-      navigate('/resources');
+      navigate('/materials');
       setEditing(false);
     }
     setEditing(false);

@@ -9,7 +9,7 @@ import '../styles/material.css';
 import { ConstContext, UserContext } from '../App';
 import MaterialLikeButton from '../components/LikeMaterialButton';
 
-const Resources = () => {
+const Materials = () => {
   const { getAccessTokenSilently, user } = useAuth0();
   const [materials, setMaterials] = useState([]);
   const { BACK_URI } = useContext(ConstContext);
@@ -116,4 +116,4 @@ const Resources = () => {
   );
 };
 
-export default Resources;
+export default Materials;

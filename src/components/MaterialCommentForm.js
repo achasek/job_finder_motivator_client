@@ -30,7 +30,7 @@ const MaterialCommentForm = ({ material , getMaterials }) => {
     if (status?.code === 201) {
       getMaterials();
       console.log('Comment created', {data}, '------', {status});
-      navigate('/resources');
+      navigate('/materials');
       setComment('');
     } else {
       console.error("This is your error:", {data}, {status}, {material});

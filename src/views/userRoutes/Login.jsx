@@ -28,11 +28,11 @@ const Login = () => {
             // point to dashboard
             if (status.code === 200) { // returning user loging in
                 setCurrUser(data.user);
-                navigate(`/`);  // TODO: redirect to dashboard here
+                navigate(`/dashboard`);  // redirect to dashboard here
             // sign up route
             } else if (status.code === 201) { // new user loging in
                 setCurrUser(data.user);
-                navigate(`/users/signup`);  // TODO: do new user profile setup path here 
+                navigate(`/users/signup`);  // do new user profile setup path here 
             } else { // should never hit
                 console.error('ERROR: invalid login response')
             }  

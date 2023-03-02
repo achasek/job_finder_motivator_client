@@ -2,17 +2,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, 
-         TestAPIRoute, TestAPIprotected, TestAPIAdmin, Profile, About, 
+         TestAPIRoute, TestAPIprotected, TestAPIAdmin, Dashboard, Profile, About, 
          UserProtectedRoute, Materials, CreateMaterialsForm, SocialDash, CalendarP } from "./views";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Auth0LoginRequired, PageLoader, TodoList, Calendar, DashboardApps } from "./components";
-
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
 export const DataContext = React.createContext();
+
+const theme = createTheme();
 
 function App() {
   const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
@@ -42,6 +44,7 @@ function App() {
       <ConstContext.Provider value={{ BACK_URI, LOGOUT_URL, AUDIENCE }}>
         <UserContext.Provider value={{ currUser, setCurrUser }}>
           <DataContext.Provider value={{ open, setOpen, modalType, setModalType}}>
+            <ThemeProvider theme={theme}>
               <Routes>
                 <Route path="/" element={<SharedLayout />}>
                   <Route index element={<Landing />} />
@@ -52,17 +55,19 @@ function App() {
                   <Route exact path='testtwo' element={< TestTwo />} /> 
                   <Route exact path='testthree' element={<UserProtectedRoute user={currUser}>< DashboardApps /></UserProtectedRoute>} /> 
                   <Route path='test/protected' element={<Auth0LoginRequired component={TestAPIprotected} />} /> 
+                  <Route path='/dashboard' element={<UserProtectedRoute user={currUser}><Dashboard/></UserProtectedRoute>} /> 
                   <Route path='/profile' element={<UserProtectedRoute user={currUser}><Profile/></UserProtectedRoute>} /> 
                   <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/todo" element={<UserProtectedRoute user={currUser}><TodoList /></UserProtectedRoute>} />
-                  <Route path="*" element={<NotFound />} />
-                  <Route path="/resources" element={<UserProtectedRoute user={currUser}><Materials /></UserProtectedRoute>} />
-                  <Route path="/add/resources" element={<UserProtectedRoute user={currUser}><CreateMaterialsForm /></UserProtectedRoute>} />
+                  <Route path="/materials" element={<UserProtectedRoute user={currUser}><Materials /></UserProtectedRoute>} />
+                  <Route path="/add/materials" element={<UserProtectedRoute user={currUser}><CreateMaterialsForm /></UserProtectedRoute>} />
                   <Route path="/Social" element={<UserProtectedRoute user={currUser}><SocialDash /></UserProtectedRoute>} />
                   <Route path="/Calendar" element={<UserProtectedRoute user={currUser}><CalendarP /></UserProtectedRoute>} />
+                  <Route path="*" element={<NotFound />} />
                 </Route>
               </Routes>
+            </ThemeProvider>
           </DataContext.Provider>
         </UserContext.Provider>
       </ConstContext.Provider>

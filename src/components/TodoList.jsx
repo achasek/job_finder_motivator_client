@@ -70,7 +70,7 @@ export default function TodoList(){
         </div>
         <div className='unordered__list'>
           {userTasks?.map(({ taskName, comments, importance, isComplete, task, added, _id }) => (
-              <li onClick={(e) => taskModal(added,  task, _id, taskName)} className='list__items'>
+              <li onClick={(e) => taskModal(added,  task, _id, taskName)} className='list__items' key={_id}>
                 <ListItemText  className='list__item' primary={taskName} secondary={task}  /> <input type="checkbox" />
                 
                 <Divider />

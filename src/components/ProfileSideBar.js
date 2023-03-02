@@ -64,7 +64,7 @@ const ProfileSideBar = () => {
             <h4 className='titles'>Basic</h4>
             <div className='basic__wrapper'>
            
-            <div><a className='sidebar__text' href='/about' ><BsKanban/> About </a></div>
+            <div><Link className='sidebar__text' to='/about' ><BsKanban/> About </Link></div>
             <div><Link className='sidebar__text' to='/profile' ><ion-icon name="document-attach-outline"></ion-icon> Profile </Link></div>
             <div><Link className='sidebar__text' to='/dashboard' ><MdOutlineDashboardCustomize/> Dashboard </Link></div>
             {/* <div><Link className='sidebar__text' to='/social' ><MdOutlineDashboardCustomize/> Social Dashboard </Link></div> */}

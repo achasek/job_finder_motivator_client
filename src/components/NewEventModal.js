@@ -10,24 +10,24 @@ import {
   Typography,
   Box,
 } from '@mui/material';
-import {makeStyles} from '@mui/styles'
+// import {makeStyles} from '@mui/styles'
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    outline: 'none',
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   modal: {
+//     display: 'flex',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   paper: {
+//     backgroundColor: theme.palette.background.paper,
+//     boxShadow: theme.shadows[5],
+//     padding: theme.spacing(2, 4, 3),
+//     outline: 'none',
+//   },
+// }));
 
 const NewEventModal = ({ isOpen, onClose, handleAddEvent }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const { getAccessTokenSilently, isAuthenticated } = useAuth0();
   const { BACK_URI } = useContext(ConstContext);
   const navigate = useNavigate();
@@ -74,8 +74,8 @@ const NewEventModal = ({ isOpen, onClose, handleAddEvent }) => {
   };
 
   return (
-    <Modal open={isOpen} onClose={handleClose} className={classes.modal}>
-      <div className={classes.paper}>
+    <Modal open={isOpen} onClose={handleClose}>
+      <div >
         <Typography variant="h6" gutterBottom>
           Add New Event
         </Typography>

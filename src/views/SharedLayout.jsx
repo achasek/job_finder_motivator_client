@@ -15,6 +15,7 @@ const SharedLayout = () => {
                     <NavLink to="/" className='nav__link'>Home</NavLink>
                     {/* <NavLink to="/about" className='nav__link'>About</NavLink> */}
                     <NavLink to="/dashboard" className='nav__link'>My Dash</NavLink>
+                    <NavLink to="/user/profile" className='nav__link'>My Profile</NavLink>
                     {/* <NavLink to="/test/public" className='nav__link'>public-test</NavLink>
                     <NavLink to="/test/protected" className='nav__link'>protected-test</NavLink>
                     <NavLink to="/test/admin" className='nav__link'>admin-test</NavLink> */}

@@ -79,7 +79,7 @@ const ProfileSideBar = () => {
             <h4 className='titles'>Other</h4>
             <div className='other__wrapper'>
             <div><a className='sidebar__text' href='/' ><AiFillFileExcel /> Report an issue </a></div>
-            <div style={{cursor:"pointer"}} onClick={settingsModal}><Link className='sidebar__text' to='/profile' ><VscSettingsGear onClick={settingsModal}/> Profile </Link></div>
+            <div style={{cursor:"pointer"}} onClick={settingsModal}><Link className='sidebar__text' to='/profile' ><VscSettingsGear onClick={settingsModal}/> Settings </Link></div>
             <div style={{cursor:"pointer"}} onClick={dispItem.func} ><p className='sidebar__text' >{dispItem.icon} {dispItem.text} </p></div>
             </div>
         </div>

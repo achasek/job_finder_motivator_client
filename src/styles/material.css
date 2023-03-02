@@ -152,6 +152,27 @@
     cursor: pointer;
 }
 
+.comment{
+    background-color: aqua;
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    padding-top: 1px;
+    word-wrap: break-word;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+p{
+    font-style: italic;
+    margin: 0px;
+}
+h4{
+    margin-bottom: 10px;
+}
 
 .comment__box{
     width: 100%;
@@ -170,6 +191,14 @@
     overflow-y: scroll;
 }
 
+.comment__pic{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    display: inline;
+}
+
 .materials__Pcontainer{
     background-color: rgba(6, 3, 3, 0.728);
     max-width: fit-content;
@@ -184,12 +213,13 @@
     color: rgb(0, 0, 0);
     border-bottom: 2px solid rgb(0, 0, 0);
     font-style: italic;
-    width: fit-content;
+    width: 200px;
     border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap:break-word;
 }
 
 .material__title{

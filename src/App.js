@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, 
          TestAPIRoute, TestAPIprotected, TestAPIAdmin, Dashboard, Profile, About, 
-         UserProtectedRoute, Materials, CreateMaterialsForm, SocialDash, CalendarP } from "./views";
+         UserProtectedRoute, Materials, CreateMaterialsForm, SocialDash, CalendarP, UserProfile } from "./views";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -64,6 +64,8 @@ function App() {
                   <Route path="/add/materials" element={<UserProtectedRoute user={currUser}><CreateMaterialsForm /></UserProtectedRoute>} />
                   <Route path="/Social" element={<UserProtectedRoute user={currUser}><SocialDash /></UserProtectedRoute>} />
                   <Route path="/Calendar" element={<UserProtectedRoute user={currUser}><CalendarP /></UserProtectedRoute>} />
+                  <Route path="/User/Profile" element={<UserProtectedRoute user={currUser}><UserProfile /></UserProtectedRoute>} />
+
                   <Route path="*" element={<NotFound />} />
                 </Route>
               </Routes>

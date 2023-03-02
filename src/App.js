@@ -8,15 +8,11 @@ import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Auth0LoginRequired, PageLoader, TodoList, Calendar, DashboardApps } from "./components";
-import { createMuiTheme } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
 export const DataContext = React.createContext();
-
-const theme = createTheme();
 
 function App() {
   const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
@@ -42,7 +38,6 @@ function App() {
   // }, [currUser])
 
   return (
-            <ThemeProvider theme={theme}>
     <BrowserRouter>
       <ConstContext.Provider value={{ BACK_URI, LOGOUT_URL, AUDIENCE }}>
         <UserContext.Provider value={{ currUser, setCurrUser }}>
@@ -72,7 +67,6 @@ function App() {
         </UserContext.Provider>
       </ConstContext.Provider>
     </BrowserRouter>
-            </ThemeProvider>
   );
 }
 

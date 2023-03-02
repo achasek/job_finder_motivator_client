@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { TodoList, ProfileSideBar, Calendar } from "../components";
 
 const About = () => {
   return (
@@ -11,6 +12,7 @@ On our site, you'll find a wealth of resources designed to help you thrive, incl
 But what truly sets Thriver apart is our community. When you join Thriver, you'll have the opportunity to connect with like-minded individuals who are also striving to reach their full potential. Our platform makes it easy to network, ask for advice, and share your experiences with others who understand what you're going through.
 So whether you're looking to jump-start your job search, stay motivated to achieve your goals, or simply connect with others who share your passion for success, Thriver is the perfect place for you. I can't wait to see all that you'll accomplish with the help of our community and resources.</h3>
     </div>
+    <ProfileSideBar />
     </div>
   )
 }

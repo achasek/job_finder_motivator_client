@@ -10,20 +10,20 @@ const Profile = () => {
   return (
     <div className="profile__layout">
         <div className="sidebar">
-  <ProfileSideBar />
+          <ProfileSideBar />
         </div>
     <div className="profile-page__container">
         <div className="dash__apps">
-    <DashboardApps />
+          <DashboardApps />
         </div>
         <div className="CLN">
-      <Calendar />
+          <Calendar />
         </div>
         <div className="TD">
-       <TodoList/>
+          <TodoList/>
         </div>
         <div className="KB">
-       <Kanban />
+          <Kanban />
         </div>
       </div>
       </div>

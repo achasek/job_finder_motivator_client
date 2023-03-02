@@ -31,22 +31,22 @@ const ProfileSideBar = () => {
             <h4 className='titles'>Basic</h4>
             <div className='basic__wrapper'>
            
-            <div><Link className='sidebar__text' to='/social' ><MdOutlineDashboardCustomize/> Social Dashboard </Link></div>
+            <div><Link className='sidebar__text' to='/dashboard' ><MdOutlineDashboardCustomize/> Dashboard </Link></div>
             </div>
             
             <h4 className='titles'>Tools</h4>
             <div className='tools__wrapper'>
             <div><a className='sidebar__text' href='http://www.google.com' ><BsKanban/> Kanban </a></div>
-            <div><a className='sidebar__text' href='/calendar' ><AiOutlineCalendar /> Calendar </a></div>
-            <div><Link className='sidebar__text' to='/add/resources' ><BsPen /> Add a Material </Link></div>
-            <div><Link className='sidebar__text' to='/resources' ><BiNotepad /> Materials </Link></div>
+            <div><Link className='sidebar__text' to='/calendar' ><AiOutlineCalendar /> Calendar </Link></div>
+            <div><Link className='sidebar__text' to='/add/materials' ><BsPen /> Add a Material </Link></div>
+            <div><Link className='sidebar__text' to='/materials' ><BiNotepad /> Materials </Link></div>
             <div><Link className='sidebar__text' to='/' ><ion-icon name="document-attach-outline"></ion-icon> Resources </Link></div>
             </div>
 
             <h4 className='titles'>Other</h4>
             <div className='other__wrapper'>
             <div><a className='sidebar__text' href='http://www.google.com' ><AiFillFileExcel /> Report an issue </a></div>
-            <div style={{cursor:"pointer"}} onClick={settingsModal}><a className='sidebar__text' href='http://www.google.com' ><VscSettingsGear onClick={settingsModal}/> Settings </a></div>
+            <div style={{cursor:"pointer"}} onClick={settingsModal}><Link className='sidebar__text' to='/profile' ><VscSettingsGear onClick={settingsModal}/> Profile </Link></div>
             <div><a className='sidebar__text' href='http://www.google.com' ><BiLogOut /> Sign out </a></div>
             </div>
         </div>

@@ -34,7 +34,7 @@ const CreateMaterialForm = () => {
       console.log({data});
       console.log({status});
       console.log({error});
-      navigate('/resources');
+      navigate('/materials');
     } catch (error) {
       console.error(error);
     }

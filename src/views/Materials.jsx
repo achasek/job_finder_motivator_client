@@ -68,11 +68,11 @@ const Materials = () => {
         {/* -------------------------- Material title and Content section below ------------------------- */}
       <div className="resources__container">
         {materials?.map((material) => (
-          <div className='materials__Pcontainer'>
+          <div className='materials__Pcontainer' key={material._id}>
             <h2 className='material__title'>{material.name}</h2>
             <MaterialLikeButton material={material} getMaterials={getMaterials} />
             <br/>
-            <div className="each__resource" key={material._id}>
+            <div className="each__resource">
               <h3>Content :</h3>
               <p className='content__container'>{material.content}</p>
               <hr />
@@ -91,6 +91,7 @@ const Materials = () => {
                   {material.comments.map((comment) => (
                   <div key={comment._id}>
                     <div className='comment__author'>
+                      <img className='comment__pic' src={comment.owner_picture} alt="" />
                       <p>User: {comment.owner_name}</p>
                   </div>
                 <p>~ {comment.content}</p>

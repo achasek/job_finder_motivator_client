@@ -67,21 +67,18 @@ const ProfileSideBar = () => {
             <div><Link className='sidebar__text' to='/about' ><BsKanban/> About </Link></div>
             <div><Link className='sidebar__text' to='/profile' ><ion-icon name="document-attach-outline"></ion-icon> Profile </Link></div>
             <div><Link className='sidebar__text' to='/dashboard' ><MdOutlineDashboardCustomize/> Dashboard </Link></div>
-            {/* <div><Link className='sidebar__text' to='/social' ><MdOutlineDashboardCustomize/> Social Dashboard </Link></div> */}
             </div>
             
             <h4 className='titles'>Tools</h4>
             <div className='tools__wrapper'>
-            {/* <div><a className='sidebar__text' href='http://www.google.com' ><BsKanban/> Kanban </a></div> */}
             <div><Link className='sidebar__text' to='/calendar' ><AiOutlineCalendar /> Calendar </Link></div>
             <div><Link className='sidebar__text' to='/add/materials' ><BsPen /> Add a Material </Link></div>
             <div><Link className='sidebar__text' to='/materials' ><BiNotepad /> Materials </Link></div>
-            {/* <div><Link className='sidebar__text' to='/' ><ion-icon name="document-attach-outline"></ion-icon> Resources </Link></div> */}
             </div>
 
             <h4 className='titles'>Other</h4>
             <div className='other__wrapper'>
-            <div><a className='sidebar__text' href='http://www.google.com' ><AiFillFileExcel /> Report an issue </a></div>
+            <div><a className='sidebar__text' href='/' ><AiFillFileExcel /> Report an issue </a></div>
             <div style={{cursor:"pointer"}} onClick={settingsModal}><Link className='sidebar__text' to='/profile' ><VscSettingsGear onClick={settingsModal}/> Profile </Link></div>
             <div style={{cursor:"pointer"}} onClick={dispItem.func} ><p className='sidebar__text' >{dispItem.icon} {dispItem.text} </p></div>
             </div>

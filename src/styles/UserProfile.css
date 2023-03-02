@@ -1,0 +1,38 @@
+.User-page__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(75, 249, 243, 0.85);
+  width: 500px;
+  height: 80vh;
+  border-radius: 10px;
+  border: 1px solid black;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+}
+.User__titleContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.User__title {
+  font-size: 28px;
+  font-weight: bold;
+}
+.User__avatarContainer {
+  margin-bottom: 30px;
+}
+.User__avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+}

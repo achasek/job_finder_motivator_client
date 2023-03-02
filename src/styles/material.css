@@ -170,6 +170,13 @@
     overflow-y: scroll;
 }
 
+.comment__pic{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+}
+
 .materials__Pcontainer{
     background-color: rgba(6, 3, 3, 0.728);
     max-width: fit-content;

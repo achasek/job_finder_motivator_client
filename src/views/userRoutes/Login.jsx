@@ -17,10 +17,13 @@ const Login = () => {
             // change
             url: `${BACK_URI}/api/user/login`,
             // change to update method
-            method: "GET",
+            method: "POST",
             headers: {
                 "content-type": "application/json",
                 "Authorization": `bearer ${token}`
+            },
+            data: {
+                picture: user.picture
             }
         }
         const { data, status, error } = await callExternalApi({config});

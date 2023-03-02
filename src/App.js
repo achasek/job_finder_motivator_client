@@ -10,7 +10,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Auth0LoginRequired, PageLoader, TodoList, Calendar, DashboardApps } from "./components";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-
 export const ConstContext = React.createContext();
 export const UserContext = React.createContext();
 export const DataContext = React.createContext();
@@ -41,11 +40,11 @@ function App() {
   // }, [currUser])
 
   return (
-            <ThemeProvider theme={theme}>
     <BrowserRouter>
       <ConstContext.Provider value={{ BACK_URI, LOGOUT_URL, AUDIENCE }}>
         <UserContext.Provider value={{ currUser, setCurrUser }}>
           <DataContext.Provider value={{ open, setOpen, modalType, setModalType}}>
+            <ThemeProvider theme={theme}>
               <Routes>
                 <Route path="/" element={<SharedLayout />}>
                   <Route index element={<Landing />} />
@@ -68,11 +67,11 @@ function App() {
                   <Route path="*" element={<NotFound />} />
                 </Route>
               </Routes>
+            </ThemeProvider>
           </DataContext.Provider>
         </UserContext.Provider>
       </ConstContext.Provider>
     </BrowserRouter>
-            </ThemeProvider>
   );
 }
 

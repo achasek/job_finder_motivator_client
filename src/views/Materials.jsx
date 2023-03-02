@@ -6,13 +6,14 @@ import EditButton from '../components/Editbutton';
 import DeleteButton from '../components/Deletebutton';
 import MaterialCommentForm from '../components/MaterialCommentForm';
 import '../styles/material.css';
-import { ConstContext } from '../App';
+import { ConstContext, UserContext } from '../App';
 import MaterialLikeButton from '../components/LikeMaterialButton';
 
 const Materials = () => {
   const { getAccessTokenSilently, user } = useAuth0();
   const [materials, setMaterials] = useState([]);
   const { BACK_URI } = useContext(ConstContext);
+  const { currUser } = useContext(UserContext);
 
   const getMaterials = async () => {
     const token = await getAccessTokenSilently();
@@ -27,13 +28,13 @@ const Materials = () => {
     const { data, status, error } = await callExternalApi({ config });
     console.log({ status }, { data });
     if (status.code === 200) {
-      console.log({ data: data.posts });
+      // console.log({ data: data.posts });
       setMaterials(data.posts);
     }
   };
 
   useEffect(() => {
-    console.log('Hello');
+    // console.log('Hello');
     getMaterials();
   }, []);
   
@@ -55,7 +56,7 @@ const Materials = () => {
     const { data, status, error } = await callExternalApi({ config });
     console.log({ status }, { data });
     if (status.code === 200) {
-      console.log({ data });
+      // console.log({ data });
       getMaterials();
     }
   };
@@ -102,8 +103,12 @@ const Materials = () => {
           )}
           </div>
             {/* -------------------------- edit/delete section below ------------------------- */}
+          {(currUser._id === material.owner)?
+          <div className='edit__delete'>
         <EditButton material={material} getMaterials={getMaterials} />
         <DeleteButton material={material} onDelete={handleDelete} getMaterials={getMaterials} />
+          </div>
+          :null }
         </div>
       ))}
       </div>

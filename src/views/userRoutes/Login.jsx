@@ -29,13 +29,13 @@ const Login = () => {
         const { data, status, error } = await callExternalApi({config});
         if (data) {
             // point to dashboard
-            if (status.code === 200) { // returning user loging in
+            if (status.code >= 200 && status.code < 300) { // not splitting on signup // returning user loging in
                 setCurrUser(data.user);
                 navigate(`/dashboard`);  // redirect to dashboard here
             // sign up route
-            } else if (status.code === 201) { // new user loging in
-                setCurrUser(data.user);
-                navigate(`/users/signup`);  // do new user profile setup path here 
+            // } else if (status.code === 201) { // new user loging in
+            //     setCurrUser(data.user);
+            //     navigate(`/users/signup`);  // do new user profile setup path here 
             } else { // should never hit
                 console.error('ERROR: invalid login response')
             }  

@@ -5,6 +5,8 @@
     text-align: center;
 }
 
+
+
 .resources__container{
     width: fit-content;
     height: 100vh;
@@ -22,17 +24,20 @@
 }
 
 .create__material{
-    width: 300px;
-    height: 300px;
+    width: 425px;
+    height: 425px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 250px;
+    margin-top: 100px;
 }
 
 .material__form{
     background-color: var(--white);
+    width: 300px;
+    height: 300px;
     padding: 30px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px solid black;
     border-radius: 20px;
     text-align: center;
@@ -41,13 +46,12 @@
     box-shadow: 2px -2px 2px 0px rgba(0,0,0,0.65);
 }
 
-.Mlabel{
-    text-align: center;
-}
-
 .Minput{
     margin-left: auto;
     margin-right: auto;
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
 }
 
 .each__resource{
@@ -251,6 +255,36 @@ button:hover{
     border: 2px solid rgb(68, 102, 255);
 }
 
-.labels{
-    color: white;
+.Jlabel{
+
+
+}
+
+.Jinput{
+
+
+}
+
+.create__job{
+    width: fit-content;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+
+}
+
+.job__form{
+    background-color: var(--white);
+    width: 300px;
+    height: fit-content;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+    -webkit-box-shadow: 2px -2px 2px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 2px -2px 2px 0px rgba(0,0,0,0.65);
+    box-shadow: 2px -2px 2px 0px rgba(0,0,0,0.65);
 }

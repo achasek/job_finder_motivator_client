@@ -13,7 +13,7 @@
 .CLN { grid-area: calendar; }
 .TD { grid-area: todo; }
 .dash__apps { grid-area: apps; }
-.profile-page__container {
+/* .profile-page__container {
   grid-template-areas: 
   'apps . todo'
   '. . .'
@@ -25,7 +25,7 @@
   width: 1200px;
   height: 800px;
   overflow: visible;
-  }
+  } */
 
   .sidebar__container {
     border-top: none;
@@ -94,10 +94,10 @@
     list-style-type: none;
   }
 
-.KB{
+/* .KB{
   max-height: fit-content;
   min-width: fit-content;
-}
+} */
 
 .TD{
   min-width: fit-content;
@@ -118,7 +118,7 @@
   /* ========================================= Media Query MEDIUM ========================================== */
 
   @media screen and (max-width: 1024px) {
-    .profile-page__container {
+    /* .profile-page__container {
       display: grid;
       grid-template-areas: 
       'apps'
@@ -126,7 +126,7 @@
       'todo'
       'calendar';
       margin-left: 50px;
-    }
+    } */
 
     .profile__layout{
       margin-left: auto;
@@ -165,14 +165,14 @@
   /* =========================================== Media Query SMALL ============================================ */
   
   @media screen and (max-width: 600px) {
-    .profile-page__container {
+    /* .profile-page__container {
       display: grid;
       grid-template-areas: 
       'todo'
       'apps'
       'kanban'
       'calendar';
-    }
+    } */
 
     .profile__layout{
       background-color: var(--TealBlue);

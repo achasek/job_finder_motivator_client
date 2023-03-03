@@ -5,6 +5,7 @@ import { ConstContext } from '../App';
 import { callExternalApi } from '../services/external-api.service';
 import "../styles/material.css";
 import { useNavigate } from "react-router-dom";
+import { ProfileSideBar } from "../components";
 
 const CreateMaterialForm = () => {
   const { getAccessTokenSilently } = useAuth0();
@@ -45,10 +46,10 @@ const CreateMaterialForm = () => {
     <form className='material__form' onSubmit={handleSubmit}>
       <div>
         <h1> Add Resource here</h1>
-        <label className='Mlabel' htmlFor="name">Name:</label>
+        <label className='Mlabel1' htmlFor="name">Name:</label>
         <br/>
         <input
-          className='Minput'
+          className='Minput1'
           type="text"
           id="name"
           value={name}
@@ -67,6 +68,7 @@ const CreateMaterialForm = () => {
       </div>
       <button type="submit">Submit</button>
     </form>
+    <ProfileSideBar />
     </div>
   );
 };

@@ -74,6 +74,8 @@ const ProfileSideBar = () => {
             <div><Link className='sidebar__text' to='/calendar' ><AiOutlineCalendar /> Calendar </Link></div>
             <div><Link className='sidebar__text' to='/add/materials' ><BsPen /> Add a Material </Link></div>
             <div><Link className='sidebar__text' to='/materials' ><BiNotepad /> Materials </Link></div>
+            <div><Link className='sidebar__text' to='/add/jobs' ><BsPen /> Add a Job App </Link></div>
+            <div><Link className='sidebar__text' to='/jobs' ><BiNotepad /> Jobs </Link></div>
             </div>
 
             <h4 className='titles'>Other</h4>

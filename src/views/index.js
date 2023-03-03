@@ -18,4 +18,6 @@ export { default as CreateMaterialsForm } from './CreateMaterialsForm';
 export { default as SocialDash } from './SocialDash';
 export { default as CalendarP } from './CalendarP';
 export { default as Dashboard } from './Dashboard';
+export { default as JobApps } from './JobApps'
+export { default as CreateJobForm } from './CreateJobForm';
 export { default as UserProfile } from './UserProfile';

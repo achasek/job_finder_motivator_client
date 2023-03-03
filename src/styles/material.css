@@ -164,6 +164,7 @@
     margin-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
+    word-wrap: break-word;
 }
 
 p{
@@ -215,12 +216,12 @@ h4{
     border-bottom: 2px solid rgb(0, 0, 0);
     font-style: italic;
     width: 200px;
+    word-wrap: break-word;
     border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
     margin-left: auto;
     margin-right: auto;
-    word-wrap:break-word;
 }
 
 .material__title{

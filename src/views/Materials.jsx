@@ -89,7 +89,7 @@ const Materials = () => {
                 <h3>Scroll Comments Below: <ion-icon name="caret-down-outline"></ion-icon></h3>
                 <div className="comments__box">
                   {material.comments.map((comment) => (
-                  <div key={comment._id}>
+                  <div className='each__comment' key={comment._id}>
                     <div className='comment__author'>
                       <img className='comment__pic' src={comment.owner_picture} />
                       <p>User: <h4>{comment.owner_name}</h4></p>

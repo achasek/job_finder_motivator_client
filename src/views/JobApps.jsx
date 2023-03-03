@@ -44,26 +44,26 @@ const JobApps = () => {
 
 
   return (
-    <div className="resources__page">
+    <div className="jobs__page">
       <ProfileSideBar />
-      <h1 className='resource__title'> Job Applications</h1>
-        {/* -------------------------- Material title and Content section below ------------------------- */}
-      <div className="resources__container">
+      <h1 className='jobPage__title'> Job Applications</h1>
+        {/* -------------------------- job title and Content section below ------------------------- */}
+      <div className="jobs__container">
         {jobs?.map((job) => (
-          <div className='materials__Pcontainer' key={job._id}>
-            <h2 className='material__title'>{job.company} : {job.position}</h2>
+          <div className='jobs__Pcontainer' key={job._id}>
+            <h2 className='job__title'>{job.company} : {job.position}</h2>
             <br/>
-            <div className="each__resource" >
+            <div className="each__Job" >
               <h3>URL :</h3>
-              <p className='content__container'>{job.url}</p>
+              <p className='content__container1'>{job.url}</p>
               <h3>Status :</h3>
-              <p className='content__container'>{job.status}</p>
+              <p className='content__container1'>{job.status}</p>
               <h3>Date Applied :</h3>
-              <p className='content__container'>{job.date_applied ? job.date_applied : null}</p>
+              <p className='content__container1'>{job.date_applied ? job.date_applied : null}</p>
               <h3>Date of Response :</h3>
-              <p className='content__container'>{job.date_response ? job.date_response : null}</p>
+              <p className='content__container1'>{job.date_response ? job.date_response : null}</p>
               <h3>Description :</h3>
-              <p className='content__container'>{job.description}</p>
+              <p className='content__container1'>{job.description}</p>
               <hr />
                 {/* -------------------------- like and comment total section below ------------------------- */}
               <p>
@@ -76,13 +76,14 @@ const JobApps = () => {
               <div>
                 {/* -------------------------- comments section below ------------------------- */}
                 <h3>Scroll Comments Below: <ion-icon name="caret-down-outline"></ion-icon></h3>
-                <div className="comments__box">
+                <div className="comments__box1">
                   {job.comments?.map((comment) => (
-                  <div key={comment._id}>
-                    <div className='comment__author'>
+                  <div className='each__comment1' key={comment._id}>
+                    <div className='comment__author1'>
+                      <img className='comment__pic1' src={comment.owner_picture} />  
                       <p>User: {comment.owner_name}</p>
+                  <p className='comment1'>~ {comment.content}</p>
                     </div>
-                  <p>~ {comment.content}</p>
                   <hr />
                   <hr />
                 </div>

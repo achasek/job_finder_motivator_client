@@ -9,22 +9,24 @@
   
 }
 
-.KB { grid-area: kanban; }
+/* .KB { grid-area: kanban; } */
 .CLN { grid-area: calendar; }
 .TD { grid-area: todo; }
 .dash__apps { grid-area: apps; }
 .profile-page__container {
   grid-template-areas: 
-  'apps . todo'
-  '. . .'
-  'kanban . calendar';
+  ' calendar apps'
+  ' calendar todo ';
+  row-gap: 20px;
+  column-gap: 30px;
   border-radius: 100px;
   display: grid;
   align-items: center;
   z-index: 99;
-  width: 1200px;
-  height: 800px;
+  min-width: fit-content;
+  min-height: fit-content;
   overflow: visible;
+  margin-top: 50px;
   }
 
   .sidebar__container {
@@ -94,10 +96,10 @@
     list-style-type: none;
   }
 
-.KB{
+/* .KB{
   max-height: fit-content;
   min-width: fit-content;
-}
+} */
 
 .TD{
   min-width: fit-content;

@@ -1,7 +1,7 @@
 .todo-list__container {
     width: fit-content;
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
 .todo__innards{

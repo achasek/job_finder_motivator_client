@@ -1,45 +1,24 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/UserProfile.css";
+import { useContext, useState } from "react";
 import { ProfileSideBar } from "../components";
-import { UserContext, ConstContext } from "../App";
+import { ConstContext, UserContext } from "../App";
+import "../styles/UserProfile.css";
 
 const UserProfile = () => {
   const { user, getAccessTokenSilently } = useAuth0();
   const { currUser, setCurrUser } = useContext(UserContext);
   const { BACK_URI } = useContext(ConstContext);
   const [displayName, setDisplayName] = useState("");
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const token = await getAccessTokenSilently();
-        const res = await axios.get(`${BACK_URI}/api/user`, {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-          },
-        });
-        setCurrUser(res.data.data.user);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchUserData();
-  }, [BACK_URI, getAccessTokenSilently, setCurrUser]);
-
-  const handleChange = (e) => {
-    setDisplayName(e.target.value);
-  };
+  const [showInput, setShowInput] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = await getAccessTokenSilently();
-      const formData = { display_name: displayName };
       const res = await axios.put(
         `${BACK_URI}/api/user/update`,
-        formData,
+        { display_name: displayName },
         {
           headers: {
             "content-type": "application/json",
@@ -47,25 +26,40 @@ const UserProfile = () => {
           },
         }
       );
-      setCurrUser({ ...currUser, name: res.data.data.user.display_name });
+      setCurrUser({ ...currUser, display_name: res.data.data.user.display_name });
+      setShowInput(false);
     } catch (err) {
       console.error(err);
-      // Display error message to the user
     }
   };
 
-  if (!currUser) {
-    return null;
-  }
-
-  return (
+  return currUser ? (
     <div className="user__page">
+        <div className="fly__image"></div>
       <div className="User-page__container">
         <div className="User__titleContainer">
-          <h2 className="User__title">
-            Welcome to your profile {currUser.name}
-          </h2>
+          <h2 className="User__title">Welcome to your profile {currUser.display_name}</h2>
         </div>
+        {showInput ? (
+          <form onSubmit={handleSubmit}>
+            <input
+              className="username__input"
+              placeholder="New Display Name"
+              type="text"
+              id="displayName"
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+            />
+            <button className="update__username" type="submit">
+              Update Username
+            </button>
+            {console.log("This the current user: ",currUser)}
+          </form>
+        ) : (
+          <button className="update__username" onClick={() => setShowInput(true)}>
+            Change Username
+          </button>
+        )}
         <div className="User__avatarContainer">
           <img
             src={currUser.picture ? currUser.picture : user.picture}
@@ -73,17 +67,11 @@ const UserProfile = () => {
             className="User__avatar"
           />
         </div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="displayName">Display Name:</label>
-            <input type="text" id="displayName" onChange={handleChange} />
-          </div>
-          <button type="submit">Update Username</button>
-        </form>
+        <div className="FlyingDino__img"></div>
       </div>
       <ProfileSideBar />
     </div>
-  );
+  ) : null;
 };
 
 export default UserProfile;

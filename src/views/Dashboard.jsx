@@ -20,9 +20,9 @@ const Dashboard = () => {
         <div className="TD">
           <TodoList/>
         </div>
-        <div className="KB">
+        {/* <div className="KB">
           <Kanban />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -40,10 +40,18 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  word-wrap: break-word;
+  max-width:400px ;
 }
 .User__title {
   font-size: 28px;
   font-weight: bold;
+  background-color: aliceblue;
+  border: 1px solid black;
+  word-wrap: break-word;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .update__username{

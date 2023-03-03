@@ -23,34 +23,37 @@ export default function TodoList(){
   const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
   const { getAccessTokenSilently } = useAuth0();
 
-  useEffect(() => {
-    const handleGetTasks = async () => {
-      const token = await getAccessTokenSilently();
-      const config = {
-          url: `${BACK_URI}/api/task/`,
-          method: "GET",
-          headers: {
-              "content-type": "application/json",
-              "Authorization": `bearer ${token}`
-          }
-      }
-      const { data, status, error } = await callExternalApi({config});
-      if (status.code === 200){
-        console.log({data: data.tasks});
-        setUserTasks(data.tasks);
-      }
+  const handleGetTasks = async () => {
+    const token = await getAccessTokenSilently();
+    const config = {
+        url: `${BACK_URI}/api/task/`,
+        method: "GET",
+        headers: {
+            "content-type": "application/json",
+            "Authorization": `bearer ${token}`
+        }
     }
-    handleGetTasks();
-  }, [])
+    const { data, status, error } = await callExternalApi({config});
+    if (status.code === 200){
+      console.log({data: data.tasks});
+      setUserTasks(data.tasks);
+    }
+  }
+
+  useEffect(() => { handleGetTasks(); }, [])
+
+  const closeModal = () => {
+    setOpen(false);
+  }
 
   const postModal = () => {
     setOpen(true)
-    setModalType(<TodoListForm email={email}/>)
+    setModalType(<TodoListForm email={email} onClose={handleGetTasks} closeModal={closeModal} />)
     }
 
   const taskModal = (added, task, id, taskName) => {
     setOpen(true)
-    setModalType(<TaskContent taskName={taskName} added={added} task={task} id={id}/>)
+    setModalType(<TaskContent taskName={taskName} added={added} task={task} id={id} onClose={handleGetTasks} closeModal={closeModal} />)
   }
 
   const kanbanModal = () => {

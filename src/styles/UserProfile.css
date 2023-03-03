@@ -1,3 +1,24 @@
+.FlyingDino__img{
+  width: 400px;
+  height: 400px;
+  background-image: url('../Img/Trex.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.user__page{
+  background-image: url('../Img/fly.png');
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  margin-bottom: 20px;
+  margin-right: 80px;
+  z-index: 0;
+}
+
 .User-page__container {
   display: flex;
   flex-direction: column;
@@ -24,6 +45,21 @@
   font-size: 28px;
   font-weight: bold;
 }
+
+.update__username{
+  border-radius: 20px;
+  background-color: orange;
+  color: rgb(0, 0, 0);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 30px;
+}
+
+.username__input{
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
 .User__avatarContainer {
   margin-bottom: 30px;
 }

@@ -48,22 +48,22 @@ const EditJobButton = ({ job, getJobs }) => {
 
   if (!editing) {
     return(
-    <button className='btn__edit' onClick={() => setEditing(true)}>Edit</button>
+    <button className='btn__edit1' onClick={() => setEditing(true)}>Edit</button>
     )
   }
 
   return (
     <>
-      <label className='labels'>New Position</label>
+      <label className='labels1'>New Position</label>
       <br/>
       <input placeholder='New Title' value={position} onChange={(e) => setPosition(e.target.value)} />
       <br/>
-      <label className='labels'>New Description</label>
+      <label className='labels1'>New Description</label>
       <br/>
       <input placeholder='New Description' value={description} onChange={(e) => setDescription(e.target.value)} />
       <br />
-      <button className='btn__save' onClick={handleEdit}>Save</button>
-      <button className='btn__cancel' onClick={handleCancel}>Cancel</button>
+      <button className='btn__save1' onClick={handleEdit}>Save</button>
+      <button className='btn__cancel1' onClick={handleCancel}>Cancel</button>
     </>
   );
 };

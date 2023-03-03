@@ -164,16 +164,17 @@ body {
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s;
+    min-width: fit-content;
   }
 
   .nav__block{
-    min-width: 400px;
+    min-width: 300px;
     margin-left: auto;
     height: 20px;
   }
 
   .Dino__back{
-    background-image: url('../Img/Dino-Back3.png');
+    background-image: url('../Img/Dino1.png');
     background-position: center bottom;
     background-size: contain;
     background-repeat: no-repeat;
@@ -181,6 +182,7 @@ body {
     height: 400px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 60px;
   }
 
   /* .nav__links{

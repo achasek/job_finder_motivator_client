@@ -197,6 +197,7 @@ h4{
     height: 30px;
     margin-left: auto;
     display: inline;
+    margin-right: 10px;
 }
 
 .materials__Pcontainer{
@@ -223,8 +224,11 @@ h4{
 }
 
 .material__title{
-    color: white;
+    color: rgb(10, 1, 1);
     font-weight: bold;
+    background-color: rgb(4, 224, 4);
+    margin-top: 0px;
+    border-radius: 20px;
 }
 
 .content__container{

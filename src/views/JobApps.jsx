@@ -81,7 +81,7 @@ const JobApps = () => {
                   <div className='each__comment1' key={comment._id}>
                     <div className='comment__author1'>
                       <img className='comment__pic1' src={comment.owner_picture} />  
-                      <p>User: {comment.owner_name}</p>
+                      <p>Your comment: {comment.owner_name}</p>
                   <p className='comment1'>~ {comment.content}</p>
                     </div>
                   <hr />

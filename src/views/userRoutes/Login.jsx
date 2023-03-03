@@ -31,7 +31,7 @@ const Login = () => {
             // point to dashboard
             if (status.code >= 200 && status.code < 300) { // not splitting on signup // returning user loging in
                 setCurrUser(data.user);
-                navigate(`/dashboard`);  // redirect to dashboard here
+                navigate(`/user/profile`);  // redirect to dashboard here
             // sign up route
             // } else if (status.code === 201) { // new user loging in
             //     setCurrUser(data.user);

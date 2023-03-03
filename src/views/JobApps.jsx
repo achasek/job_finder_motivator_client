@@ -56,6 +56,12 @@ const JobApps = () => {
             <div className="each__resource" >
               <h3>URL :</h3>
               <p className='content__container'>{job.url}</p>
+              <h3>Status :</h3>
+              <p className='content__container'>{job.status}</p>
+              <h3>Date Applied :</h3>
+              <p className='content__container'>{job.date_applied ? job.date_applied : null}</p>
+              <h3>Date of Response :</h3>
+              <p className='content__container'>{job.date_response ? job.date_response : null}</p>
               <h3>Description :</h3>
               <p className='content__container'>{job.description}</p>
               <hr />
@@ -71,7 +77,7 @@ const JobApps = () => {
                 {/* -------------------------- comments section below ------------------------- */}
                 <h3>Scroll Comments Below: <ion-icon name="caret-down-outline"></ion-icon></h3>
                 <div className="comments__box">
-                  {job.comments.map((comment) => (
+                  {job.comments?.map((comment) => (
                   <div key={comment._id}>
                     <div className='comment__author'>
                       <p>User: {comment.owner_name}</p>

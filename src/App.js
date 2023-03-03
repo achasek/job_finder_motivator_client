@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { SharedLayout, Landing, NotFound, CallbackView, UserRoutes, 
          TestAPIRoute, TestAPIprotected, TestAPIAdmin, Dashboard, Profile, About, 
-         UserProtectedRoute, Materials, CreateMaterialsForm, SocialDash, CalendarP, UserProfile } from "./views";
+         UserProtectedRoute, Materials, CreateMaterialsForm, SocialDash, CalendarP, 
+         UserProfile, JobApps, CreateJobForm } from "./views";
 import Test from "./pages/Test";
 import TestTwo from "./pages/TestTwo";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -60,6 +61,8 @@ function App() {
                   <Route path="test/admin" element={<Auth0LoginRequired component={TestAPIAdmin} />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/todo" element={<UserProtectedRoute user={currUser}><TodoList /></UserProtectedRoute>} />
+                  <Route path="/jobs" element={<UserProtectedRoute user={currUser}><JobApps /></UserProtectedRoute>} />
+                  <Route path="/add/jobs" element={<UserProtectedRoute user={currUser}><CreateJobForm /></UserProtectedRoute>} />
                   <Route path="/materials" element={<UserProtectedRoute user={currUser}><Materials /></UserProtectedRoute>} />
                   <Route path="/add/materials" element={<UserProtectedRoute user={currUser}><CreateMaterialsForm /></UserProtectedRoute>} />
                   <Route path="/Social" element={<UserProtectedRoute user={currUser}><SocialDash /></UserProtectedRoute>} />

@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { callExternalApi } from '../services/external-api.service';
 
-function TodoListForm(props) {
+function TodoListForm({ email, onClose, closeModal}) {
   const [task, setTask] = useState({})
   const [importance, setImportance] = useState({})
   const [taskName, setTaskName] = useState({})
-  const email = props.email
+  // const  = props;
   const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
   const { getAccessTokenSilently } = useAuth0();
   const handleTaskName = (e) => {
@@ -49,6 +49,8 @@ function TodoListForm(props) {
     console.log({status});
     if (data){
       console.log({task: data.task});
+      onClose();
+      closeModal();
     } else {
       console.error(error);
     }

@@ -6,10 +6,11 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { callExternalApi } from '../services/external-api.service';
 
 const TaskContent = (props) => {
-    const added = props.added
-    const taskName = props.taskName
-    const task = props.task
-    const id = props.id
+  const { added, taskName, task, id, onClose, closeModal } = props;
+    // const added = props.added
+    // const taskName = props.taskName
+    // const task = props.task
+    // const id = props.id
     const BACK_URI = process.env.REACT_APP_API_SERVER_URL;
     const { getAccessTokenSilently } = useAuth0();
 
@@ -30,7 +31,8 @@ const TaskContent = (props) => {
       // console.log({status});
       if (status.code === 200){
         // if status.code === 200 task was deleted
-        // axios.delete(`${BACK_URI}/api/task/${id}`)
+        onClose();
+        closeModal();
       }
     }
 
